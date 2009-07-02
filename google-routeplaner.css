@@ -1,0 +1,14 @@
+.google_routeplaner table,
+.google_routeplaner td,
+.google_routeplaner th,
+.google_routeplaner tr {
+	border: 1px solid #1A1A1A;
+	text-align: center;
+}
+
+
+.google_routeplaner .success {
+	background-color: #c3ff88;
+	border-color: #8dff1c;
+
+}
