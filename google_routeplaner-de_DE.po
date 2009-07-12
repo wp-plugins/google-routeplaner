@@ -1,0 +1,381 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Google Routeplaner\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-12 17:04+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: Deformed Design <info@deformed-design.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: \\\\192.168.1.15\\webdesign\\wordpress\\wp-content\\plugins\\google_routeplaner\n"
+"X-Poedit-SearchPath-0: \\\\192.168.1.15\\webdesign\\wordpress\\wp-content\\plugins\\google-routeplaner\n"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner.php:92
+msgid "Google Routeplaner isn't ready yet. Please enter your Google Maps API Key on the <a href=\"admin.php?page=google_routeplaner_settings\">settings screen</a>."
+msgstr "Google Routeplaner ist noch nicht einsatzbereit. Bitte gib einen Google Maps API Key auf der <a href=\"admin.php?page=google_routeplaner_settings\">Einstellungsseite</a> ein."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner.php:197
+msgid "Your location"
+msgstr "Dein Standort"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner.php:197
+msgid "Create route"
+msgstr "Route erstellen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:14
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:64
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:122
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:169
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:183
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:216
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:230
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:320
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:335
+msgid "Google Routeplaner"
+msgstr "Google Routeplaner"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:14
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:403
+msgid "About"
+msgstr "Über"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:15
+msgid "Google Routeplaner generates a routeplaner based on the <a href=\"http://code.google.com/apis/maps/\">Google Maps API</a>."
+msgstr "Google Routeplaner erstellt einen Routenplaner auf Basis der <a href=\"http://code.google.com/apis/maps/\">Google Maps API</a>."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:25
+msgid "Yes, I want to uninstall Google Routeplaner"
+msgstr "Ja, ich will Google Routeplaner deinstallieren"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:26
+msgid "Full Uninstall Google Routeplaner"
+msgstr "Google Routeplaner komplett deinstallieren"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:64
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:405
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:72
+msgid "Settings saved!"
+msgstr "Einstellungen gespeichert!"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:76
+msgid "Your Google Maps API Key"
+msgstr "Dein Google Maps API Key"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:78
+msgid "You can get a free api key <a href=\"http://code.google.com/apis/maps/\">here</a>."
+msgstr "Du kannst einen kostenlosen API Key <a href=\"http://code.google.com/apis/maps/\">here</a> bekommen."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:79
+msgid "Language"
+msgstr "Sprache"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:81
+msgid "English"
+msgstr "Englisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:82
+msgid "German"
+msgstr "Deutsch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:83
+msgid "French"
+msgstr "Französisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:84
+msgid "Spanish"
+msgstr "Spanisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:85
+msgid "Dutch"
+msgstr "Holländisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:86
+msgid "Italian"
+msgstr "Italienisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:87
+msgid "Polish"
+msgstr "Polnisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:88
+msgid "Catalan"
+msgstr "Katalanisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:89
+msgid "Euskara"
+msgstr "Euskaraisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:90
+msgid "Russian"
+msgstr "Russisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:91
+msgid "Japanese"
+msgstr "Japanisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:93
+msgid "Set language for driving information."
+msgstr "Sprache für die Wegbeschreibung festlegen."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:94
+msgid "Donate this plugin"
+msgstr "Dieses Plugin unterstützen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:96
+msgid "Show a link under the maps"
+msgstr "Einen Link unten den Karten anzeigen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:98
+msgid "I write an articel about it"
+msgstr "Ich schreibe einen Artikel darüber"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:100
+msgid "I donated with Paypal"
+msgstr "Ich habe per PayPal gespendet"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:102
+msgid "I will not donate this project"
+msgstr "Ich will das Projekt nicht unterstützen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:103
+msgid "Save settings"
+msgstr "Einstellungen speichern"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:122
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:404
+msgid "Routes"
+msgstr "Routen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:123
+msgid "Create Route"
+msgstr "Route erstellen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:126
+msgid "ID"
+msgstr "ID"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:127
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:232
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:337
+msgid "Destination"
+msgstr "Ziel"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:128
+msgid "Code"
+msgstr "Code"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:129
+msgid "Actions"
+msgstr "Aktionen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:141
+msgid "preview"
+msgstr "Vorschau"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:142
+msgid "edit"
+msgstr "bearbeiten"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:143
+msgid "delete"
+msgstr "löschen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:149
+msgid "You have not created any routes yet!"
+msgstr "Du hast noch keine Routen angelegt!"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:169
+msgid "Delete Route"
+msgstr "Route löschen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:170
+msgid "The route has been deleted!"
+msgstr "Die Route wurde gelöscht!"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:171
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:184
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:219
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:322
+msgid "Back to overview"
+msgstr "Zurück zur Übersicht"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:183
+msgid "Preview Route"
+msgstr "Vorschau der Route"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:216
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:230
+msgid "Add Route"
+msgstr "Route erstellen"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:217
+msgid "Your route has been saved!"
+msgstr "Deine Route wurde gespeichert!"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:218
+msgid "The code for this route is: "
+msgstr "Der Code für diese Route ist: "
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:234
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:339
+msgid "Add a search string for the destination. Adress, company name or something like this."
+msgstr "Füge einen Such-Text für das Ziel ein. Eine Adresse, ein Firmenname oder etwas Vergleichbares."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:235
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:340
+msgid "Map width"
+msgstr "Kartenbreite"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:237
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:342
+msgid "Enter the width for the map."
+msgstr "Gib die Breite für die Karte ein."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:238
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:343
+msgid "Map heigth"
+msgstr "Kartenhöhe"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:240
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:345
+msgid "Enter the height for the map."
+msgstr "Gib die Höhe für die Karte ein."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:241
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:346
+msgid "Map type"
+msgstr "Kartentyp"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:244
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:349
+msgid "Normal map"
+msgstr "Normale Karte"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:245
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:350
+msgid "Satellite map"
+msgstr "Satellitenkarte"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:246
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:351
+msgid "Hybrid map"
+msgstr "Hybrid-Karte"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:247
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:352
+msgid "Physical map"
+msgstr "Physikalische Karte"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:249
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:354
+msgid "Select how the map should look like."
+msgstr "Lege fest, wie die Karte aussehen soll."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:251
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:356
+msgid "Map Zoom Control"
+msgstr "Karten-Zoom Interface"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:253
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:358
+msgid "Large"
+msgstr "Groß"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:255
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:360
+msgid "Small"
+msgstr "Klein"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:257
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:362
+msgid "Zoom only"
+msgstr "Nur Zoom"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:259
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:268
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:364
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:373
+msgid "None"
+msgstr "Keine"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:260
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:365
+msgid "Select the type of zoom and direction control you want."
+msgstr "Wähle den Typ der Zoom-Steuerungselemente fest."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:262
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:367
+msgid "Map Type Control"
+msgstr "Kartentyp-Steuerung"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:264
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:369
+msgid "Normal"
+msgstr "Normal"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:266
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:371
+msgid "Hierarchical"
+msgstr "Hierachisch"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:269
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:374
+msgid "Select if users can change the map type."
+msgstr "Lege fest, ob der Benutzer den Kartentyp ändern kann."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:271
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:376
+msgid "Overview Map"
+msgstr "Übersichtskarte"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:273
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:378
+msgid "Yes"
+msgstr "Ja"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:275
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:380
+msgid "No"
+msgstr "Nein"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:276
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:381
+msgid "Display a small overview map."
+msgstr "Zeigt eine kleine Übersichtskarte auf der großen Karte an."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:278
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:383
+msgid "Advance CSS"
+msgstr "Erweitertes CSS"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:283
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:385
+msgid "You can add css information for any element."
+msgstr "Du kannst erweitere CSS Informationen für jedes Kartenelement festlegen."
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:285
+msgid "Save route"
+msgstr "Route speichern"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:320
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:335
+msgid "Edit Route"
+msgstr "Route bearbeiten"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:321
+msgid "Your changes has been saved!"
+msgstr "Die Änderungen wurden gespeichert!"
+
+#: \\192.168.1.15\webdesign\wordpress\wp-content\plugins\google-routeplaner/google-routeplaner-pages.php:387
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
