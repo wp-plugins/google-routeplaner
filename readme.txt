@@ -2,8 +2,8 @@
 Contributors: Deformed Design
 Tags: route, google, map, route planer, planer
 Requires at least: 2.7
-Tested up to: 2.8
-Stable tag: 0.6
+Tested up to: 3.2.1
+Stable tag: 1.0
 
 Creates a route planer based on google maps.
 
@@ -16,12 +16,10 @@ You can give your readers the ability to plan a route from where they live to yo
 
 1. Upload `google_routeplaner`-folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Get a Google Maps API Key from http://code.google.com/apis/maps/
-4. Insert the API Key in the plugins settings
 
 = Usage =
 
-After activating the plugin there is a new menu in your admin interface of WordPress called `Google Routeplaner`. Open the menu and choose `routes` from the submenu. 
+After activating the plugin there is a new menu in your admin interface of WordPress called `Routeplaner`. Open the menu and choose `routes` from the submenu. 
 Now click on `Create Route` and insert a destination. Change the rest of the settings like you want the map to look like. You can add advance CSS information for the different
 section of the route planer.
 
@@ -29,7 +27,7 @@ map_controls - location field and submit button
 map_canvas - the map itself
 map_directions - the driving information
 
-Save the route and you will recieve a code to insert into your page. The code is like [googlerouteplaner=1] (the number is your routes id and changes for every route). Just insert this code to your page - done.
+Save the route and you will recieve a code to insert into your page. The code looks like [googlerouteplaner=1] (the number is your routes id and changes for every route). Just insert this code to your page or post - done.
 
 == Frequently Asked Questions ==
 
@@ -42,6 +40,12 @@ It seems Google Maps is unable to recieve custom zoom information when used as r
 No, this is not possible at the moment.
 
 == Changelog ==
+
+= 1.0 =
+* Updated to Google Maps API V3
+* No more API Key required
+* Overview Map no longer available due to it's not available in Google Maps API V3
+* Improved design
 
 = 0.6 =
 * Displays the code for each route in the admin section
