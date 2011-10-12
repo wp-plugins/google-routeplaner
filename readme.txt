@@ -1,7 +1,7 @@
 === Google Routeplaner ===
 Contributors: Deformed Design
 Tags: route, google, map, route planer, planer
-Requires at least: 2.7
+Requires at least: 3.0
 Tested up to: 3.2.1
 Stable tag: 1.0
 
