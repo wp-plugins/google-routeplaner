@@ -1,62 +1,58 @@
-=== Google Routeplaner ===
+=== Plugin Name ===
 Contributors: Deformed Design
-Tags: route, google, map, route planer, planer
+Tags: comments, spam, captcha, geographic, antispam
 Requires at least: 3.0
 Tested up to: 3.2.1
-Stable tag: 1.0
+Stable tag: 1.9
 
-Creates a route planer based on google maps.
+Geo Captcha shows a captcha image only to countries you don't trust.
 
 == Description ==
 
-You can create multiple routeplaners and define the ending position. 
-You can give your readers the ability to plan a route from where they live to your location, an event you promote or another place you have written about.
+There are a lot of great plugins to prevent spam but especially the effectiv captcha images can annoy your human visitors. 
+Geo Captcha uses the knowledge that a lot of spam is caused from a few countries and prevents them from spamming.
+
+Visitors from the countries on your whitelist will never see a captcha image and will not be annoyed. 
+Visitors from other countries will have to type in the captcha code or their comments and registrations will be blocked.
+
+The location of the visitors is checked using the GeoLite Country-Library from MaxMind (http://www.maxmind.com).
+The captcha image is generated using SecurImage from drew010 (http://www.phpcaptcha.org).
 
 == Installation ==
 
-1. Upload `google_routeplaner`-folder to the `/wp-content/plugins/` directory
+1. Upload `geo-captcha`-folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Set up the whitelist in the Geo Captcha Settings
 
 = Usage =
 
-After activating the plugin there is a new menu in your admin interface of WordPress called `Routeplaner`. Open the menu and choose `routes` from the submenu. 
-Now click on `Create Route` and insert a destination. Change the rest of the settings like you want the map to look like. You can add advance CSS information for the different
-section of the route planer.
-
-map_controls - location field and submit button
-map_canvas - the map itself
-map_directions - the driving information
-
-Save the route and you will recieve a code to insert into your page. The code looks like [googlerouteplaner=1] (the number is your routes id and changes for every route). Just insert this code to your page or post - done.
-
-== Frequently Asked Questions ==
-
-= Why can't I define the zoom? =
-
-It seems Google Maps is unable to recieve custom zoom information when used as routeplaner. If you have any idea how to solve this problem, please contact me.
-
-= Can I add multiple maps to a single page? =
-
-No, this is not possible at the moment.
+You can activate and deactivate the geocaptcha function for comments and registration in the settings.
+Add the country codes of the countries you don't want to insert a captcha to the list in the plugins settings.
+Check you log to see the countries which cause a lot of spam or who are false positivs.
 
 == Changelog ==
+= 1.9 =
+* Manually as spam marked comments will now affect the statistics
+* Latest country database added
+* Improved design
+* I did NOT replace securimage because the latest version did not work as expected
+
+= 1.2 =
+* Now works for comments and registration
+* Improved log function
+* IP logging possible
+* Included country code list
+* Latest country database added
 
 = 1.0 =
-* Updated to Google Maps API V3
-* No more API Key required
-* Overview Map no longer available due to it's not available in Google Maps API V3
-* Improved design
+* Small bugfixes
 
-= 0.6 =
-* Displays the code for each route in the admin section
-* Added a preview function to the admin section
-
-= 0.5 =
+= 0.9 =
 * Plugin release
 
 == Screenshots ==
 
-1. screenshot-1.jpg
-2. screenshot-2.jpg
-3. screenshot-3.jpg
-4. screenshot-4.jpg
+1. logo.jpg
+2. screenshot-1.gif
+3. screenshot-2.gif
+4. screenshot-3.gif
