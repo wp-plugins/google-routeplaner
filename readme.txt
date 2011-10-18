@@ -1,9 +1,10 @@
 === Google Routeplaner ===
 Contributors: Deformed Design
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VAFAKGCDQ2GHU
 Tags: route, google, map, route planer, planer
 Requires at least: 2.7
 Tested up to: 3.2.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 Creates a route planer based on google maps.
 
@@ -29,6 +30,12 @@ map_directions - the driving information
 
 Save the route and you will recieve a code to insert into your page. The code looks like [googlerouteplaner=1] (the number is your routes id and changes for every route). Just insert this code to your page or post - done.
 
+== Upgrade Notice ==
+
+If you are upgrading from version 0.x to 1.x it's possible that old routes don't work anymore. 
+First you should try to edit and save this routes again. 
+If that doesn't work, please completly uninstall the plugin and activate the latest version.
+
 == Frequently Asked Questions ==
 
 = Why can't I define the zoom? =
@@ -39,7 +46,15 @@ It seems Google Maps is unable to recieve custom zoom information when used as r
 
 No, this is not possible at the moment.
 
+= How can I avoid invalid HTML output = 
+
+Simply don't use the "Advanced CSS" function and use your themes CSS file to change the look of your map. Everything else should be valid!
+
 == Changelog ==
+
+= 1.1 =
+* Cleaned up Sourcecode
+* Removed some validation issues (there are still some remaining)
 
 = 1.0 =
 * Updated to Google Maps API V3

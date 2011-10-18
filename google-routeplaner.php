@@ -3,7 +3,7 @@
 Plugin Name: Google Routeplaner
 Plugin URI: http://deformed-design.de
 Description: Generates a routeplaner based on Google Maps. 
-Version: 1.0
+Version: 1.1
 Author: Thomas Probach
 Author URI: http://deformed-design.de
 Min WP Version: 3.0
@@ -13,11 +13,14 @@ if( !isset( $_SESSION ) ) {
 	session_start();
 }
 
-/* Load language */
+/*
+ * Load Language
+ */
 load_plugin_textdomain('google_routeplaner', WP_PLUGIN_DIR . '/google-routeplaner/', dirname(plugin_basename(__FILE__)));
 
-
-// Install the needed database table
+/*
+ * Install the needed database table
+ */
 function google_routeplaner_install() {
 	global $wpdb, $table_prefix;
 		
@@ -89,7 +92,9 @@ function google_routeplaner_uninstall() {
 	delete_option('google_routeplaner_language');
 	$wpdb->query(sprintf('DROP TABLE `' . $table_prefix . 'google_routeplaner`'));
 	
-	// Deactivate the Plugin
+	/*
+	 * Deactivate the Plugin
+	 */
 	if('full_uninstall_google_routeplaner' == $_POST['action']) {
 		$current = get_option('active_plugins');
 		if(in_array("google-routeplaner/google-routeplaner.php", $current))
@@ -105,7 +110,9 @@ function google_routeplaner_uninstall() {
 	}
 }
 
-// Uninstall
+/*
+ * Uninstall
+ */	
 if ( function_exists('register_uninstall_hook') )
     register_uninstall_hook(__FILE__, 'google_routeplaner_uninstall');
 
@@ -116,7 +123,6 @@ if('full_uninstall_google_routeplaner' == $_POST['action']) {
 /*
  * Search for plugin code and replace
  */	
-
 function google_routeplaner_output($data) {
 	if(!preg_match("/\[googlerouteplaner=([0-9]*)\]/", $data, $matches)) {
 		return $data;
@@ -136,10 +142,11 @@ function google_routeplaner_build_map($route_id) {
 	$check_updated = $wpdb->get_results('SHOW COLUMNS FROM `' . $table_prefix . 'google_routeplaner`');
 
 	$map = '
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=' . get_option("google_routeplaner_language") . '"></script>
+	<!-- Start Google Routeplaner Plugin Output -->
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . get_option("google_routeplaner_language") . '"></script>
 
 	<script type="text/javascript">
+	/* <![CDATA[ */
     var geocoder;
 	var directionDisplay;
 	var directionsService = new google.maps.DirectionsService();
@@ -165,6 +172,9 @@ function google_routeplaner_build_map($route_id) {
 				navigationControlOptions: {style: google.maps.NavigationControlStyle.' . $planer['planer_zoom_control'] . '},' . "\n";
 			}
 			
+			/*
+			 * Mapstyle control options
+			 */	
 			if('NONE' == $planer['planer_type_control']) {
 				$map .= 'mapTypeControl: false,' . "\n";
 			} else {
@@ -209,38 +219,65 @@ function google_routeplaner_build_map($route_id) {
 			}
 		});
 	}
-
-    </script>
-	<style type="text/css" media="all">
-	' . $planer['planer_css'] . '	
-	</style>
+	/* ]]> */
+    </script>' . "\n";
+	
+	if('' !== $planer['planer_css'] && strlen($planer['planer_css']) > 55) {
+		$map .= '<style type="text/css" media="all">
+			' . $planer['planer_css'] . '	
+		</style>' . "\n";
+	}
+	
+	$map .= '
 	<form action="#" onsubmit="calcRoute(); return false">
 	 <div id="map_controls"><label for="fromAddress">' . __('Your location', 'google_routeplaner') . '</label> <input type="text" size="25" id="fromAddress" name="from" value=""/><input name="calc" type="submit" value="' . __('Create route', 'google_routeplaner') . '" /></div>
 	 <div id="map_canvas" style="overflow: hidden; width: ' . $planer['planer_width'] . 'px; height: ' . $planer['planer_height'] . 'px;"></div>
 	 <div id="map_directions"></div>
 	</form>
 	<script type="text/javascript">
+	/* <![CDATA[ */
 	if (document.all && window.attachEvent) { 
 		window.attachEvent("onload", initialize);
 	// Non-IE load and unload            
 	} else if (window.addEventListener) { 
 		window.addEventListener("load", initialize, false);
 	}
-	</script>';
+	/* ]]> */
+	</script>' . "\n";
 	
 	if('link' == get_option("google_routeplaner_donate")) {
-		$map .= '<div style="clear: both; margin-top: 10px;">Google Routeplaner Plugin by <a href="http://deformed-design.de">Deformed Design</a></div>';
+		$map .= '<div style="clear: both; margin-top: 10px;">Google Routeplaner Plugin by <a href="http://deformed-design.de">Deformed Design</a></div>' . "\n";
 	}
+	$map .= '<!-- End Google Routeplaner Plugin Output -->' . "\n";
 
 	return $map;
 }
 
 
-
+/*
+ * Content Filter
+ */	
 if( function_exists('add_filter') ) {
 	add_filter('the_content', 'google_routeplaner_output'); 
 }
 
+
+function google_routeplaner_admin_head() {
+	echo '<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css" media="screen">
+	@import url("' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner.css");
+	</style>';
+}
+add_action('admin_head', 'google_routeplaner_admin_head');
+
+function google_routeplaner_head() {
+	echo '<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />';
+}
+add_action('wp_head', 'google_routeplaner_head');
+
+/*
+ * Include pages
+ */	
 require_once(WP_PLUGIN_DIR . '/google-routeplaner/google-routeplaner-pages.php');
 
 

@@ -4,18 +4,22 @@
  * GENERATE PAGES
  */
 
-// About page
+/*
+ * About Page
+ */
 function google_routeplaner_about_page() {
 ?>
-  <style type="text/css" media="screen">
-  @import url("<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/google-routeplaner.css");
-  </style>
   <div class="wrap google_routeplaner">
    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Overview', 'google_routeplaner'); ?></h2>
 	<div id="poststuff">
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside">
+				<h5>Version 1.1</h5>
+					<ul>
+						<li>Cleaned up Sourcecode</li>
+						<li>Removed some validation issues (there are still some remaining)</li>
+					</ul>
 				<h5>Version 1.0</h5>
 					<ul>
 						<li>Updated to Google Maps API V3</li>
@@ -45,9 +49,10 @@ function google_routeplaner_about_page() {
 			</div>
 		</div>
 		<div class="postbox">
-			<h3><?php _e('Support', 'google_routeplaner'); ?></h3>
+			<h3><?php _e('Support &amp; Feedback', 'google_routeplaner'); ?></h3>
 			<div class="inside">
-				<p><?php _e('If you encounter any problems feel free to use our <a href="http://support.deformed-design.de">Help Desk</a>.', 'google_routeplaner'); ?></p>
+				<p><?php _e('If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk.', 'google_routeplaner'); ?></p>
+				<p style="text-align: center;"><a href="http://support.deformed-design.de"><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/support.png" alt="<?php _e('Support &amp; Feedback', 'google_routeplaner'); ?>" border="0" /></a></p>
 			</div>
 		</div>
 		</div>
@@ -55,13 +60,12 @@ function google_routeplaner_about_page() {
 	   <div class="postbox" style="width: 30%; float: left; margin-left: 5%;">
 		   <h3><?php _e('Enjoy the plugin?', 'google_routeplaner'); ?></h3>
 			<div class="inside">
-				<p><?php _e('If you enjoy the plugin we would be glad about a small donation. If you donated, please feel free to remove the authors notice below the map in the settings menu.'); ?></p>
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="6505842">
-					<input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-					<img alt="" border="0" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-				</form>
+				<p><?php _e('If you like the plugin you can support my work in different ways:', 'google_routeplaner'); ?></p>
+					<ul>
+						<li><a href="http://wordpress.org/extend/plugins/google_routeplaner/"><?php _e('Rate it on WordPress.org', 'google_routeplaner'); ?></a></li>
+						<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VAFAKGCDQ2GHU"><?php _e('Donate using PayPal', 'google_routeplaner'); ?></a></li>
+						<li><a href="http://www.amazon.de/registry/wishlist/2ZWBSTFQJ9PDU"><?php _e('Take a look at my Amazon wishlist', 'google_routeplaner'); ?></a></li>
+					</ul>
 			</div>
 	   </div>
 	   
@@ -76,7 +80,8 @@ function google_routeplaner_about_page() {
 				</form>
 			</div>
 		</div>
-  </div>
+	</div>
+</div>
 <?php
 
 }
@@ -104,16 +109,17 @@ function google_routeplaner_routes_page() {
 	}
 }
 
-// Settings page
+/*
+ * Settings Page
+ */
 function google_routeplaner_option_page() {
 ?>
-  <style type="text/css" media="screen">
-  @import url("<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/google-routeplaner.css");
-  </style>
   <div class="wrap google_routeplaner">
    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Settings', 'google_routeplaner'); ?></h2>
    <?php
-   // Save settings
+   /*
+    * Save Settings
+	*/
 	if ('google_routeplaner_save_settings' == $_POST['action'])
 	{
 		update_option("google_routeplaner_language", $_POST['google_routeplaner_language']);
@@ -122,29 +128,29 @@ function google_routeplaner_option_page() {
 	}
 	?>
    <form method="post" action="">
-	<p><label for="google_routeplaner_language"><?php _e('Language', 'google_routeplaner'); ?></label><br />
+	<p><label for="google_routeplaner_language" class="formbold"><?php _e('Language', 'google_routeplaner'); ?></label><br />
 	<select name="google_routeplaner_language" id="google_routeplaner_language">
-	    <option value="en"<?php if('en' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('English', 'google_routeplaner'); ?></option>
-		<option value="de"<?php if('de' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('German', 'google_routeplaner'); ?></option>
-		<option value="fr"<?php if('fr' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('French', 'google_routeplaner'); ?></option>
-		<option value="es"<?php if('es' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('Spanish', 'google_routeplaner'); ?></option>
-		<option value="nl"<?php if('nl' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('Dutch', 'google_routeplaner'); ?></option>
-		<option value="it"<?php if('it' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('Italian', 'google_routeplaner'); ?></option>
-		<option value="pl"<?php if('pl' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('Polish', 'google_routeplaner'); ?></option>
-		<option value="ca"<?php if('ca' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('Catalan', 'google_routeplaner'); ?></option>
-		<option value="eu"<?php if('eu' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('Euskara', 'google_routeplaner'); ?></option>
-		<option value="ru"<?php if('ru' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('Russian', 'google_routeplaner'); ?></option>
-		<option value="ja"<?php if('ja' == get_option("google_routeplaner_language")) { echo ' selected=""'; } ?>><?php _e('Japanese', 'google_routeplaner'); ?></option>
+	    <option value="en"<?php if('en' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('English', 'google_routeplaner'); ?></option>
+		<option value="de"<?php if('de' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('German', 'google_routeplaner'); ?></option>
+		<option value="fr"<?php if('fr' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('French', 'google_routeplaner'); ?></option>
+		<option value="es"<?php if('es' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Spanish', 'google_routeplaner'); ?></option>
+		<option value="nl"<?php if('nl' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Dutch', 'google_routeplaner'); ?></option>
+		<option value="it"<?php if('it' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Italian', 'google_routeplaner'); ?></option>
+		<option value="pl"<?php if('pl' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Polish', 'google_routeplaner'); ?></option>
+		<option value="ca"<?php if('ca' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Catalan', 'google_routeplaner'); ?></option>
+		<option value="eu"<?php if('eu' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Euskara', 'google_routeplaner'); ?></option>
+		<option value="ru"<?php if('ru' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Russian', 'google_routeplaner'); ?></option>
+		<option value="ja"<?php if('ja' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Japanese', 'google_routeplaner'); ?></option>
 	</select><br />
     <i><?php _e('Set language for driving information.', 'google_routeplaner'); ?></i></p>
-	<p><?php _e('Donate this plugin', 'google_routeplaner'); ?><br />
-	<input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_link" value="link"<?php if('link' == get_option("google_routeplaner_donate")) { echo ' checked=""'; } ?> />
+	<p><span class="formbold"><?php _e('Donate this plugin', 'google_routeplaner'); ?></span><br />
+	<input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_link" value="link"<?php if('link' == get_option("google_routeplaner_donate")) { echo ' checked="checked"'; } ?> />
 	<label for="google_routeplaner_donate_link"><?php _e('Show a link under the maps', 'google_routeplaner'); ?></label><br />
-	<input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_articel" value="articel"<?php if('articel' == get_option("google_routeplaner_donate")) { echo ' checked=""'; } ?> />
+	<input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_articel" value="articel"<?php if('articel' == get_option("google_routeplaner_donate")) { echo ' checked="checked"'; } ?> />
 	<label for="google_routeplaner_donate_articel"><?php _e('I write an articel about it', 'google_routeplaner'); ?></label><br />
-	<input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_paypal" value="paypal"<?php if('paypal' == get_option("google_routeplaner_donate")) { echo ' checked=""'; } ?> />
+	<input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_paypal" value="paypal"<?php if('paypal' == get_option("google_routeplaner_donate")) { echo ' checked="checked"'; } ?> />
 	<label for="google_routeplaner_donate_paypal"><?php _e('I donated with Paypal', 'google_routeplaner'); ?></label><br />
-	<input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_none" value="none"<?php if('none' == get_option("google_routeplaner_donate")) { echo ' checked=""'; } ?> />
+	<input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_none" value="none"<?php if('none' == get_option("google_routeplaner_donate")) { echo ' checked="checked"'; } ?> />
 	<label for="google_routeplaner_donate_none"><?php _e('I will not donate this project (you will not get support)', 'google_routeplaner'); ?></label></p>
 	<p><input type="submit" class="button-primary" value="<?php _e('Save settings', 'google_routeplaner'); ?>" />
 	<input name="action" value="google_routeplaner_save_settings" type="hidden" /></p>
@@ -155,33 +161,32 @@ function google_routeplaner_option_page() {
 }
 
 
-// List routes page
+/*
+ * List Routes
+ */
 function google_routeplaner_list_routes() {
 	global $wpdb, $table_prefix;
 
 	$planers = $wpdb->get_results("SELECT * FROM " . $table_prefix . "google_routeplaner ORDER BY planer_id", ARRAY_A); 
 ?>
-  <style type="text/css" media="screen">
-  @import url("<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/google-routeplaner.css");
-  </style>
   <div class="wrap google_routeplaner">
    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Routes', 'google_routeplaner'); ?></h2>
-   <p><a href="admin.php?page=google_routeplaner_routes&routeplaner_action=google_routeplaner_add_route" class="button-primary"><?php _e('Create Route', 'google_routeplaner'); ?></a>
+   <p><a href="admin.php?page=google_routeplaner_routes&amp;routeplaner_action=google_routeplaner_add_route" class="button-primary"><?php _e('Create Route', 'google_routeplaner'); ?></a></p>
    <table class="widefat" cellspacing="0" cellpadding="0">
 	<thead>
-    <tr scope="col" class="column-cb">
-	 <th scope="col"><?php _e('ID', 'google_routeplaner'); ?></th>
-	 <th scope="col"><?php _e('Destination', 'google_routeplaner'); ?></th>
-	 <th scope="col"><?php _e('Code', 'google_routeplaner'); ?></th>
-	 <th scope="col"><?php _e('Actions', 'google_routeplaner'); ?></th>
+    <tr class="column-cb">
+	 <th><?php _e('ID', 'google_routeplaner'); ?></th>
+	 <th><?php _e('Destination', 'google_routeplaner'); ?></th>
+	 <th><?php _e('Code', 'google_routeplaner'); ?></th>
+	 <th><?php _e('Actions', 'google_routeplaner'); ?></th>
 	</tr>
    </thead>
    <tfoot>
-    <tr scope="col" class="column-cb">
-	 <th scope="col"><?php _e('ID', 'google_routeplaner'); ?></th>
-	 <th scope="col"><?php _e('Destination', 'google_routeplaner'); ?></th>
-	 <th scope="col"><?php _e('Code', 'google_routeplaner'); ?></th>
-	 <th scope="col"><?php _e('Actions', 'google_routeplaner'); ?></th>
+    <tr class="column-cb">
+	 <th><?php _e('ID', 'google_routeplaner'); ?></th>
+	 <th><?php _e('Destination', 'google_routeplaner'); ?></th>
+	 <th><?php _e('Code', 'google_routeplaner'); ?></th>
+	 <th><?php _e('Actions', 'google_routeplaner'); ?></th>
 	</tr>
    </tfoot>
    
@@ -200,9 +205,9 @@ function google_routeplaner_list_routes() {
 			<td>' . $planer['start_location'] . '</td>
 			<td>[googlerouteplaner=' . $planer['planer_id'] . ']</td>
 			<td>
-			<a href="admin.php?page=google_routeplaner_routes&routeplaner_action=preview_route&route_id=' . $planer['planer_id'] . '" class="button">' . __('preview', 'google_routeplaner') . '</a>
-			<a href="admin.php?page=google_routeplaner_routes&routeplaner_action=edit_route&route_id=' . $planer['planer_id'] . '" class="button">' . __('edit', 'google_routeplaner') . '</a>
-			<a href="admin.php?page=google_routeplaner_routes&routeplaner_action=delete_route&route_id=' . $planer['planer_id'] . '" class="button">' . __('delete', 'google_routeplaner') . '</a>
+			<a href="admin.php?page=google_routeplaner_routes&amp;routeplaner_action=preview_route&amp;route_id=' . $planer['planer_id'] . '" class="button">' . __('preview', 'google_routeplaner') . '</a>
+			<a href="admin.php?page=google_routeplaner_routes&amp;routeplaner_action=edit_route&amp;route_id=' . $planer['planer_id'] . '" class="button">' . __('edit', 'google_routeplaner') . '</a>
+			<a href="admin.php?page=google_routeplaner_routes&amp;routeplaner_action=delete_route&amp;route_id=' . $planer['planer_id'] . '" class="button">' . __('delete', 'google_routeplaner') . '</a>
 			</td>
 			</tr>' . "\n";
 		}
@@ -213,10 +218,13 @@ function google_routeplaner_list_routes() {
 	}
    ?>
    </table>
+   </div>
  <?php
 }
 
-// Delete Route
+/*
+ * Delete Route
+ */
 function google_routeplaner_delete_route($route_id) {
 	global $wpdb, $table_prefix;
 	
@@ -224,9 +232,6 @@ function google_routeplaner_delete_route($route_id) {
 	WHERE planer_id='" . $route_id . "' LIMIT 1");
 	
 	?>
-	<style type="text/css" media="screen">
-	@import url("<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/google-routeplaner.css");
-	</style>
 	<div class="wrap google_routeplaner">
     <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Delete Route', 'google_routeplaner'); ?></h2>
 	<p class="success"><?php _e('The route has been deleted!', 'google_routeplaner'); ?></p>
@@ -235,12 +240,11 @@ function google_routeplaner_delete_route($route_id) {
 	<?php
 }
 
-// Preview Route
+/*
+ * Previw Route
+ */
 function google_routeplaner_preview_route($route_id) {
 	?>
-	<style type="text/css" media="screen">
-	@import url("<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/google-routeplaner.css");
-	</style>
 	<div class="wrap google_routeplaner">
 	<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Preview Route', 'google_routeplaner'); ?></h2>
 	<p><a href="admin.php?page=google_routeplaner_routes" class="button"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
@@ -250,11 +254,15 @@ function google_routeplaner_preview_route($route_id) {
 }
 
 
-// Add route page
+/*
+ * Add Route Page
+ */
 function google_routeplaner_add_route() {
 	global $wpdb, $table_prefix;
 	
-	// Save route
+	/*
+	 * Save Route
+	 */
 	if ('google_routeplaner_add_route' == $_POST['action'])
 	{
 			
@@ -270,9 +278,6 @@ function google_routeplaner_add_route() {
 		'" . $_POST['google_routeplaner_css'] . "')");
 		
 		?>	  
-		<style type="text/css" media="screen">
-		@import url("<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/google-routeplaner.css");
-		</style>
 		<div class="wrap google_routeplaner">
 	    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
 		<p class="success"><?php _e('Your route has been saved!', 'google_routeplaner'); ?><br />
@@ -281,36 +286,35 @@ function google_routeplaner_add_route() {
 		</div>
 		<?php
 	} else {
-
+	/*
+	 * Output Form
+	 */
 
 ?>
-	  <style type="text/css" media="screen">
-	  @import url("<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/google-routeplaner.css");
-	  </style>
 	  <div class="wrap google_routeplaner">
 	   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
 	   <form method="post" action="">
-		<p><label for="google_routeplaner_destination"><?php _e('Destination', 'google_routeplaner'); ?></label><br />
+		<p><label for="google_routeplaner_destination" class="formbold"><?php _e('Destination', 'google_routeplaner'); ?></label><br />
 		<input type="text" name="google_routeplaner_destination" id="google_routeplaner_destination" style="width: 300px;" value="<?php echo get_option("google_routeplaner_destination"); ?>" /><br />
 		<i><?php _e('Add a search string for the destination. Adress, company name or something like this.', 'google_routeplaner'); ?></i></p>
-		<p><label for="google_routeplaner_map_width"><?php _e('Map width', 'google_routeplaner'); ?></label><br />
+		<p><label for="google_routeplaner_map_width" class="formbold"><?php _e('Map width', 'google_routeplaner'); ?></label><br />
 		<input type="text" name="google_routeplaner_map_width" id="google_routeplaner_map_width" style="width: 70px;" value="500" /><br />
 		<i><?php _e('Enter the width for the map.', 'google_routeplaner'); ?></i></p>
-		<p><label for="google_routeplaner_map_height"><?php _e('Map heigth', 'google_routeplaner'); ?></label><br />
+		<p><label for="google_routeplaner_map_height" class="formbold"><?php _e('Map heigth', 'google_routeplaner'); ?></label><br />
 		<input type="text" name="google_routeplaner_map_height" id="google_routeplaner_map_height" style="width: 70px;" value="400" /><br />
 		<i><?php _e('Enter the height for the map.', 'google_routeplaner'); ?></i></p>
-		<p><label for="google_routeplaner_map_type"><?php _e('Map type', 'google_routeplaner'); ?></label><br />
+		<p><label for="google_routeplaner_map_type" class="formbold"><?php _e('Map type', 'google_routeplaner'); ?></label><br />
 		<select name="google_routeplaner_map_type" id="google_routeplaner_map_type">
 			<?php $google_routeplaner_map_type = get_option("google_routeplaner_map_type"); ?>
-			<option value="ROADMAP" selected=""><?php _e('Road map', 'google_routeplaner'); ?></option>
+			<option value="ROADMAP" selected="selected"><?php _e('Road map', 'google_routeplaner'); ?></option>
 			<option value="SATELLITE"><?php _e('Satellite map', 'google_routeplaner'); ?></option>
 			<option value="HYBRID"><?php _e('Hybrid map', 'google_routeplaner'); ?></option>
 			<option value="TERRAIN"><?php _e('Physical map', 'google_routeplaner'); ?></option>	
 		</select><br />
 		<i><?php _e('Select how the map should look like.', 'google_routeplaner'); ?></i></p>
 		
-		<p><?php _e('Map Zoom Control', 'google_routeplaner'); ?><br />
-		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_large" value="DEFAULT" checked="" />
+		<p><span class="formbold"><?php _e('Map Zoom Control', 'google_routeplaner'); ?></span><br />
+		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_large" value="DEFAULT" checked="checked" />
 		<label for="google_routeplaner_zoom_control_large"><?php _e('Large', 'google_routeplaner'); ?></label><br />
 		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_small" value="SMALL" />
 		<label for="google_routeplaner_zoom_control_small"><?php _e('Small', 'google_routeplaner'); ?></label><br />
@@ -320,8 +324,8 @@ function google_routeplaner_add_route() {
 		<label for="google_routeplaner_zoom_control_none"><?php _e('None', 'google_routeplaner'); ?></label><br />
 		<i><?php _e('Select the type of zoom and direction control you want.', 'google_routeplaner'); ?></i></p>
 		
-		<p><?php _e('Map Type Control', 'google_routeplaner'); ?><br />
-		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_standard" value="HORIZONTAL_BAR"  checked="" />
+		<p><span class="formbold"><?php _e('Map Type Control', 'google_routeplaner'); ?></span><br />
+		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_standard" value="HORIZONTAL_BAR"  checked="checked" />
 		<label for="google_routeplaner_type_control_standard"><?php _e('Normal', 'google_routeplaner'); ?></label><br />
 		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_hierachical" value="DROPDOWN_MENU" />
 		<label for="google_routeplaner_type_control_hierachical"><?php _e('Hierarchical', 'google_routeplaner'); ?></label><br />
@@ -329,12 +333,12 @@ function google_routeplaner_add_route() {
 		<label for="google_routeplaner_type_control_none"><?php _e('None', 'google_routeplaner'); ?></label><br />
 		<i><?php _e('Select if users can change the map type.', 'google_routeplaner'); ?></i></p>
 		
-		<p><label for="google_routeplaner_css"><?php _e('Advance CSS', 'google_routeplaner'); ?></label><br />
-		<textarea name="google_routeplaner_css" id="google_routeplaner_css" style="width: 300px; height: 200px;"><?php echo '#map_controls{}' . "\n"; 
+		<p><label for="google_routeplaner_css" class="formbold"><?php _e('Advance CSS', 'google_routeplaner'); ?></label><br />
+		<textarea name="google_routeplaner_css" id="google_routeplaner_css" style="width: 300px; height: 200px;" rows="10" cols="50"><?php echo '#map_controls{}' . "\n"; 
 		echo '#map_canvas{}' . "\n"; 
 		echo '#map_directions{}';  ?>
 		</textarea><br />
-		<i><?php _e('You can add css information for any element.', 'google_routeplaner'); ?></i></p>
+		<i><?php _e('You can add css information for any element. Warning: This will result in invalid HTML output.', 'google_routeplaner'); ?></i></p>
 		
 		<p><input type="submit" class="button-primary" value="<?php _e('Save route', 'google_routeplaner'); ?>" />
 		<input name="action" value="google_routeplaner_add_route" type="hidden" /></p>
@@ -346,11 +350,15 @@ function google_routeplaner_add_route() {
 
 
 
-// Edit route page
+/*
+ * Edit Route Page
+ */
 function google_routeplaner_edit_route($route_id) {
 	global $wpdb, $table_prefix;
 	
-	// Save route
+	/*
+	 * Save Route
+	 */
 	if ('google_routeplaner_edit_route' == $_POST['action'])
 	{
 			
@@ -366,9 +374,6 @@ function google_routeplaner_edit_route($route_id) {
 		WHERE planer_id='" . $_POST['route_id'] . "' LIMIT 1");
 		
 		?>
-		<style type="text/css" media="screen">
-		@import url("<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/google-routeplaner.css");
-		</style>
 		<div class="wrap google_routeplaner">
 	    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Edit Route', 'google_routeplaner'); ?></h2>
 		<p class="success"><?php _e('Your changes has been saved!', 'google_routeplaner'); ?></p>
@@ -377,58 +382,57 @@ function google_routeplaner_edit_route($route_id) {
 		<?php
 		
 	} else {
-
+		/*
+		 * Output Form
+		 */
 		$planer = $wpdb->get_row("SELECT * FROM " . $table_prefix . "google_routeplaner WHERE planer_id='" . $route_id . "' LIMIT 1", ARRAY_A);
 
 ?>
-	  <style type="text/css" media="screen">
-	  @import url("<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/google-routeplaner.css");
-	  </style>
 	  <div class="wrap google_routeplaner">
 	   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Edit Route', 'google_routeplaner'); ?></h2>
 	   <form method="post" action="">
-		<p><label for="google_routeplaner_destination"><?php _e('Destination', 'google_routeplaner'); ?></label><br />
+		<p><label for="google_routeplaner_destination" class="formbold"><?php _e('Destination', 'google_routeplaner'); ?></label><br />
 		<input type="text" name="google_routeplaner_destination" id="google_routeplaner_destination" style="width: 300px;" value="<?php echo $planer['start_location']; ?>" /><br />
 		<i><?php _e('Add a search string for the destination. Adress, company name or something like this.', 'google_routeplaner'); ?></i></p>
-		<p><label for="google_routeplaner_map_width"><?php _e('Map width', 'google_routeplaner'); ?></label><br />
+		<p><label for="google_routeplaner_map_width" class="formbold"><?php _e('Map width', 'google_routeplaner'); ?></label><br />
 		<input type="text" name="google_routeplaner_map_width" id="google_routeplaner_map_width" style="width: 70px;" value="<?php echo $planer['planer_width']; ?>" /><br />
 		<i><?php _e('Enter the width for the map.', 'google_routeplaner'); ?></i></p>
-		<p><label for="google_routeplaner_map_height"><?php _e('Map heigth', 'google_routeplaner'); ?></label><br />
+		<p><label for="google_routeplaner_map_height" class="formbold"><?php _e('Map heigth', 'google_routeplaner'); ?></label><br />
 		<input type="text" name="google_routeplaner_map_height" id="google_routeplaner_map_height" style="width: 70px;" value="<?php echo $planer['planer_height']; ?>" /><br />
 		<i><?php _e('Enter the height for the map.', 'google_routeplaner'); ?></i></p>
-		<p><label for="google_routeplaner_map_type"><?php _e('Map type', 'google_routeplaner'); ?></label><br />
+		<p><label for="google_routeplaner_map_type" class="formbold"><?php _e('Map type', 'google_routeplaner'); ?></label><br />
 		<select name="google_routeplaner_map_type" id="google_routeplaner_map_type">
 			<?php $google_routeplaner_map_type = get_option("google_routeplaner_map_type"); ?>
-			<option value="ROADMAP" selected=""><?php _e('Road map', 'google_routeplaner'); ?></option>
+			<option value="ROADMAP" selected="selected"><?php _e('Road map', 'google_routeplaner'); ?></option>
 			<option value="SATELLITE"><?php _e('Satellite map', 'google_routeplaner'); ?></option>
 			<option value="HYBRID"><?php _e('Hybrid map', 'google_routeplaner'); ?></option>
 			<option value="TERRAIN"><?php _e('Physical map', 'google_routeplaner'); ?></option>	
 		</select><br />
 		<i><?php _e('Select how the map should look like.', 'google_routeplaner'); ?></i></p>
 		
-		<p><?php _e('Map Zoom Control', 'google_routeplaner'); ?><br />
-		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_large" value="DEFAULT"<?php if('DEFAULT' == $planer['planer_zoom_control']) { echo ' checked=""'; } ?> />
+		<p><span class="formbold"><?php _e('Map Zoom Control', 'google_routeplaner'); ?></span><br />
+		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_large" value="DEFAULT"<?php if('DEFAULT' == $planer['planer_zoom_control']) { echo ' checked="checked"'; } ?> />
 		<label for="google_routeplaner_zoom_control_large"><?php _e('Large', 'google_routeplaner'); ?></label><br />
-		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_small" value="SMALL"<?php if('SMALL' == $planer['planer_zoom_control']) { echo ' checked=""'; } ?> />
+		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_small" value="SMALL"<?php if('SMALL' == $planer['planer_zoom_control']) { echo ' checked="checked"'; } ?> />
 		<label for="google_routeplaner_zoom_control_small"><?php _e('Small', 'google_routeplaner'); ?></label><br />
-		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_zoom" value="ZOOM_PAN"<?php if('ZOOM_PAN' == $planer['planer_zoom_control']) { echo ' checked=""'; } ?> />
+		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_zoom" value="ZOOM_PAN"<?php if('ZOOM_PAN' == $planer['planer_zoom_control']) { echo ' checked="checked"'; } ?> />
 		<label for="google_routeplaner_zoom_control_zoom"><?php _e('Zoom only', 'google_routeplaner'); ?></label><br />
-		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_none" value="NONE"<?php if('NONE' == $planer['planer_zoom_control']) { echo ' checked=""'; } ?> />
+		<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_none" value="NONE"<?php if('NONE' == $planer['planer_zoom_control']) { echo ' checked="checked"'; } ?> />
 		<label for="google_routeplaner_zoom_control_none"><?php _e('None', 'google_routeplaner'); ?></label><br />
 		<i><?php _e('Select the type of zoom and direction control you want.', 'google_routeplaner'); ?></i></p>
 		
-		<p><?php _e('Map Type Control', 'google_routeplaner'); ?><br />
-		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_standard" value="HORIZONTAL_BAR"<?php if('HORIZONTAL_BAR' == $planer['planer_type_control']) { echo ' checked=""'; } ?> />
+		<p><span class="formbold"><?php _e('Map Type Control', 'google_routeplaner'); ?></span><br />
+		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_standard" value="HORIZONTAL_BAR"<?php if('HORIZONTAL_BAR' == $planer['planer_type_control']) { echo ' checked="checked"'; } ?> />
 		<label for="google_routeplaner_type_control_standard"><?php _e('Normal', 'google_routeplaner'); ?></label><br />
-		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_hierachical" value="DROPDOWN_MENU"<?php if('DROPDOWN_MENU' == $planer['planer_type_control']) { echo ' checked=""'; } ?> />
+		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_hierachical" value="DROPDOWN_MENU"<?php if('DROPDOWN_MENU' == $planer['planer_type_control']) { echo ' checked="checked"'; } ?> />
 		<label for="google_routeplaner_type_control_hierachical"><?php _e('Hierarchical', 'google_routeplaner'); ?></label><br />
-		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_none" value="NONE"<?php if('NONE' == $planer['planer_type_control']) { echo ' checked=""'; } ?> />
+		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_none" value="NONE"<?php if('NONE' == $planer['planer_type_control']) { echo ' checked="checked"'; } ?> />
 		<label for="google_routeplaner_type_control_none"><?php _e('None', 'google_routeplaner'); ?></label><br />
 		<i><?php _e('Select if users can change the map type.', 'google_routeplaner'); ?></i></p>
 		
-		<p><label for="google_routeplaner_css"><?php _e('Advance CSS', 'google_routeplaner'); ?></label><br />
-		<textarea name="google_routeplaner_css" id="google_routeplaner_css" style="width: 300px;"><?php echo $planer['planer_css']; ?></textarea><br />
-		<i><?php _e('You can add css information for any element.', 'google_routeplaner'); ?></i></p>
+		<p><label for="google_routeplaner_css" class="formbold"><?php _e('Advance CSS', 'google_routeplaner'); ?></label><br />
+		<textarea name="google_routeplaner_css" id="google_routeplaner_css" style="width: 300px;" rows="10" cols="50"><?php echo $planer['planer_css']; ?></textarea><br />
+		<i><?php _e('You can add css information for any element. Warning: This will result in invalid HTML output.', 'google_routeplaner'); ?></i></p>
 		
 		<p><input type="submit" class="button-primary" value="<?php _e('Save changes', 'google_routeplaner'); ?>" />
 		<input name="action" value="google_routeplaner_edit_route" type="hidden" />
@@ -439,8 +443,9 @@ function google_routeplaner_edit_route($route_id) {
 	}
 }
 
-
-// Adds the option page for admin menu
+/*
+ * Adds the option page for admin menu
+ */
 function google_routeplaner_add_menu() {
 	add_option("google_routeplaner_donate","link");	
 	add_option("google_routeplaner_language","en");	

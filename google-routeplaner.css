@@ -21,3 +21,7 @@
 .google_routeplaner h2 {
 	margin-bottom: 10px;
 }
+
+.google_routeplaner .formbold {
+	font-weight: bold;
+}
