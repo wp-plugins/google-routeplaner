@@ -1,0 +1,27 @@
+.google_routeplaner td,
+.google_routeplaner th  {
+	padding: 10px;
+}
+
+.google_routeplaner .success {
+	background-color: #c3ff88;
+	border-color: #8dff1c;
+	padding: 5px;
+}
+
+.google_routeplaner ul {
+	list-style-type: disc;
+	padding-left: 15px;
+}
+
+#icon-google_routeplaner  {
+    background:url(images/routeplanner_icon_grey.png) no-repeat scroll 1px 1px transparent;
+}
+
+.google_routeplaner h2 {
+	margin-bottom: 10px;
+}
+
+.google_routeplaner .formbold {
+	font-weight: bold;
+}
