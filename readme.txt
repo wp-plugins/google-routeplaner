@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: route, google, map, route planer, planer
 Requires at least: 2.7
 Tested up to: 3.2.1
-Stable tag: 1.1
+Stable tag: 1.2
 
 Creates a route planer based on google maps.
 
