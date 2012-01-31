@@ -25,3 +25,8 @@
 .google_routeplaner .formbold {
 	font-weight: bold;
 }
+
+table.plugins tr#google-routeplaner td.plugin-title {
+   background: url(images/routeplanner_icon_grey.png) no-repeat scroll 0 4px transparent;
+   padding-left: 44px;
+}

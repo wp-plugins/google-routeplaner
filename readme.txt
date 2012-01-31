@@ -52,6 +52,10 @@ Simply don't use the "Advanced CSS" function and use your themes CSS file to cha
 
 == Changelog ==
 
+= 1.2 =
+* You can now select a different language for every map
+* Fixed a compatiblity issues with the TheCartPress
+
 = 1.1 =
 * Cleaned up Sourcecode
 * Removed some validation issues (there are still some remaining)
