@@ -3,15 +3,13 @@
 Plugin Name: Google Routeplaner
 Plugin URI: http://deformed-design.de
 Description: Generates a routeplaner based on Google Maps. 
-Version: 1.1
+Version: 1.2
 Author: Thomas Probach
 Author URI: http://deformed-design.de
 Min WP Version: 3.0
 */
 
-if( !isset( $_SESSION ) ) {
-	session_start();
-}
+
 
 /*
  * Load Language
@@ -56,6 +54,7 @@ function google_routeplaner_install() {
 
 		
 		$wpdb->query('ALTER TABLE `' . $table_prefix . 'google_routeplaner` DROP `planer_overview`');
+		$wpdb->query('ALTER TABLE `wp_google_routeplaner` ADD `planer_language` VARCHAR( 2 ) NULL ');
 		
 		/* 
 		 * Update old information in the database!
@@ -142,10 +141,15 @@ function google_routeplaner_build_map($route_id) {
 	$check_updated = $wpdb->get_results('SHOW COLUMNS FROM `' . $table_prefix . 'google_routeplaner`');
 
 	$map = '
-	<!-- Start Google Routeplaner Plugin Output -->
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . get_option("google_routeplaner_language") . '"></script>
+	<!-- Start Google Routeplaner Plugin Output -->';
+	
+	if(2 == strlen($planer['planer_language'])) {
+		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . $planer['planer_language'] . '"></script>';
+	} else {
+		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . get_option("google_routeplaner_language") . '"></script>';
+	}
 
-	<script type="text/javascript">
+	$map .= '<script type="text/javascript">
 	/* <![CDATA[ */
     var geocoder;
 	var directionDisplay;

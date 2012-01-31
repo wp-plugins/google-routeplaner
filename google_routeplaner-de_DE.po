@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Routeplaner\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-18 16:38+0100\n"
+"POT-Creation-Date: 2012-01-31 18:24+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Thomas Heger <info@deformed-design.de>\n"
+"Last-Translator: Thomas Probach <info@deformed-design.de>\n"
 "Language-Team: Deformed Design <info@deformed-design.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,410 +16,441 @@ msgstr ""
 "X-Poedit-Basepath: C:\\google-routeplaner\n"
 "X-Poedit-SearchPath-0: C:\\google-routeplaner\n"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:13
-#: C:\google-routeplaner/google-routeplaner-pages.php:118
-#: C:\google-routeplaner/google-routeplaner-pages.php:173
-#: C:\google-routeplaner/google-routeplaner-pages.php:236
-#: C:\google-routeplaner/google-routeplaner-pages.php:249
-#: C:\google-routeplaner/google-routeplaner-pages.php:282
-#: C:\google-routeplaner/google-routeplaner-pages.php:295
-#: C:\google-routeplaner/google-routeplaner-pages.php:378
-#: C:\google-routeplaner/google-routeplaner-pages.php:392
+#: C:\google-routeplaner/google-routeplaner-add-route.php:24
+#: C:\google-routeplaner/google-routeplaner-add-route.php:37
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:24
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:38
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:7
+#: C:\google-routeplaner/google-routeplaner-main-page.php:2
+#: C:\google-routeplaner/google-routeplaner-pages.php:63
+#: C:\google-routeplaner/google-routeplaner-pages.php:76
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:2
 msgid "Google Routeplaner"
 msgstr "Google Routeplaner"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:13
-#: C:\google-routeplaner/google-routeplaner-pages.php:453
-msgid "Overview"
-msgstr "Übersicht"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:16
-msgid "Changelog"
-msgstr "Letzte Änderungen"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:44
-msgid "The Plugin"
-msgstr "Das Plugin"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:46
-msgid "Google Routeplaner generates a routeplaner based on the <a href=\"http://code.google.com/apis/maps/\">Google Maps API</a>."
-msgstr "Google Routeplaner erstellt einen Routenplaner auf Basis der <a href=\"http://code.google.com/apis/maps/\">Google Maps API</a>."
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:47
-msgid "We suggest adding a printer friendly stylesheet to your Wordpress design to allow your users to print the route without the need to print design elements. A tutorial how to do this can be found <a href=\"http://codex.wordpress.org/Styling_for_Print\">here</a>."
-msgstr "Wer empfehlen das hinzufügen eines druckfreundlichen Stylesheets zu Ihrem Wordpress-Design. Dies erlaubt es Ihren Besuchern die Route ohne unnötige Designelemente auszudrucken. Ein (englisches) Tutorial wie Sie dies anstellen finden Sie <a href=\"http://codex.wordpress.org/Styling_for_Print\">hier</a>."
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:48
-msgid "Plugin developed by <a href=\"http://deformed-design.de\">Deformed Design</a>."
-msgstr "Plugin entwickelt von <a href=\"http://deformed-design.de\">Deformed Design</a>."
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:52
-#: C:\google-routeplaner/google-routeplaner-pages.php:55
-msgid "Support &amp; Feedback"
-msgstr "Support &amp; Feedback"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:54
-msgid "If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk."
-msgstr "Wenn Sie bei der Verwendung des Plugins Probleme haben, Ihre Ideen für die künftige Weiterentwicklung weitergeben möchten oder schlicht Ihre Meinung zum Plugin abgeben möchten verwenden Sie bitte meine Help Desk Software."
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:61
-msgid "Enjoy the plugin?"
-msgstr "Gefällt Ihnen das Plugin?"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:63
-msgid "If you like the plugin you can support my work in different ways:"
-msgstr "Wenn Sie das Plugin mögen können Sie es auf verschiedene Arten unterstützen:"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:65
-msgid "Rate it on WordPress.org"
-msgstr "Bewerte das Plugin auf WordPress.org"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:66
-msgid "Donate using PayPal"
-msgstr "Via PayPal spenden"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:67
-msgid "Take a look at my Amazon wishlist"
-msgstr "Schauen Sie auf meine Amazon-Wunschliste"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:73
-msgid "Uninstall"
-msgstr "Deinstallieren"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:76
-msgid "To completly remove this plugin and all database entries you need to use this uninstall feature. If you only deactivate the plugin a lot of stuff will remain in your database."
-msgstr "Um das Plugin vollständig zu entfernen und alle Datenbankeinträge zu löschen verwenden Sie bitte diese Deinstallationsfunktion. Wenn Sie das Plugin nur deaktivieren bleiben viele Daten in Ihrer Datenbank."
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:77
-msgid "Yes, I want to uninstall Google Routeplaner"
-msgstr "Ja, ich möchte Google Routeplaner deinstallieren"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:78
-msgid "Full Uninstall Google Routeplaner"
-msgstr "Google Routeplaner komplett deinstallieren"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:118
-#: C:\google-routeplaner/google-routeplaner-pages.php:455
-msgid "Settings"
-msgstr "Einstellungen"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:127
-msgid "Settings saved!"
-msgstr "Einstellungen gespeichert!"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:131
-msgid "Language"
-msgstr "Sprache"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:133
-msgid "English"
-msgstr "Englisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:134
-msgid "German"
-msgstr "Deutsch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:135
-msgid "French"
-msgstr "Französisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:136
-msgid "Spanish"
-msgstr "Spanisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:137
-msgid "Dutch"
-msgstr "Holländisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:138
-msgid "Italian"
-msgstr "Italienisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:139
-msgid "Polish"
-msgstr "Polnisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:140
-msgid "Catalan"
-msgstr "Katalanisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:141
-msgid "Euskara"
-msgstr "Euskaraisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:142
-msgid "Russian"
-msgstr "Russisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:143
-msgid "Japanese"
-msgstr "Japanisch"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:145
-msgid "Set language for driving information."
-msgstr "Sprache für die Wegbeschreibung festlegen."
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:146
-msgid "Donate this plugin"
-msgstr "Dieses Plugin unterstützen"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:148
-msgid "Show a link under the maps"
-msgstr "Einen Link unten den Karten anzeigen"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:150
-msgid "I write an articel about it"
-msgstr "Ich schreibe einen Artikel darüber"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:152
-msgid "I donated with Paypal"
-msgstr "Ich habe per PayPal gespendet"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:154
-msgid "I will not donate this project (you will not get support)"
-msgstr "Ich will das Projekt nicht unterstützen (Sie erhalten keinen Support)"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:155
-msgid "Save settings"
-msgstr "Einstellungen speichern"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:173
-#: C:\google-routeplaner/google-routeplaner-pages.php:454
-msgid "Routes"
-msgstr "Routen"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:174
-msgid "Create Route"
-msgstr "Route erstellen"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:178
-#: C:\google-routeplaner/google-routeplaner-pages.php:186
-msgid "ID"
-msgstr "ID"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:179
-#: C:\google-routeplaner/google-routeplaner-pages.php:187
-#: C:\google-routeplaner/google-routeplaner-pages.php:297
-#: C:\google-routeplaner/google-routeplaner-pages.php:394
-msgid "Destination"
-msgstr "Ziel"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:180
-#: C:\google-routeplaner/google-routeplaner-pages.php:188
-msgid "Code"
-msgstr "Code"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:181
-#: C:\google-routeplaner/google-routeplaner-pages.php:189
-msgid "Actions"
-msgstr "Aktionen"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:208
-msgid "preview"
-msgstr "Vorschau"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:209
-msgid "edit"
-msgstr "bearbeiten"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:210
-msgid "delete"
-msgstr "löschen"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:216
-msgid "You have not created any routes yet!"
-msgstr "Sie haben noch keine Route angelegt!"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:236
-msgid "Delete Route"
-msgstr "Route löschen"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:237
-msgid "The route has been deleted!"
-msgstr "Die Route wurde gelöscht!"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:238
-#: C:\google-routeplaner/google-routeplaner-pages.php:250
-#: C:\google-routeplaner/google-routeplaner-pages.php:285
-#: C:\google-routeplaner/google-routeplaner-pages.php:380
-msgid "Back to overview"
-msgstr "Zurück zur Übersicht"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:249
-msgid "Preview Route"
-msgstr "Vorschau der Route"
-
-#: C:\google-routeplaner/google-routeplaner-pages.php:282
-#: C:\google-routeplaner/google-routeplaner-pages.php:295
+#: C:\google-routeplaner/google-routeplaner-add-route.php:24
+#: C:\google-routeplaner/google-routeplaner-add-route.php:37
 msgid "Add Route"
 msgstr "Route erstellen"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:283
+#: C:\google-routeplaner/google-routeplaner-add-route.php:25
 msgid "Your route has been saved!"
 msgstr "Ihre Route wurde gespeichert!"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:284
+#: C:\google-routeplaner/google-routeplaner-add-route.php:26
 msgid "The code for this route is: "
 msgstr "Der Code für diese Route ist: "
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:299
-#: C:\google-routeplaner/google-routeplaner-pages.php:396
+#: C:\google-routeplaner/google-routeplaner-add-route.php:27
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:26
+#: C:\google-routeplaner/google-routeplaner-pages.php:65
+#: C:\google-routeplaner/google-routeplaner-pages.php:77
+msgid "Back to overview"
+msgstr "Zurück zur Übersicht"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:39
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:40
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:13
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:21
+msgid "Destination"
+msgstr "Ziel"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:41
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:42
 msgid "Add a search string for the destination. Adress, company name or something like this."
 msgstr "Füge einen Such-Text für das Ziel ein. Eine Adresse, ein Firmenname oder etwas Vergleichbares."
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:300
-#: C:\google-routeplaner/google-routeplaner-pages.php:397
+#: C:\google-routeplaner/google-routeplaner-add-route.php:42
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:43
 msgid "Map width"
 msgstr "Kartenbreite"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:302
-#: C:\google-routeplaner/google-routeplaner-pages.php:399
+#: C:\google-routeplaner/google-routeplaner-add-route.php:44
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:45
 msgid "Enter the width for the map."
 msgstr "Gib die Breite für die Karte ein."
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:303
-#: C:\google-routeplaner/google-routeplaner-pages.php:400
+#: C:\google-routeplaner/google-routeplaner-add-route.php:45
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:46
 msgid "Map heigth"
 msgstr "Kartenhöhe"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:305
-#: C:\google-routeplaner/google-routeplaner-pages.php:402
+#: C:\google-routeplaner/google-routeplaner-add-route.php:47
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:48
 msgid "Enter the height for the map."
 msgstr "Gib die Höhe für die Karte ein."
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:306
-#: C:\google-routeplaner/google-routeplaner-pages.php:403
+#: C:\google-routeplaner/google-routeplaner-add-route.php:48
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:49
 msgid "Map type"
 msgstr "Kartentyp"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:309
-#: C:\google-routeplaner/google-routeplaner-pages.php:406
+#: C:\google-routeplaner/google-routeplaner-add-route.php:51
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:52
 msgid "Road map"
 msgstr "Straßenkarte"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:310
-#: C:\google-routeplaner/google-routeplaner-pages.php:407
+#: C:\google-routeplaner/google-routeplaner-add-route.php:52
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:53
 msgid "Satellite map"
 msgstr "Satellitenkarte"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:311
-#: C:\google-routeplaner/google-routeplaner-pages.php:408
+#: C:\google-routeplaner/google-routeplaner-add-route.php:53
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:54
 msgid "Hybrid map"
 msgstr "Hybrid-Karte"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:312
-#: C:\google-routeplaner/google-routeplaner-pages.php:409
+#: C:\google-routeplaner/google-routeplaner-add-route.php:54
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:55
 msgid "Physical map"
 msgstr "Physikalische Karte"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:314
-#: C:\google-routeplaner/google-routeplaner-pages.php:411
+#: C:\google-routeplaner/google-routeplaner-add-route.php:56
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:57
 msgid "Select how the map should look like."
 msgstr "Lege fest, wie die Karte aussehen soll."
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:316
-#: C:\google-routeplaner/google-routeplaner-pages.php:413
+#: C:\google-routeplaner/google-routeplaner-add-route.php:58
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:59
 msgid "Map Zoom Control"
 msgstr "Karten-Zoom Interface"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:318
-#: C:\google-routeplaner/google-routeplaner-pages.php:415
+#: C:\google-routeplaner/google-routeplaner-add-route.php:60
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:61
 msgid "Large"
 msgstr "Groß"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:320
-#: C:\google-routeplaner/google-routeplaner-pages.php:417
+#: C:\google-routeplaner/google-routeplaner-add-route.php:62
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:63
 msgid "Small"
 msgstr "Klein"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:322
-#: C:\google-routeplaner/google-routeplaner-pages.php:419
+#: C:\google-routeplaner/google-routeplaner-add-route.php:64
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:65
 msgid "Zoom only"
 msgstr "Nur Zoom"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:324
-#: C:\google-routeplaner/google-routeplaner-pages.php:333
-#: C:\google-routeplaner/google-routeplaner-pages.php:421
-#: C:\google-routeplaner/google-routeplaner-pages.php:430
+#: C:\google-routeplaner/google-routeplaner-add-route.php:66
+#: C:\google-routeplaner/google-routeplaner-add-route.php:75
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:67
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:76
 msgid "None"
 msgstr "Keine"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:325
-#: C:\google-routeplaner/google-routeplaner-pages.php:422
+#: C:\google-routeplaner/google-routeplaner-add-route.php:67
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:68
 msgid "Select the type of zoom and direction control you want."
 msgstr "Wählen Sie den Typ der Zoom-Steuerungselemente."
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:327
-#: C:\google-routeplaner/google-routeplaner-pages.php:424
+#: C:\google-routeplaner/google-routeplaner-add-route.php:69
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:70
 msgid "Map Type Control"
 msgstr "Kartentyp-Steuerung"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:329
-#: C:\google-routeplaner/google-routeplaner-pages.php:426
+#: C:\google-routeplaner/google-routeplaner-add-route.php:71
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:72
 msgid "Normal"
 msgstr "Normal"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:331
-#: C:\google-routeplaner/google-routeplaner-pages.php:428
+#: C:\google-routeplaner/google-routeplaner-add-route.php:73
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:74
 msgid "Hierarchical"
 msgstr "Hierachisch"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:334
-#: C:\google-routeplaner/google-routeplaner-pages.php:431
+#: C:\google-routeplaner/google-routeplaner-add-route.php:76
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:77
 msgid "Select if users can change the map type."
 msgstr "Lege fest, ob der Benutzer den Kartentyp ändern kann."
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:336
-#: C:\google-routeplaner/google-routeplaner-pages.php:433
+#: C:\google-routeplaner/google-routeplaner-add-route.php:78
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:79
 msgid "Advance CSS"
 msgstr "Erweitertes CSS"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:341
-#: C:\google-routeplaner/google-routeplaner-pages.php:435
+#: C:\google-routeplaner/google-routeplaner-add-route.php:83
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:81
 msgid "You can add css information for any element. Warning: This will result in invalid HTML output."
 msgstr "Sie können erweitere CSS Informationen für jedes Kartenelement festlegen. Achtung: Dadurch wird die HTML-Ausgabe invalide."
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:343
+#: C:\google-routeplaner/google-routeplaner-add-route.php:84
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:82
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:15
+msgid "Language"
+msgstr "Sprache"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:86
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:84
+msgid "Default"
+msgstr "Standard"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:87
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:85
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:17
+msgid "English"
+msgstr "Englisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:88
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:86
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:18
+msgid "German"
+msgstr "Deutsch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:89
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:87
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:19
+msgid "French"
+msgstr "Französisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:90
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:88
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:20
+msgid "Spanish"
+msgstr "Spanisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:91
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:89
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:21
+msgid "Dutch"
+msgstr "Holländisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:92
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:90
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:22
+msgid "Italian"
+msgstr "Italienisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:93
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:91
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:23
+msgid "Polish"
+msgstr "Polnisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:94
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:92
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:24
+msgid "Catalan"
+msgstr "Katalanisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:95
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:93
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:25
+msgid "Euskara"
+msgstr "Euskaraisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:96
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:94
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:26
+msgid "Russian"
+msgstr "Russisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:97
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:95
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:27
+msgid "Japanese"
+msgstr "Japanisch"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:99
 msgid "Save route"
 msgstr "Route speichern"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:378
-#: C:\google-routeplaner/google-routeplaner-pages.php:392
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:24
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:38
 msgid "Edit Route"
 msgstr "Route bearbeiten"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:379
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:25
 msgid "Your changes has been saved!"
 msgstr "Die Änderungen wurden gespeichert!"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:437
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:97
 msgid "Save changes"
 msgstr "Änderungen speichern"
 
-#: C:\google-routeplaner/google-routeplaner-pages.php:453
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:7
+#: C:\google-routeplaner/google-routeplaner-pages.php:106
+msgid "Routes"
+msgstr "Routen"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:8
+msgid "Create Route"
+msgstr "Route erstellen"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:12
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:20
+msgid "ID"
+msgstr "ID"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:14
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:22
+msgid "Code"
+msgstr "Code"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:15
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:23
+msgid "Actions"
+msgstr "Aktionen"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:42
+msgid "preview"
+msgstr "Vorschau"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:43
+msgid "edit"
+msgstr "bearbeiten"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:44
+msgid "delete"
+msgstr "löschen"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:50
+msgid "You have not created any routes yet!"
+msgstr "Sie haben noch keine Route angelegt!"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:2
+#: C:\google-routeplaner/google-routeplaner-pages.php:105
+msgid "Overview"
+msgstr "Übersicht"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:5
+msgid "Changelog"
+msgstr "Letzte Änderungen"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:38
+msgid "The Plugin"
+msgstr "Das Plugin"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:40
+msgid "Google Routeplaner generates a routeplaner based on the <a href=\"http://code.google.com/apis/maps/\">Google Maps API</a>."
+msgstr "Google Routeplaner erstellt einen Routenplaner auf Basis der <a href=\"http://code.google.com/apis/maps/\">Google Maps API</a>."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:41
+msgid "We suggest adding a printer friendly stylesheet to your Wordpress design to allow your users to print the route without the need to print design elements. A tutorial how to do this can be found <a href=\"http://codex.wordpress.org/Styling_for_Print\">here</a>."
+msgstr "Wer empfehlen das hinzufügen eines druckfreundlichen Stylesheets zu Ihrem Wordpress-Design. Dies erlaubt es Ihren Besuchern die Route ohne unnötige Designelemente auszudrucken. Ein (englisches) Tutorial wie Sie dies anstellen finden Sie <a href=\"http://codex.wordpress.org/Styling_for_Print\">hier</a>."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:42
+msgid "Plugin developed by <a href=\"http://deformed-design.de\">Deformed Design</a>."
+msgstr "Plugin entwickelt von <a href=\"http://deformed-design.de\">Deformed Design</a>."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:46
+#: C:\google-routeplaner/google-routeplaner-main-page.php:49
+msgid "Support &amp; Feedback"
+msgstr "Support &amp; Feedback"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:48
+msgid "If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk."
+msgstr "Wenn Sie bei der Verwendung des Plugins Probleme haben, Ihre Ideen für die künftige Weiterentwicklung weitergeben möchten oder schlicht Ihre Meinung zum Plugin abgeben möchten verwenden Sie bitte meine Help Desk Software."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:55
+msgid "Enjoy the plugin?"
+msgstr "Gefällt Ihnen das Plugin?"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:57
+msgid "If you like the plugin you can support my work in different ways:"
+msgstr "Wenn Sie das Plugin mögen können Sie es auf verschiedene Arten unterstützen:"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:59
+msgid "Rate it on WordPress.org"
+msgstr "Bewerte das Plugin auf WordPress.org"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:60
+msgid "Donate using PayPal"
+msgstr "Via PayPal spenden"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:61
+msgid "Take a look at my Amazon wishlist"
+msgstr "Schauen Sie auf meine Amazon-Wunschliste"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:67
+msgid "Uninstall"
+msgstr "Deinstallieren"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:70
+msgid "To completly remove this plugin and all database entries you need to use this uninstall feature. If you only deactivate the plugin a lot of stuff will remain in your database."
+msgstr "Um das Plugin vollständig zu entfernen und alle Datenbankeinträge zu löschen verwenden Sie bitte diese Deinstallationsfunktion. Wenn Sie das Plugin nur deaktivieren bleiben viele Daten in Ihrer Datenbank."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:71
+msgid "Yes, I want to uninstall Google Routeplaner"
+msgstr "Ja, ich möchte Google Routeplaner deinstallieren"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:72
+msgid "Full Uninstall Google Routeplaner"
+msgstr "Google Routeplaner komplett deinstallieren"
+
+#: C:\google-routeplaner/google-routeplaner-pages.php:63
+msgid "Delete Route"
+msgstr "Route löschen"
+
+#: C:\google-routeplaner/google-routeplaner-pages.php:64
+msgid "The route has been deleted!"
+msgstr "Die Route wurde gelöscht!"
+
+#: C:\google-routeplaner/google-routeplaner-pages.php:76
+msgid "Preview Route"
+msgstr "Vorschau der Route"
+
+#: C:\google-routeplaner/google-routeplaner-pages.php:105
 msgid "Routeplaner"
 msgstr "Routenplaner"
 
-#: C:\google-routeplaner/google-routeplaner.php:201
+#: C:\google-routeplaner/google-routeplaner-pages.php:107
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:2
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:11
+msgid "Settings saved!"
+msgstr "Einstellungen gespeichert!"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:29
+msgid "Set language for driving information."
+msgstr "Sprache für die Wegbeschreibung festlegen."
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:30
+msgid "Donate this plugin"
+msgstr "Dieses Plugin unterstützen"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:32
+msgid "Show a link under the maps"
+msgstr "Einen Link unten den Karten anzeigen"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:34
+msgid "I write an articel about it"
+msgstr "Ich schreibe einen Artikel darüber"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:36
+msgid "I donated with Paypal"
+msgstr "Ich habe per PayPal gespendet"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:38
+msgid "I will not donate this project (you will not get support)"
+msgstr "Ich will das Projekt nicht unterstützen (Sie erhalten keinen Support)"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:39
+msgid "Save settings"
+msgstr "Einstellungen speichern"
+
+#: C:\google-routeplaner/google-routeplaner.php:205
 msgid "Could not find the start location. Please be more specific!"
 msgstr "Kann die Startposition nicht finden. Bitte geben Sie diese genauer ein."
 
-#: C:\google-routeplaner/google-routeplaner.php:233
+#: C:\google-routeplaner/google-routeplaner.php:237
 msgid "Your location"
 msgstr "Ihr Standort"
 
-#: C:\google-routeplaner/google-routeplaner.php:233
+#: C:\google-routeplaner/google-routeplaner.php:237
 msgid "Create route"
 msgstr "Route erstellen"
 
 #~ msgid "Support"
 #~ msgstr "Support"
+
 #~ msgid ""
 #~ "If you encounter any problems feel free to use our <a href=\"http://"
 #~ "support.deformed-design.de\">Help Desk</a>."
 #~ msgstr ""
 #~ "Wenn Sie Probleme haben verwenden Sie unsere <a href=\"http://support."
 #~ "deformed-design.de\">Hilfe-Seite</a>."
+
 #~ msgid ""
 #~ "If you enjoy the plugin we would be glad about a small donation. If you "
 #~ "donated, please feel free to remove the authors notice below the map in "
@@ -428,14 +459,19 @@ msgstr "Route erstellen"
 #~ "Wenn Ihnen das Plugin gefällt würden wir uns über eine kleine Spende "
 #~ "freuen. Sollten Sie gespendet haben können Sie gerne den Hinweis auf den "
 #~ "Autoren unter dem Routenplaner in den Einstellungen des Plugins entfernen."
+
 #~ msgid "About"
 #~ msgstr "Über"
+
 #~ msgid "Yes"
 #~ msgstr "Ja"
+
 #~ msgid "No"
 #~ msgstr "Nein"
+
 #~ msgid "Display a small overview map."
 #~ msgstr "Zeigt eine kleine Übersichtskarte auf der großen Karte an."
+
 #~ msgid ""
 #~ "Google Routeplaner isn't ready yet. Please enter your Google Maps API Key "
 #~ "on the <a href=\"admin.php?page=google_routeplaner_settings\">settings "
@@ -444,12 +480,13 @@ msgstr "Route erstellen"
 #~ "Google Routeplaner ist noch nicht einsatzbereit. Bitte gib einen Google "
 #~ "Maps API Key auf der <a href=\"admin.php?page=google_routeplaner_settings"
 #~ "\">Einstellungsseite</a> ein."
+
 #~ msgid "Your Google Maps API Key"
 #~ msgstr "Dein Google Maps API Key"
+
 #~ msgid ""
 #~ "You can get a free api key <a href=\"http://code.google.com/apis/maps/"
 #~ "\">here</a>."
 #~ msgstr ""
 #~ "Du kannst einen kostenlosen API Key <a href=\"http://code.google.com/apis/"
 #~ "maps/\">here</a> bekommen."
-
