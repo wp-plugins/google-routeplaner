@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: route, google, map, route planer, planer
 Requires at least: 2.7
 Tested up to: 3.2.1
-Stable tag: 1.2
+Stable tag: 1.21
 
 Creates a route planer based on google maps.
 
@@ -51,6 +51,9 @@ No, this is not possible at the moment.
 Simply don't use the "Advanced CSS" function and use your themes CSS file to change the look of your map. Everything else should be valid!
 
 == Changelog ==
+
+= 1.21 =
+* Hotfix for not working setup
 
 = 1.2 =
 * You can now select a different language for every map
