@@ -4,6 +4,10 @@
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside">
+				<h5>Version 1.21</h5>
+					<ul>
+						<li>Hotfix for not working setup</li>
+					</ul>
 				<h5>Version 1.2</h5>
 					<ul>
 						<li>You can now select a different language for every map</li>

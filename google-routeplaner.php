@@ -3,7 +3,7 @@
 Plugin Name: Google Routeplaner
 Plugin URI: http://deformed-design.de
 Description: Generates a routeplaner based on Google Maps. 
-Version: 1.2
+Version: 1.21
 Author: Thomas Probach
 Author URI: http://deformed-design.de
 Min WP Version: 3.0
@@ -43,6 +43,7 @@ function google_routeplaner_install() {
 					 `planer_zoom_control` VARCHAR(120) NOT NULL,
 					 `planer_type_control` VARCHAR(120) NOT NULL,
 					 `planer_css` TEXT,
+					 `planer_language` VARCHAR( 2 ),
 					 PRIMARY KEY (`planer_id`)
 					 )%s';
 		$wpdb->query(sprintf($sql_routeplaner, $charset_collate));
