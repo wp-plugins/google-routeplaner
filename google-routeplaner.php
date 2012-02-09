@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Google Routeplaner
-Plugin URI: http://deformed-design.de
+Plugin URI: http://plugins.deformed-design.de
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
 Version: 1.5
 Author: Deformed Design
