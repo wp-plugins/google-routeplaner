@@ -99,14 +99,19 @@ function google_routeplaner_edit_route($route_id) {
  * Adds the option page for admin menu
  */
 function google_routeplaner_add_menu() {
+	global $submenu;
 	add_option("google_routeplaner_donate","link");	
 	add_option("google_routeplaner_language","en");	
+	
+	add_action( 'admin_menu' , 'admin_menu_new_items' );
 
-	add_menu_page(__('Overview', 'google_routeplaner'), __('Routeplaner', 'google_routeplaner'), 8, __FILE__, 'google_routeplaner_about_page', WP_PLUGIN_URL . '/google-routeplaner/images/routeplanner_icon16.png');
-	add_submenu_page(__FILE__, __('Routes', 'google_routeplaner'), __('Routes', 'google_routeplaner'), 8, 'google_routeplaner_routes', 'google_routeplaner_routes_page');
-	add_submenu_page(__FILE__, __('Settings', 'google_routeplaner'), __('Settings', 'google_routeplaner'), 8, 'google_routeplaner_settings', 'google_routeplaner_option_page');
+
+	add_menu_page(__('Overview', 'google_routeplaner'), __('Routeplaner', 'google_routeplaner'), 8, 'google-routeplaner.php', 'google_routeplaner_about_page', WP_PLUGIN_URL . '/google-routeplaner/images/routeplanner_icon16.png');
+	add_submenu_page('google-routeplaner.php', __('Routes', 'google_routeplaner'), __('Routes', 'google_routeplaner'), 8, 'google_routeplaner_routes', 'google_routeplaner_routes_page');
+	add_submenu_page('google-routeplaner.php', __('Settings', 'google_routeplaner'), __('Settings', 'google_routeplaner'), 8, 'google_routeplaner_settings', 'google_routeplaner_option_page');
+	
+	$submenu['google-routeplaner.php'][500] = array( 'Support', 'read' , 'http://support.deformed-design.de' );
 }
 
 add_action('admin_menu', 'google_routeplaner_add_menu');
-
 ?>
