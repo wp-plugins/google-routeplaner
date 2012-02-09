@@ -1,17 +1,21 @@
 === Google Routeplaner ===
 Contributors: Deformed Design
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VAFAKGCDQ2GHU
-Tags: route, google, map, route planer, planer
+Tags: route, google, map, route planner, planer, route
 Requires at least: 2.7
 Tested up to: 3.2.1
-Stable tag: 1.21
+Stable tag: 1.5
 
-Creates a route planer based on google maps.
+Allows you to add one or more route planners based on Google Maps to help your users to find a specific place.
 
 == Description ==
 
-You can create multiple routeplaners and define the ending position. 
-You can give your readers the ability to plan a route from where they live to your location, an event you promote or another place you have written about.
+To help your users locate a specific place, such as your company site, the plugin integrates a Route Planner based on Google Maps in WordPress. 
+
+The view of the plan can be quickly and easily adapt to your needs and of course it is also possible to create more then one route planner, for example to find venues. The well-known interface of Google Maps your users find quickly a way around. With a simple input field the user can specify their own location and not only gets directions but also a map with the marked path.
+
+* [Plugin Page](http://plugins.deformed-design.de/)
+* [Plugin Support](http://support.deformed-design.de/)
 
 == Installation ==
 
@@ -21,36 +25,35 @@ You can give your readers the ability to plan a route from where they live to yo
 = Usage =
 
 After activating the plugin there is a new menu in your admin interface of WordPress called `Routeplaner`. Open the menu and choose `routes` from the submenu. 
-Now click on `Create Route` and insert a destination. Change the rest of the settings like you want the map to look like. You can add advance CSS information for the different
-section of the route planer.
-
-map_controls - location field and submit button
-map_canvas - the map itself
-map_directions - the driving information
+Now click on `Create Route` and insert a destination. Change the rest of the settings like you want the map to look like. 
 
 Save the route and you will recieve a code to insert into your page. The code looks like [googlerouteplaner=1] (the number is your routes id and changes for every route). Just insert this code to your page or post - done.
 
 == Upgrade Notice ==
 
-If you are upgrading from version 0.x to 1.x it's possible that old routes don't work anymore. 
-First you should try to edit and save this routes again. 
-If that doesn't work, please completly uninstall the plugin and activate the latest version.
+If you encounter any problems after updating please first try to deactivate the plugin and activate it again.
+Maybe you need to uninstall and reinstall the plugin if you update from a very old version.
+
 
 == Frequently Asked Questions ==
 
 = Why can't I define the zoom? =
 
-It seems Google Maps is unable to recieve custom zoom information when used as routeplaner. If you have any idea how to solve this problem, please contact me.
+It seems Google Maps is unable to recieve custom zoom information when used as route planner. If you have any idea how to solve this problem, please contact me.
 
 = Can I add multiple maps to a single page? =
 
-No, this is not possible at the moment.
+Yes, this works since version 1.5 but it's not possible to use different languages for routes on one page.
 
-= How can I avoid invalid HTML output = 
-
-Simply don't use the "Advanced CSS" function and use your themes CSS file to change the look of your map. Everything else should be valid!
 
 == Changelog ==
+
+= 1.5 =
+* Added some icons
+* Made it easier to copy the routes codes
+* You can now use more then one map on the same page (but only one language is possible at once)
+* Removed CSS additions due it only caused invalid HTML code
+* Due to the updates you can now change the look using your themes CSS file.
 
 = 1.21 =
 * Hotfix for not working setup

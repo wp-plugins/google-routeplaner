@@ -2,10 +2,10 @@
 /*
 Plugin Name: Google Routeplaner
 Plugin URI: http://deformed-design.de
-Description: Generates a routeplaner based on Google Maps. 
-Version: 1.21
-Author: Thomas Probach
-Author URI: http://deformed-design.de
+Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
+Version: 1.5
+Author: Deformed Design
+Author URI: http://plugins.deformed-design.de
 Min WP Version: 3.0
 */
 
@@ -42,7 +42,6 @@ function google_routeplaner_install() {
 					 `planer_type` VARCHAR(120) NOT NULL,
 					 `planer_zoom_control` VARCHAR(120) NOT NULL,
 					 `planer_type_control` VARCHAR(120) NOT NULL,
-					 `planer_css` TEXT,
 					 `planer_language` VARCHAR( 2 ),
 					 PRIMARY KEY (`planer_id`)
 					 )%s';
@@ -55,6 +54,7 @@ function google_routeplaner_install() {
 
 		
 		$wpdb->query('ALTER TABLE `' . $table_prefix . 'google_routeplaner` DROP `planer_overview`');
+		$wpdb->query('ALTER TABLE `' . $table_prefix . 'google_routeplaner` DROP `planer_css`');
 		$wpdb->query('ALTER TABLE `wp_google_routeplaner` ADD `planer_language` VARCHAR( 2 ) NULL ');
 		
 		/* 
@@ -124,11 +124,14 @@ if('full_uninstall_google_routeplaner' == $_POST['action']) {
  * Search for plugin code and replace
  */	
 function google_routeplaner_output($data) {
-	if(!preg_match("/\[googlerouteplaner=([0-9]*)\]/", $data, $matches)) {
+	if(!preg_match_all("/\[googlerouteplaner=([0-9]*)\]/", $data, $matches)) {
 		return $data;
 	} else {
-		$map = google_routeplaner_build_map($matches[1]);
-		return str_replace("[googlerouteplaner=" . $matches[1] . "]", $map, $data);
+		foreach($matches[1] as $match) {
+			$map = google_routeplaner_build_map($match);
+			$data = str_replace("[googlerouteplaner=" . $match . "]", $map, $data);
+		}
+		return $data;
 	}
 }
 
@@ -152,16 +155,16 @@ function google_routeplaner_build_map($route_id) {
 
 	$map .= '<script type="text/javascript">
 	/* <![CDATA[ */
-    var geocoder;
-	var directionDisplay;
+    var geocoder' . $planer['planer_id'] . ';
+	var directionDisplay' . $planer['planer_id'] . ';
 	var directionsService = new google.maps.DirectionsService();
-	var map;
+	var map' . $planer['planer_id'] . ';
 
-	function initialize() {
-		directionsDisplay = new google.maps.DirectionsRenderer();
-		geocoder = new google.maps.Geocoder();
-		var startplace = new google.maps.LatLng(52.52340510, 13.41139990);
-		var myOptions = {
+	function initialize' . $planer['planer_id'] . '() {
+		directionsDisplay' . $planer['planer_id'] . ' = new google.maps.DirectionsRenderer();
+		geocoder' . $planer['planer_id'] . ' = new google.maps.Geocoder();
+		var startplace' . $planer['planer_id'] . ' = new google.maps.LatLng(52.52340510, 13.41139990);
+		var myOptions' . $planer['planer_id'] . ' = {
 			zoom:8,
 			disableDefaultUI: true,
 
@@ -187,21 +190,21 @@ function google_routeplaner_build_map($route_id) {
 				mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.' . $planer['planer_type_control'] . '},' . "\n";
 			}
 
-			$map .= 'center: startplace
+			$map .= 'center: startplace' . $planer['planer_id'] . '
 		}
-		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-		directionsDisplay.setMap(map);
-		directionsDisplay.setPanel(document.getElementById("map_directions"));
+		map' . $planer['planer_id'] . ' = new google.maps.Map(document.getElementById("map_canvas' . $planer['planer_id'] . '"), myOptions' . $planer['planer_id'] . ');
+		directionsDisplay' . $planer['planer_id'] . '.setMap(map' . $planer['planer_id'] . ');
+		directionsDisplay' . $planer['planer_id'] . '.setPanel(document.getElementById("map_directions' . $planer['planer_id'] . '"));
 
 		google.maps.NavigationControlStyle.SMALL;
-		codeAddress(\'' . $planer['start_location'] . '\');
+		codeAddress' . $planer['planer_id'] . '(\'' . $planer['start_location'] . '\');
 	}
 
-	function codeAddress(address) {
-		if (geocoder) {
-			geocoder.geocode( { \'address\': address}, function(results, status) {
+	function codeAddress' . $planer['planer_id'] . '(address) {
+		if (geocoder' . $planer['planer_id'] . ') {
+			geocoder' . $planer['planer_id'] . '.geocode( { \'address\': address}, function(results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
-					map.setCenter(results[0].geometry.location);
+					map' . $planer['planer_id'] . '.setCenter(results[0].geometry.location);
 				} else {
 					alert("' . __('Could not find the start location. Please be more specific!') . '");
 				}
@@ -209,9 +212,8 @@ function google_routeplaner_build_map($route_id) {
 		}
 	}
 	
-	function calcRoute() {
-		
-		var start = document.getElementById("fromAddress").value;
+	function calcRoute' . $planer['planer_id'] . '() {
+		var start = document.getElementById("fromAddress' . $planer['planer_id'] . '").value;
 		var end = \'' . $planer['start_location'] . '\';
 		var request = {
 			origin:start, 
@@ -220,7 +222,7 @@ function google_routeplaner_build_map($route_id) {
 		};
 		directionsService.route(request, function(result, status) {
 			if (status == google.maps.DirectionsStatus.OK) {
-				directionsDisplay.setDirections(result);
+				directionsDisplay' . $planer['planer_id'] . '.setDirections(result);
 			}
 		});
 	}
@@ -234,18 +236,18 @@ function google_routeplaner_build_map($route_id) {
 	}
 	
 	$map .= '
-	<form action="#" onsubmit="calcRoute(); return false">
-	 <div id="map_controls"><label for="fromAddress">' . __('Your location', 'google_routeplaner') . '</label> <input type="text" size="25" id="fromAddress" name="from" value=""/><input name="calc" type="submit" value="' . __('Create route', 'google_routeplaner') . '" /></div>
-	 <div id="map_canvas" style="overflow: hidden; width: ' . $planer['planer_width'] . 'px; height: ' . $planer['planer_height'] . 'px;"></div>
-	 <div id="map_directions"></div>
+	<form action="#" onsubmit="calcRoute' . $planer['planer_id'] . '(); return false">
+	 <div id="map_controls' . $planer['planer_id'] . '" class="google_map_controls"><label for="fromAddress' . $planer['planer_id'] . '">' . __('Your location', 'google_routeplaner') . '</label> <input type="text" size="25" id="fromAddress' . $planer['planer_id'] . '" name="from" value=""/><input name="calc" type="submit" value="' . __('Create route', 'google_routeplaner') . '" /></div>
+	 <div id="map_canvas' . $planer['planer_id'] . '" class="google_map_canvas" style="overflow: hidden; width: ' . $planer['planer_width'] . 'px; height: ' . $planer['planer_height'] . 'px;"></div>
+	 <div id="map_directions' . $planer['planer_id'] . '" class="google_map_directions"></div>
 	</form>
 	<script type="text/javascript">
 	/* <![CDATA[ */
 	if (document.all && window.attachEvent) { 
-		window.attachEvent("onload", initialize);
+		window.attachEvent("onload", initialize' . $planer['planer_id'] . ');
 	// Non-IE load and unload            
 	} else if (window.addEventListener) { 
-		window.addEventListener("load", initialize, false);
+		window.addEventListener("load", initialize' . $planer['planer_id'] . ', false);
 	}
 	/* ]]> */
 	</script>' . "\n";

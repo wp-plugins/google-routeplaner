@@ -4,6 +4,14 @@
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside">
+				<h5>Version 1.5</h5>
+					<ul>
+						<li>Added some icons</li>
+						<li>Made it easier to copy the routes codes</li>
+						<li>You can now use more then one map on the same page (but only one language is possible at once)</li>
+						<li>Removed CSS additions due it only caused invalid HTML code</li>
+						<li>Due to the updates you can now change the look using your themes CSS file.</li>
+					</ul>
 				<h5>Version 1.21</h5>
 					<ul>
 						<li>Hotfix for not working setup</li>

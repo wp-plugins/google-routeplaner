@@ -30,3 +30,23 @@ table.plugins tr#google-routeplaner td.plugin-title {
    background: url(images/routeplanner_icon_grey.png) no-repeat scroll 0 4px transparent;
    padding-left: 44px;
 }
+
+.google_routeplaner .gr_preview {
+	 background: url(images/preview.png) 6px center no-repeat;
+	 padding-left: 24px;
+}
+
+.google_routeplaner .gr_edit {
+	 background: url(images/edit.png) 6px center no-repeat;
+	 padding-left: 24px;
+}
+
+.google_routeplaner .gr_delete {
+	 background: url(images/delete.png) 6px center no-repeat;
+	 padding-left: 24px;
+}
+
+.google_routeplaner .routecode {
+	width: 150px;
+	text-align: center;
+}

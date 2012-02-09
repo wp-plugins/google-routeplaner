@@ -16,9 +16,8 @@
 		'" . $_POST['google_routeplaner_map_type'] . "',
 		'" . $_POST['google_routeplaner_zoom_control'] . "',
 		'" . $_POST['google_routeplaner_type_control'] . "',
-		'" . $_POST['google_routeplaner_css'] . "',
 		'" . $_POST['google_routeplaner_language'] . "')");
-		
+
 		?>	  
 		<div class="wrap google_routeplaner">
 	    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
@@ -74,13 +73,6 @@
 		<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_none" value="NONE" />
 		<label for="google_routeplaner_type_control_none"><?php _e('None', 'google_routeplaner'); ?></label><br />
 		<i><?php _e('Select if users can change the map type.', 'google_routeplaner'); ?></i></p>
-		
-		<p><label for="google_routeplaner_css" class="formbold"><?php _e('Advance CSS', 'google_routeplaner'); ?></label><br />
-		<textarea name="google_routeplaner_css" id="google_routeplaner_css" style="width: 300px; height: 200px;" rows="10" cols="50"><?php echo '#map_controls{}' . "\n"; 
-		echo '#map_canvas{}' . "\n"; 
-		echo '#map_directions{}';  ?>
-		</textarea><br />
-		<i><?php _e('You can add css information for any element. Warning: This will result in invalid HTML output.', 'google_routeplaner'); ?></i></p>
 		<label for="google_routeplaner_language" class="formbold"><?php _e('Language', 'google_routeplaner'); ?></label><br />
 		<select name="google_routeplaner_language" id="google_routeplaner_language">
 			<option value=""><?php _e('Default', 'google_routeplaner'); ?></option>
