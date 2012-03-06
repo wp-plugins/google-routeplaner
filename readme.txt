@@ -45,6 +45,10 @@ It seems Google Maps is unable to recieve custom zoom information when used as r
 
 Yes, this works since version 1.5 but it's not possible to use different languages for routes on one page.
 
+= Does this plugin work with WordPress MU? =
+
+Currently not! Maybe in the future.
+
 
 == Changelog ==
 
