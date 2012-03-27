@@ -17,6 +17,8 @@ The view of the plan can be quickly and easily adapt to your needs and of course
 * [Plugin Page](http://plugins.deformed-design.de/)
 * [Plugin Support](http://support.deformed-design.de/)
 
+Romanian Translation [Web Geek Science](http://webhostinggeeks.com/)
+
 == Installation ==
 
 1. Upload `google_routeplaner`-folder to the `/wp-content/plugins/` directory
@@ -44,10 +46,6 @@ It seems Google Maps is unable to recieve custom zoom information when used as r
 = Can I add multiple maps to a single page? =
 
 Yes, this works since version 1.5 but it's not possible to use different languages for routes on one page.
-
-= Does this plugin work with WordPress MU? =
-
-Currently not! Maybe in the future.
 
 
 == Changelog ==
