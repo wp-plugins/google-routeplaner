@@ -12,6 +12,7 @@
 		start_location = '" . $_POST['google_routeplaner_destination'] . "',
 		planer_width = '" . $_POST['google_routeplaner_map_width'] . "',
 		planer_height = '" . $_POST['google_routeplaner_map_height'] . "',
+		planer_zoom = '" . $_POST['google_routeplaner_zoom'] . "',
 		planer_type = '" . $_POST['google_routeplaner_map_type'] . "',
 		planer_zoom_control = '" . $_POST['google_routeplaner_zoom_control'] . "',
 		planer_type_control = '" . $_POST['google_routeplaner_type_control'] . "',
@@ -45,6 +46,23 @@
 		<p><label for="google_routeplaner_map_height" class="formbold"><?php _e('Map heigth', 'google_routeplaner'); ?></label><br />
 		<input type="text" name="google_routeplaner_map_height" id="google_routeplaner_map_height" style="width: 70px;" value="<?php echo $planer['planer_height']; ?>" /><br />
 		<i><?php _e('Enter the height for the map.', 'google_routeplaner'); ?></i></p>
+		
+		<p><label for="google_routeplaner_zoom" class="formbold"><?php _e('Map Zoom', 'google_routeplaner'); ?></label><br />
+		<select name="google_routeplaner_zoom" id="google_routeplaner_zoom">
+			<?php
+			$z_level = 0;
+			while($z_level <= 18) {
+				if($planer['planer_zoom'] == $z_level) {
+					echo '<option value="' . $z_level . '" selected="">' . $z_level . '</option>';
+				} else {
+					echo '<option value="' . $z_level . '">' . $z_level . '</option>';
+				}
+				$z_level++;
+			}
+			?>
+			
+		</select></p>
+		
 		<p><label for="google_routeplaner_map_type" class="formbold"><?php _e('Map type', 'google_routeplaner'); ?></label><br />
 		<select name="google_routeplaner_map_type" id="google_routeplaner_map_type">
 			<?php $google_routeplaner_map_type = get_option("google_routeplaner_map_type"); ?>

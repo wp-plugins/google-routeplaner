@@ -3,7 +3,7 @@
 Plugin Name: Google Routeplaner
 Plugin URI: http://plugins.deformed-design.de
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
-Version: 1.5
+Version: 2.0
 Author: Deformed Design
 Author URI: http://plugins.deformed-design.de
 Min WP Version: 3.0
@@ -47,6 +47,13 @@ function google_routeplaner_install() {
 					 )%s';
 		$wpdb->query(sprintf($sql_routeplaner, $charset_collate));
 	} else {
+
+	/* 
+		 * Update old information in the database for version 2
+		 */
+		$wpdb->query('ALTER TABLE  `' . $table_prefix . 'google_routeplaner` ADD  `planer_zoom` INT NOT NULL DEFAULT  \'8\' AFTER  `planer_height`');
+	
+		/* START DELETE WITH NEXT VERSION */
 		/*
 		 * Delete and Update old stuff
 		 */
@@ -55,7 +62,7 @@ function google_routeplaner_install() {
 		
 		$wpdb->query('ALTER TABLE `' . $table_prefix . 'google_routeplaner` DROP `planer_overview`');
 		$wpdb->query('ALTER TABLE `' . $table_prefix . 'google_routeplaner` DROP `planer_css`');
-		$wpdb->query('ALTER TABLE `wp_google_routeplaner` ADD `planer_language` VARCHAR( 2 ) NULL ');
+		$wpdb->query('ALTER TABLE `' . $table_prefix . 'google_routeplaner` ADD `planer_language` VARCHAR( 2 ) NULL ');
 		
 		/* 
 		 * Update old information in the database!
@@ -73,6 +80,7 @@ function google_routeplaner_install() {
 		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type_control = 'HORIZONTAL_BAR' WHERE planer_type_control = 'GMapTypeControl'");
 		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type_control = 'DROPDOWN_MENU' WHERE planer_type_control = 'GHierarchicalMapTypeControl'");
 		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type_control = 'NONE' WHERE planer_type_control = 'none'");
+		/* END DELETE WITH NEXT VERSION */
 	}
 }
 
@@ -145,89 +153,15 @@ function google_routeplaner_build_map($route_id) {
 	$check_updated = $wpdb->get_results('SHOW COLUMNS FROM `' . $table_prefix . 'google_routeplaner`');
 
 	$map = '
-	<!-- Start Google Routeplaner Plugin Output -->';
+	<!-- Start Google Routeplaner Plugin Output -->' . "\n";
 	
 	if(2 == strlen($planer['planer_language'])) {
-		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . $planer['planer_language'] . '"></script>';
+		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . $planer['planer_language'] . '"></script>' . "\n";
 	} else {
-		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . get_option("google_routeplaner_language") . '"></script>';
+		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . get_option("google_routeplaner_language") . '"></script>' . "\n";
 	}
 
-	$map .= '<script type="text/javascript">
-	/* <![CDATA[ */
-    var geocoder' . $planer['planer_id'] . ';
-	var directionDisplay' . $planer['planer_id'] . ';
-	var directionsService = new google.maps.DirectionsService();
-	var map' . $planer['planer_id'] . ';
-
-	function initialize' . $planer['planer_id'] . '() {
-		directionsDisplay' . $planer['planer_id'] . ' = new google.maps.DirectionsRenderer();
-		geocoder' . $planer['planer_id'] . ' = new google.maps.Geocoder();
-		var startplace' . $planer['planer_id'] . ' = new google.maps.LatLng(52.52340510, 13.41139990);
-		var myOptions' . $planer['planer_id'] . ' = {
-			zoom:8,
-			disableDefaultUI: true,
-
-			mapTypeId: google.maps.MapTypeId.' . $planer['planer_type'] . ',' . "\n";
-			
-			/*
-			 * Zoom control options
-			 */
-			if('NONE' == $planer['planer_zoom_control']) {
-				$map .= 'navigationControl: false,' . "\n";
-			} else {
-				$map .= 'navigationControl: true,
-				navigationControlOptions: {style: google.maps.NavigationControlStyle.' . $planer['planer_zoom_control'] . '},' . "\n";
-			}
-			
-			/*
-			 * Mapstyle control options
-			 */	
-			if('NONE' == $planer['planer_type_control']) {
-				$map .= 'mapTypeControl: false,' . "\n";
-			} else {
-				$map .= 'mapTypeControl: true,
-				mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.' . $planer['planer_type_control'] . '},' . "\n";
-			}
-
-			$map .= 'center: startplace' . $planer['planer_id'] . '
-		}
-		map' . $planer['planer_id'] . ' = new google.maps.Map(document.getElementById("map_canvas' . $planer['planer_id'] . '"), myOptions' . $planer['planer_id'] . ');
-		directionsDisplay' . $planer['planer_id'] . '.setMap(map' . $planer['planer_id'] . ');
-		directionsDisplay' . $planer['planer_id'] . '.setPanel(document.getElementById("map_directions' . $planer['planer_id'] . '"));
-
-		google.maps.NavigationControlStyle.SMALL;
-		codeAddress' . $planer['planer_id'] . '(\'' . $planer['start_location'] . '\');
-	}
-
-	function codeAddress' . $planer['planer_id'] . '(address) {
-		if (geocoder' . $planer['planer_id'] . ') {
-			geocoder' . $planer['planer_id'] . '.geocode( { \'address\': address}, function(results, status) {
-				if (status == google.maps.GeocoderStatus.OK) {
-					map' . $planer['planer_id'] . '.setCenter(results[0].geometry.location);
-				} else {
-					alert("' . __('Could not find the start location. Please be more specific!') . '");
-				}
-			});
-		}
-	}
-	
-	function calcRoute' . $planer['planer_id'] . '() {
-		var start = document.getElementById("fromAddress' . $planer['planer_id'] . '").value;
-		var end = \'' . $planer['start_location'] . '\';
-		var request = {
-			origin:start, 
-			destination:end,
-			travelMode: google.maps.DirectionsTravelMode.DRIVING
-		};
-		directionsService.route(request, function(result, status) {
-			if (status == google.maps.DirectionsStatus.OK) {
-				directionsDisplay' . $planer['planer_id'] . '.setDirections(result);
-			}
-		});
-	}
-	/* ]]> */
-    </script>' . "\n";
+	$map .= '<script type="text/javascript" src="' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner-main-js.php?planer_id=' . $planer['planer_id'] . '&amp;planer_type=' . urlencode($planer['planer_type']) . '&amp;planer_zoom_control=' . urlencode($planer['planer_zoom_control']) . '&amp;planer_type_control=' . urlencode($planer['planer_type_control']) . '&amp;start_location=' . urlencode($planer['start_location']) . '&amp;planer_zoom=' . $planer['planer_zoom'] . '"></script>' . "\n";
 	
 	if('' !== $planer['planer_css'] && strlen($planer['planer_css']) > 55) {
 		$map .= '<style type="text/css" media="all">
@@ -235,27 +169,19 @@ function google_routeplaner_build_map($route_id) {
 		</style>' . "\n";
 	}
 	
-	$map .= '
-	<form action="#" onsubmit="calcRoute' . $planer['planer_id'] . '(); return false">
+	$map .= 
+	'<form action="#" onsubmit="calcRoute' . $planer['planer_id'] . '(); return false">
 	 <div id="map_controls' . $planer['planer_id'] . '" class="google_map_controls"><label for="fromAddress' . $planer['planer_id'] . '">' . __('Your location', 'google_routeplaner') . '</label> <input type="text" size="25" id="fromAddress' . $planer['planer_id'] . '" name="from" value=""/><input name="calc" type="submit" value="' . __('Create route', 'google_routeplaner') . '" /></div>
 	 <div id="map_canvas' . $planer['planer_id'] . '" class="google_map_canvas" style="overflow: hidden; width: ' . $planer['planer_width'] . 'px; height: ' . $planer['planer_height'] . 'px;"></div>
 	 <div id="map_directions' . $planer['planer_id'] . '" class="google_map_directions"></div>
-	</form>
-	<script type="text/javascript">
-	/* <![CDATA[ */
-	if (document.all && window.attachEvent) { 
-		window.attachEvent("onload", initialize' . $planer['planer_id'] . ');
-	// Non-IE load and unload            
-	} else if (window.addEventListener) { 
-		window.addEventListener("load", initialize' . $planer['planer_id'] . ', false);
-	}
-	/* ]]> */
-	</script>' . "\n";
+	</form>' . "\n";
+	
+	$map .= '<script type="text/javascript" src="' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner-js.php?planer_id=' . $planer['planer_id'] . '"></script>';
 	
 	if('link' == get_option("google_routeplaner_donate")) {
 		$map .= '<div style="clear: both; margin-top: 10px;">Google Routeplaner Plugin by <a href="http://deformed-design.de">Deformed Design</a></div>' . "\n";
 	}
-	$map .= '<!-- End Google Routeplaner Plugin Output -->' . "\n";
+	$map .= '<!-- End Google Routeplaner Plugin Output --><p>' . "\n";
 
 	return $map;
 }

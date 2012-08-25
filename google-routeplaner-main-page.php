@@ -4,6 +4,13 @@
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside">
+				<h5>Version 2</h5>
+					<ul>
+						<li>Issues with writing to the database some users had fixed</li>
+						<li>Removed a lot of potential issues other plugins may cause</li>
+						<li>Zoom is now adjustable</li>
+						<li>Added a marker to the map when no route is calculated</li>
+					</ul>
 				<h5>Version 1.5</h5>
 					<ul>
 						<li>Added some icons</li>
