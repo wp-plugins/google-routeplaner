@@ -3,7 +3,7 @@
 Plugin Name: Google Routeplaner
 Plugin URI: http://plugins.deformed-design.de
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
-Version: 2.0
+Version: 2.1
 Author: Deformed Design
 Author URI: http://plugins.deformed-design.de
 Min WP Version: 3.0
@@ -19,12 +19,27 @@ load_plugin_textdomain('google_routeplaner', WP_PLUGIN_DIR . '/google-routeplane
 /*
  * Install the needed database table
  */
-function google_routeplaner_install() {
+ 
+function google_routeplaner_check_table() {
 	global $wpdb, $table_prefix;
 		
 	$tables = $wpdb->get_col('SHOW TABLES');
-	if (!in_array($table_prefix . 'google_routeplaner', $tables)) {
 	
+	echo '<pre>';
+	print_r($tables);
+	echo '</pre>';
+
+	if (in_array($table_prefix . 'google_routeplaner', $tables)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+ 
+function google_routeplaner_install() {
+	global $wpdb, $table_prefix;	
+	
+	if(!google_routeplaner_check_table()) {
 		$charset_collate = '';
 		if ( version_compare(mysql_get_server_info(), '4.1.0', '>=') ) {
 			if (!empty($wpdb->charset)) {
@@ -39,6 +54,7 @@ function google_routeplaner_install() {
 					 `start_location` VARCHAR(120) NOT NULL,
 					 `planer_width` INT NOT NULL,
 					 `planer_height` INT NOT NULL,
+					 `planer_zoom` INT NOT NULL,
 					 `planer_type` VARCHAR(120) NOT NULL,
 					 `planer_zoom_control` VARCHAR(120) NOT NULL,
 					 `planer_type_control` VARCHAR(120) NOT NULL,
@@ -46,49 +62,25 @@ function google_routeplaner_install() {
 					 PRIMARY KEY (`planer_id`)
 					 )%s';
 		$wpdb->query(sprintf($sql_routeplaner, $charset_collate));
+		
 	} else {
-
-	/* 
+		/* 
 		 * Update old information in the database for version 2
 		 */
 		$wpdb->query('ALTER TABLE  `' . $table_prefix . 'google_routeplaner` ADD  `planer_zoom` INT NOT NULL DEFAULT  \'8\' AFTER  `planer_height`');
 	
-		/* START DELETE WITH NEXT VERSION */
-		/*
-		 * Delete and Update old stuff
-		 */
-		delete_option('google_routeplaner_api_key');
-
-		
-		$wpdb->query('ALTER TABLE `' . $table_prefix . 'google_routeplaner` DROP `planer_overview`');
-		$wpdb->query('ALTER TABLE `' . $table_prefix . 'google_routeplaner` DROP `planer_css`');
-		$wpdb->query('ALTER TABLE `' . $table_prefix . 'google_routeplaner` ADD `planer_language` VARCHAR( 2 ) NULL ');
-		
-		/* 
-		 * Update old information in the database!
-		 */
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type = 'ROADMAP' WHERE planer_type = 'G_NORMAL_MAP'");
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type = 'SATELLITE' WHERE planer_type = 'G_SATELLITE_MAP'");
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type = 'HYBRID' WHERE planer_type = 'G_HYBRID_MAP'");
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type = 'TERRAIN' WHERE planer_type = 'G_PHYSICAL_MAP'");
-		
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_zoom_control = 'DEFAULT' WHERE planer_zoom_control = 'GLargeMapControl'");
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_zoom_control = 'SMALL' WHERE planer_zoom_control = 'GSmallMapControl'");
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_zoom_control = 'ZOOM_PAN' WHERE planer_zoom_control = 'GSmallZoomControl'");
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_zoom_control = 'NONE' WHERE planer_zoom_control = 'none'");
-		
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type_control = 'HORIZONTAL_BAR' WHERE planer_type_control = 'GMapTypeControl'");
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type_control = 'DROPDOWN_MENU' WHERE planer_type_control = 'GHierarchicalMapTypeControl'");
-		$wpdb->query("UPDATE `" . $table_prefix . "google_routeplaner` SET planer_type_control = 'NONE' WHERE planer_type_control = 'none'");
-		/* END DELETE WITH NEXT VERSION */
 	}
+}
+
+function google_routeplaner_install_start() {
+	google_routeplaner_install();
 }
 
 /*
  * Install plugin
  */
 if ( function_exists('register_activation_hook') )
-    register_activation_hook(__FILE__, 'google_routeplaner_install');
+    register_activation_hook(WP_PLUGIN_DIR . '/google-routeplaner/google-routeplaner.php', 'google_routeplaner_install_start');
 
 /*
  * Uninstall plugin
@@ -97,7 +89,9 @@ function google_routeplaner_uninstall() {
 	global $wpdb, $table_prefix;
 
 	delete_option('google_routeplaner_api_key');
+	delete_option('google_routeplaner_donate');
 	delete_option('google_routeplaner_language');
+	
 	$wpdb->query(sprintf('DROP TABLE `' . $table_prefix . 'google_routeplaner`'));
 	
 	/*
@@ -110,9 +104,9 @@ function google_routeplaner_uninstall() {
 		update_option('active_plugins', $current);
 		update_option('recently_activated', array("google-routeplaner/google-routeplaner.php" => time()) + (array)get_option('recently_activated'));
 		if(function_exists($wp_redirect)) {
-			wp_redirect('index.php');
+			wp_redirect('plugins.php');
 		} else {
-			header("Location: index.php");
+			header("Location: plugins.php");
 			exit;
 		}	
 	}

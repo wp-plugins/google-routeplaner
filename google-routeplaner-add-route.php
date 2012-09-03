@@ -17,15 +17,30 @@
 		'" . $_POST['google_routeplaner_zoom_control'] . "',
 		'" . $_POST['google_routeplaner_type_control'] . "',
 		'" . $_POST['google_routeplaner_language'] . "')");
-
-		?>	  
-		<div class="wrap google_routeplaner">
-	    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
-		<p class="success"><?php _e('Your route has been saved!', 'google_routeplaner'); ?><br />
-		<?php _e('The code for this route is: ', 'google_routeplaner'); ?> [googlerouteplaner=<?php echo mysql_insert_id(); ?>]</p>
-		<p><a href="admin.php?page=google_routeplaner_routes" class="button"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
-		</div>
+	
+		$map_id = mysql_insert_id();
+		
+		if(0 == $map_id) {
+			google_routeplaner_install();
+		?>
+			<div class="wrap google_routeplaner">
+			<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
+			<p class="error">
+			<?php _e('There has been a problem with installing the plugin. The plugin tried to fix this, please try again.'); ?><br />
+			<?php _e('If the error still appears, please deactivete the plugin, activate it again and try to add a route then.'); ?></p>
+			<p><a href="admin.php?page=google_routeplaner_routes" class="button"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
+			</div>
 		<?php
+		} else {
+		?>	  
+			<div class="wrap google_routeplaner">
+			<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
+			<p class="success"><?php _e('Your route has been saved!', 'google_routeplaner'); ?><br />
+			<?php _e('The code for this route is: ', 'google_routeplaner'); ?> [googlerouteplaner=<?php echo $map_id; ?>]</p>
+			<p><a href="admin.php?page=google_routeplaner_routes" class="button"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
+			</div>
+		<?php
+		}
 	} else {
 	/*
 	 * Output Form

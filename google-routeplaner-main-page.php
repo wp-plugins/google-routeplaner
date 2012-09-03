@@ -3,7 +3,11 @@
 	<div id="poststuff">
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
-			<div class="inside">
+			<div class="inside" style="height: 300px; overflow: auto; overflow-y: scroll;">
+				<h5>Version 2.1</h5>
+					<ul>
+						<li>Fixed a bug where installation went wrong and routes could not be added</li>
+					</ul>
 				<h5>Version 2</h5>
 					<ul>
 						<li>Issues with writing to the database some users had fixed</li>
@@ -65,7 +69,7 @@
 			<h3><?php _e('Support &amp; Feedback', 'google_routeplaner'); ?></h3>
 			<div class="inside">
 				<p><?php _e('If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk.', 'google_routeplaner'); ?></p>
-				<p style="text-align: center;"><a href="http://support.deformed-design.de"><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/support.png" alt="<?php _e('Support &amp; Feedback', 'google_routeplaner'); ?>" border="0" /></a></p>
+				<p style="text-align: center;"><a href="http://support.deformed-design.de"><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/support.png" alt="<?php _e('Support &amp; Feedback', 'google_routeplaner'); ?>" /></a></p>
 			</div>
 		</div>
 		</div>
@@ -74,10 +78,10 @@
 		   <h3><?php _e('Enjoy the plugin?', 'google_routeplaner'); ?></h3>
 			<div class="inside">
 				<p><?php _e('If you like the plugin you can support my work in different ways:', 'google_routeplaner'); ?></p>
-					<ul>
-						<li><a href="http://wordpress.org/extend/plugins/google_routeplaner/"><?php _e('Rate it on WordPress.org', 'google_routeplaner'); ?></a></li>
-						<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VAFAKGCDQ2GHU"><?php _e('Donate using PayPal', 'google_routeplaner'); ?></a></li>
-						<li><a href="http://www.amazon.de/registry/wishlist/2ZWBSTFQJ9PDU"><?php _e('Take a look at my Amazon wishlist', 'google_routeplaner'); ?></a></li>
+					<ul style="list-style-type: none;">
+						<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_wordpress.png" alt="" /> <a href="http://wordpress.org/extend/plugins/google_routeplaner/"> <?php _e('Rate it on WordPress.org', 'google_routeplaner'); ?></a></li>
+						<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_paypal.png" alt="" /> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VAFAKGCDQ2GHU"> <?php _e('Donate using PayPal', 'google_routeplaner'); ?></a></li>
+						<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_amazon.png" alt="" /> <a href="http://www.amazon.de/registry/wishlist/2ZWBSTFQJ9PDU"> <?php _e('Take a look at my Amazon wishlist', 'google_routeplaner'); ?></a></li>
 					</ul>
 			</div>
 	   </div>
