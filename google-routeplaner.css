@@ -1,0 +1,58 @@
+.google_routeplaner td,
+.google_routeplaner th  {
+	padding: 10px;
+}
+
+.google_routeplaner .success {
+	background-color: #c3ff88;
+	border-color: #8dff1c;
+	padding: 5px;
+}
+
+.google_routeplaner .error {
+	background-color: #ff8888;
+	border-color: #ff1c1c;
+	padding: 5px;
+}
+
+.google_routeplaner ul {
+	list-style-type: disc;
+	padding-left: 15px;
+}
+
+#icon-google_routeplaner  {
+    background:url(images/routeplanner_icon_grey.png) no-repeat scroll 1px 1px transparent;
+}
+
+.google_routeplaner h2 {
+	margin-bottom: 10px;
+}
+
+.google_routeplaner .formbold {
+	font-weight: bold;
+}
+
+table.plugins tr#google-routeplaner td.plugin-title {
+   background: url(images/routeplanner_icon_grey.png) no-repeat scroll 0 4px transparent;
+   padding-left: 44px;
+}
+
+.google_routeplaner .gr_preview {
+	 background: url(images/preview.png) 6px center no-repeat;
+	 padding-left: 24px;
+}
+
+.google_routeplaner .gr_edit {
+	 background: url(images/edit.png) 6px center no-repeat;
+	 padding-left: 24px;
+}
+
+.google_routeplaner .gr_delete {
+	 background: url(images/delete.png) 6px center no-repeat;
+	 padding-left: 24px;
+}
+
+.google_routeplaner .routecode {
+	width: 150px;
+	text-align: center;
+}
