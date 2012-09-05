@@ -107,7 +107,7 @@ function google_routeplaner_doc_page($route_id) {
  */
 function google_routeplaner_add_menu() {
 	global $submenu;
-	add_option("google_routeplaner_donate","private_link");	
+	add_option("google_routeplaner_donate","personal_link");	
 	add_option("google_routeplaner_language","en");	
 	
 	add_action( 'admin_menu' , 'admin_menu_new_items' );
