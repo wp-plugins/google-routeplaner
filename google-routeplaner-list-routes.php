@@ -35,13 +35,10 @@
 	if(is_array($planers)) {
 		$rownum = 1;
 		foreach($planers as $planer) {
-			if($rownum == 1) {
-				echo '<tr>' . "\n";
-				$rownum = 0;
-			} else {
-				echo '<tr class="alternate">' . "\n";
-				$rownum = 1;
-			}
+
+			if($rownum&1) { echo '<tr class="even">'; } else { echo '<tr class="odd">'; }
+			$rownum++;
+			
 			echo '<td>' . $planer['planer_id'] . '</td>
 			<td>' . $planer['start_location'] . '</td>
 			<td><input type="text" id="planercode_' . $planer['planer_id'] . '" onClick="SelectAll(\'planercode_' . $planer['planer_id'] . '\');" class="routecode" value="[googlerouteplaner=' . $planer['planer_id'] . ']" /></td>

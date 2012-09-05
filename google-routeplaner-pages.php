@@ -96,11 +96,18 @@ function google_routeplaner_edit_route($route_id) {
 }
 
 /*
+ * Documentation Page
+ */
+function google_routeplaner_doc_page($route_id) {
+	include 'google-routeplaner-doc-page.php';
+}
+
+/*
  * Adds the option page for admin menu
  */
 function google_routeplaner_add_menu() {
 	global $submenu;
-	add_option("google_routeplaner_donate","link");	
+	add_option("google_routeplaner_donate","private_link");	
 	add_option("google_routeplaner_language","en");	
 	
 	add_action( 'admin_menu' , 'admin_menu_new_items' );
@@ -109,8 +116,10 @@ function google_routeplaner_add_menu() {
 	add_menu_page(__('Overview', 'google_routeplaner'), __('Routeplaner', 'google_routeplaner'), 8, 'google-routeplaner.php', 'google_routeplaner_about_page', WP_PLUGIN_URL . '/google-routeplaner/images/routeplanner_icon16.png');
 	add_submenu_page('google-routeplaner.php', __('Routes', 'google_routeplaner'), __('Routes', 'google_routeplaner'), 8, 'google_routeplaner_routes', 'google_routeplaner_routes_page');
 	add_submenu_page('google-routeplaner.php', __('Settings', 'google_routeplaner'), __('Settings', 'google_routeplaner'), 8, 'google_routeplaner_settings', 'google_routeplaner_option_page');
-	
-	$submenu['google-routeplaner.php'][500] = array( 'Support', 'read' , 'http://support.deformed-design.de' );
+	add_submenu_page('google-routeplaner.php', __('Documentation', 'google_routeplaner'), __('Documentation', 'google_routeplaner'), 8, 'google_routeplaner_doc', 'google_routeplaner_doc_page');
+	if('personal_link' == get_option('google_routeplaner_donate') || 'personal_paypal' == get_option('google_routeplaner_donate') || 'commercial_paypal' == get_option('google_routeplaner_donate')) {
+		$submenu['google-routeplaner.php'][500] = array( 'Support', 'read' , 'http://support.deformed-design.de' );
+	}
 }
 
 add_action('admin_menu', 'google_routeplaner_add_menu');

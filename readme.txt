@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: route, google, map, route planner, planer, route
 Requires at least: 2.7
 Tested up to: 3.2.1
-Stable tag: 2.1
+Stable tag: 2.2
 
 Allows you to add one or more route planners based on Google Maps to help your users to find a specific place.
 
@@ -49,6 +49,12 @@ Yes, this works since version 1.5 but it's not possible to use different languag
 
 
 == Changelog ==
+
+= 2.2 =
+* Donation settings have been changed. Please take a look at them!
+* Fix for install error (which did not effect function)</li>
+* Small visual improvments
+* Documentation page added
 
 = 2.1 =
 * Fixed a bug where installation went wrong and routes could not be added

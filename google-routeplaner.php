@@ -3,7 +3,7 @@
 Plugin Name: Google Routeplaner
 Plugin URI: http://plugins.deformed-design.de
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
-Version: 2.1
+Version: 2.2
 Author: Deformed Design
 Author URI: http://plugins.deformed-design.de
 Min WP Version: 3.0
@@ -24,10 +24,6 @@ function google_routeplaner_check_table() {
 	global $wpdb, $table_prefix;
 		
 	$tables = $wpdb->get_col('SHOW TABLES');
-	
-	echo '<pre>';
-	print_r($tables);
-	echo '</pre>';
 
 	if (in_array($table_prefix . 'google_routeplaner', $tables)) {
 		return true;
@@ -68,6 +64,21 @@ function google_routeplaner_install() {
 		 * Update old information in the database for version 2
 		 */
 		$wpdb->query('ALTER TABLE  `' . $table_prefix . 'google_routeplaner` ADD  `planer_zoom` INT NOT NULL DEFAULT  \'8\' AFTER  `planer_height`');
+		
+		/* 
+		 * Update old information in the database for version 2.2
+		 */
+		$cur_donate = get_option('google_routeplaner_donate');
+		if('link' == $cur_donate) {
+			update_option("google_routeplaner_donate", 'personal_link');
+		} elseif('articel' == $cur_donate) {
+			update_option("google_routeplaner_donate", 'personal_no_link');
+		} elseif('paypal' == $cur_donate) {
+			update_option("google_routeplaner_donate", 'commercial_paypal');
+		} elseif('none' == $cur_donate) {
+			update_option("google_routeplaner_donate", 'personal_no_link');
+		}
+	
 	
 	}
 }
@@ -172,8 +183,9 @@ function google_routeplaner_build_map($route_id) {
 	
 	$map .= '<script type="text/javascript" src="' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner-js.php?planer_id=' . $planer['planer_id'] . '"></script>';
 	
-	if('link' == get_option("google_routeplaner_donate")) {
-		$map .= '<div style="clear: both; margin-top: 10px;">Google Routeplaner Plugin by <a href="http://deformed-design.de">Deformed Design</a></div>' . "\n";
+	if('personal_link' == get_option("google_routeplaner_donate") || 'commercial_link' == get_option("google_routeplaner_donate")) {
+		$map .= '<div style="clear: both; margin-top: 10px;">Powered by <a href="http://wordpress.org/extend/plugins/google-routeplaner/">Google Routeplaner</a>, 
+		brought to you by <a href="http://deformed-design.de">Deformed Design</a></div>' . "\n";
 	}
 	$map .= '<!-- End Google Routeplaner Plugin Output --><p>' . "\n";
 

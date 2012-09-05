@@ -4,11 +4,18 @@
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside" style="height: 300px; overflow: auto; overflow-y: scroll;">
+				<h5>Version 2.2</h5>
+					<ul>
+						<li>Donation settings have been changed. Please take a look at them!</li>
+						<li>Fix for install error (which did not effect function)</li>
+						<li>Small visual improvments</li>
+						<li>Documentation page added</li>
+					</ul>
 				<h5>Version 2.1</h5>
 					<ul>
 						<li>Fixed a bug where installation went wrong and routes could not be added</li>
 					</ul>
-				<h5>Version 2</h5>
+				<h5>Version 2</h5>Fix for install error (which did not effect function)
 					<ul>
 						<li>Issues with writing to the database some users had fixed</li>
 						<li>Removed a lot of potential issues other plugins may cause</li>
@@ -57,21 +64,33 @@
 	   </div>
 		
 		<div style="width: 30%; float: left;">
-		<div class="postbox">
-			<h3><?php _e('The Plugin', 'google_routeplaner'); ?></h3>
-			<div class="inside">
-				<p><?php _e('Google Routeplaner generates a routeplaner based on the <a href="http://code.google.com/apis/maps/">Google Maps API</a>.', 'google_routeplaner'); ?></p>
-				<p><?php _e('We suggest adding a printer friendly stylesheet to your Wordpress design to allow your users to print the route without the need to print design elements. A tutorial how to do this can be found <a href="http://codex.wordpress.org/Styling_for_Print">here</a>.', 'google_routeplaner'); ?></p>	
-				<p><?php _e('Plugin developed by <a href="http://deformed-design.de">Deformed Design</a>.', 'google_routeplaner'); ?></p>
+			<div class="postbox">
+				<h3><?php _e('The Plugin', 'google_routeplaner'); ?></h3>
+				<div class="inside">
+					<p><?php _e('Google Routeplaner generates a routeplaner based on the <a href="http://code.google.com/apis/maps/">Google Maps API</a>.', 'google_routeplaner'); ?></p>
+					<p><?php _e('We suggest adding a printer friendly stylesheet to your Wordpress design to allow your users to print the route without the need to print design elements. A tutorial how to do this can be found <a href="http://codex.wordpress.org/Styling_for_Print">here</a>.', 'google_routeplaner'); ?></p>	
+					<p><?php _e('Plugin developed by <a href="http://deformed-design.de">Deformed Design</a>.', 'google_routeplaner'); ?></p>
+				</div>
 			</div>
-		</div>
-		<div class="postbox">
-			<h3><?php _e('Support &amp; Feedback', 'google_routeplaner'); ?></h3>
-			<div class="inside">
-				<p><?php _e('If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk.', 'google_routeplaner'); ?></p>
-				<p style="text-align: center;"><a href="http://support.deformed-design.de"><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/support.png" alt="<?php _e('Support &amp; Feedback', 'google_routeplaner'); ?>" /></a></p>
+
+			<div class="postbox">
+				<h3><?php _e('Support &amp; Feedback', 'google_routeplaner'); ?></h3>
+				<div class="inside">
+					<?php
+					if('personal_link' == get_option('google_routeplaner_donate') || 'personal_paypal' == get_option('google_routeplaner_donate') || 'commercial_paypal' == get_option('google_routeplaner_donate')) {
+					?>
+					<p><?php _e('If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk.', 'google_routeplaner'); ?></p>
+					<p style="text-align: center;"><a href="http://support.deformed-design.de"><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/support.png" alt="<?php _e('Support &amp; Feedback', 'google_routeplaner'); ?>" /></a></p>
+					<?php
+					} else {
+					?>
+					<p><?php _e('Developing this plugin and helping those who have trouble with it costs a lot of time. Please consider a small donation using PayPal or Amazon.', 'google_routeplaner'); ?></p>
+					<p><?php _e('Support is currently not available for you.', 'google_routeplaner'); ?></p>
+					<?php
+					}
+					?>
+				</div>
 			</div>
-		</div>
 		</div>
 	   
 	   <div class="postbox" style="width: 30%; float: left; margin-left: 5%;">

@@ -20,6 +20,14 @@
 	padding-left: 15px;
 }
 
+.google_routeplaner tr.odd {
+	background-color: #EEE;
+}
+
+.google_routeplaner a.button {
+	background-color: #FFF;
+}
+
 #icon-google_routeplaner  {
     background:url(images/routeplanner_icon_grey.png) no-repeat scroll 1px 1px transparent;
 }
