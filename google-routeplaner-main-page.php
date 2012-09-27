@@ -4,6 +4,13 @@
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside" style="height: 300px; overflow: auto; overflow-y: scroll;">
+				<h5>Version 2.3</h5>
+					<ul>
+						<li>WordPress Multisite support</li>
+						<li>Added default values for zoom level to prevent errors</li>
+						<li>New Icon</li>
+						<li>You are now asked if you really want to delete a route</li>
+					</ul>
 				<h5>Version 2.2</h5>
 					<ul>
 						<li>Donation settings have been changed. Please take a look at them!</li>
@@ -104,17 +111,5 @@
 					</ul>
 			</div>
 	   </div>
-	   
-		<div class="postbox" style="clear: both;">
-			<h3><?php _e('Uninstall', 'google_routeplaner'); ?></h3>
-			<div class="inside">
-				<form method="post" action="">
-					<p><?php _e('To completly remove this plugin and all database entries you need to use this uninstall feature. If you only deactivate the plugin a lot of stuff will remain in your database.', 'google_routeplaner'); ?></p>
-					<p><?php _e('Yes, I want to uninstall Google Routeplaner', 'google_routeplaner'); ?> <input name="uninstall_shure" value="y" type="checkbox" /></p>
-					<p><input type="submit" class="button" value="<?php _e('Full Uninstall Google Routeplaner', 'google_routeplaner'); ?>" />
-					<input name="action" value="full_uninstall_google_routeplaner" type="hidden" /></p>
-				</form>
-			</div>
-		</div>
 	</div>
 </div>

@@ -10,10 +10,19 @@ function initialize' . $_GET['planer_id'] . '() {
 	directionsDisplay' . $_GET['planer_id'] . ' = new google.maps.DirectionsRenderer();
 	geocoder' . $_GET['planer_id'] . ' = new google.maps.Geocoder();
 	var startplace' . $_GET['planer_id'] . ' = new google.maps.LatLng(52.52340510, 13.41139990);
-	var myOptions' . $_GET['planer_id'] . ' = {
-		zoom:' . $_GET['planer_zoom'] . ',
-		disableDefaultUI: true,
-		mapTypeId: google.maps.MapTypeId.' . urldecode($_GET['planer_type']) . ',' . "\n";
+	var myOptions' . $_GET['planer_id'] . ' = {' . "\n";
+		
+		if($_GET['planer_zoom'] && '' !== $_GET['planer_zoom']) {
+			echo 'zoom:' . $_GET['planer_zoom'] . ',' . "\n";
+		} else {
+			echo 'zoom:8,';
+		}
+		echo 'disableDefaultUI: true,' . "\n";
+		if($_GET['planer_type'] && '' !== $_GET['planer_type']) {
+			echo 'mapTypeId: google.maps.MapTypeId.' . urldecode($_GET['planer_type']) . ',' . "\n";
+		} else {
+			echo 'mapTypeId: google.maps.MapTypeId.ROADMAP,' . "\n";
+		}
 		
 		/*
 		 * Zoom control options

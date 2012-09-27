@@ -53,9 +53,9 @@ function google_routeplaner_list_routes() {
  * Delete Route
  */
 function google_routeplaner_delete_route($route_id) {
-	global $wpdb, $table_prefix;
+	global $wpdb;
 	
-	$wpdb->query("DELETE FROM " . $table_prefix . "google_routeplaner 
+	$wpdb->query("DELETE FROM " . $wpdb->prefix . "google_routeplaner 
 	WHERE planer_id='" . $route_id . "' LIMIT 1");
 	
 	?>
@@ -118,7 +118,7 @@ function google_routeplaner_add_menu() {
 	add_submenu_page('google-routeplaner.php', __('Settings', 'google_routeplaner'), __('Settings', 'google_routeplaner'), 8, 'google_routeplaner_settings', 'google_routeplaner_option_page');
 	add_submenu_page('google-routeplaner.php', __('Documentation', 'google_routeplaner'), __('Documentation', 'google_routeplaner'), 8, 'google_routeplaner_doc', 'google_routeplaner_doc_page');
 	if('personal_link' == get_option('google_routeplaner_donate') || 'personal_paypal' == get_option('google_routeplaner_donate') || 'commercial_paypal' == get_option('google_routeplaner_donate')) {
-		$submenu['google-routeplaner.php'][500] = array( 'Support', 'read' , 'http://support.deformed-design.de' );
+		$submenu['google-routeplaner.php'][500] = array( 'Support', 'read' , 'http://support.derwebschmied.de' );
 	}
 }
 

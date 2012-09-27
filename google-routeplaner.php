@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Google Routeplaner
-Plugin URI: http://plugins.deformed-design.de
+Plugin URI: http://support.derwebschmied.de
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
-Version: 2.2
-Author: Deformed Design
-Author URI: http://plugins.deformed-design.de
-Min WP Version: 3.0
+Version: 2.3
+Author: DerWebschmied
+Author URI: http://support.derwebschmied.de
+Min WP Version: 3.2
 */
 
 
@@ -21,19 +21,40 @@ load_plugin_textdomain('google_routeplaner', WP_PLUGIN_DIR . '/google-routeplane
  */
  
 function google_routeplaner_check_table() {
-	global $wpdb, $table_prefix;
-		
+	global $wpdb;
+	
 	$tables = $wpdb->get_col('SHOW TABLES');
 
-	if (in_array($table_prefix . 'google_routeplaner', $tables)) {
+	if (in_array($wpdb->prefix . 'google_routeplaner', $tables)) {
 		return true;
 	} else {
 		return false;
 	}
 }
- 
+
 function google_routeplaner_install() {
-	global $wpdb, $table_prefix;	
+	global $wpdb;
+
+	$isNetwork = ($_SERVER['SCRIPT_NAME'] == '/wp-admin/network/plugins.php')?true:false;
+	
+	if (function_exists('is_multisite') && is_multisite()) {
+		if ($isNetwork) {
+			
+			$old_blog = $wpdb->blogid;
+			$blogids = $wpdb->get_col($wpdb->prepare("SELECT blog_id FROM " . $wpdb->blogs));
+			foreach ($blogids as $blog_id) {
+				switch_to_blog($blog_id);
+				google_routeplaner_install_create();
+			}
+			switch_to_blog($old_blog);
+			return;
+		}	
+	}
+	google_routeplaner_install_create();
+}
+ 
+function google_routeplaner_install_create() {
+	global $wpdb;
 	
 	if(!google_routeplaner_check_table()) {
 		$charset_collate = '';
@@ -42,10 +63,11 @@ function google_routeplaner_install() {
 				$charset_collate .= sprintf(' DEFAULT CHARACTER SET %s', $wpdb->charset);
 			}
 			if (!empty($wpdb->collate)) {
-				$charset_collate .= ' COLLATE $wpdb->collate';
+				$charset_collate .= ' COLLATE ' . $wpdb->collate;
 			}
 		}
-		$sql_routeplaner = 'CREATE TABLE `' . $table_prefix . 'google_routeplaner` (
+
+		$sql_routeplaner = 'CREATE TABLE `' . $wpdb->prefix . 'google_routeplaner` (
 					 `planer_id` INT NOT NULL AUTO_INCREMENT,
 					 `start_location` VARCHAR(120) NOT NULL,
 					 `planer_width` INT NOT NULL,
@@ -63,7 +85,7 @@ function google_routeplaner_install() {
 		/* 
 		 * Update old information in the database for version 2
 		 */
-		$wpdb->query('ALTER TABLE  `' . $table_prefix . 'google_routeplaner` ADD  `planer_zoom` INT NOT NULL DEFAULT  \'8\' AFTER  `planer_height`');
+		$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_zoom` INT NOT NULL DEFAULT  \'8\' AFTER  `planer_height`');
 		
 		/* 
 		 * Update old information in the database for version 2.2
@@ -82,55 +104,63 @@ function google_routeplaner_install() {
 	
 	}
 }
-
-function google_routeplaner_install_start() {
-	google_routeplaner_install();
-}
+if ( function_exists('register_update_hook') )
+	register_update_hook(WP_PLUGIN_DIR . '/google-routeplaner/google-routeplaner.php', 'google_routeplaner_install');
 
 /*
  * Install plugin
  */
 if ( function_exists('register_activation_hook') )
-    register_activation_hook(WP_PLUGIN_DIR . '/google-routeplaner/google-routeplaner.php', 'google_routeplaner_install_start');
+    register_activation_hook(WP_PLUGIN_DIR . '/google-routeplaner/google-routeplaner.php', 'google_routeplaner_install');
 
 /*
  * Uninstall plugin
  */	
 function google_routeplaner_uninstall() {
-	global $wpdb, $table_prefix;
+	global $wpdb;
+	
+	if (function_exists('is_multisite') && is_multisite()) {
+		$old_blog = $wpdb->blogid;
+		// Get all blog ids
+		$blogids = $wpdb->get_col($wpdb->prepare("SELECT blog_id FROM $wpdb->blogs"));
+		foreach ($blogids as $blog_id) {
+			switch_to_blog($blog_id);
+			google_routeplaner_uninstall_delete();
+		}
+		switch_to_blog($old_blog);
+		return;	
+	} 
+	google_routeplaner_uninstall_delete();	
+}
 
+function google_routeplaner_uninstall_delete() {
+	global $wpdb;
+	
 	delete_option('google_routeplaner_api_key');
 	delete_option('google_routeplaner_donate');
 	delete_option('google_routeplaner_language');
 	
-	$wpdb->query(sprintf('DROP TABLE `' . $table_prefix . 'google_routeplaner`'));
-	
-	/*
-	 * Deactivate the Plugin
-	 */
-	if('full_uninstall_google_routeplaner' == $_POST['action']) {
-		$current = get_option('active_plugins');
-		if(in_array("google-routeplaner/google-routeplaner.php", $current))
-			array_splice($current, array_search("google-routeplaner/google-routeplaner.php", $current), 1);
-		update_option('active_plugins', $current);
-		update_option('recently_activated', array("google-routeplaner/google-routeplaner.php" => time()) + (array)get_option('recently_activated'));
-		if(function_exists($wp_redirect)) {
-			wp_redirect('plugins.php');
-		} else {
-			header("Location: plugins.php");
-			exit;
-		}	
-	}
+	$wpdb->query(sprintf('DROP TABLE `' . $wpdb->prefix . 'google_routeplaner`'));
 }
 
-/*
- * Uninstall
- */	
 if ( function_exists('register_uninstall_hook') )
     register_uninstall_hook(__FILE__, 'google_routeplaner_uninstall');
 
-if('full_uninstall_google_routeplaner' == $_POST['action']) {
-	google_routeplaner_uninstall();
+
+/*
+ * Add new Multisite Blog
+ */	
+add_action( 'wpmu_new_blog', 'google_routeplaner_new_blog', 10, 6); 		
+ 
+function google_routeplaner_new_blog($blog_id, $user_id, $domain, $path, $site_id, $meta ) {
+	global $wpdb;
+ 
+	if (is_plugin_active_for_network('google-routeplaner/google-routeplaner.php')) {
+		$old_blog = $wpdb->blogid;
+		switch_to_blog($blog_id);
+		google_routeplaner_install_create();
+		switch_to_blog($old_blog);
+	}
 }
 
 /*
@@ -152,10 +182,10 @@ function google_routeplaner_output($data) {
  * Output map
  */	
 function google_routeplaner_build_map($route_id) {
-	global $wpdb, $table_prefix;
+	global $wpdb;
 
-	$planer = $wpdb->get_row("SELECT * FROM " . $table_prefix . "google_routeplaner WHERE planer_id='" . $route_id . "' LIMIT 1", ARRAY_A);
-	$check_updated = $wpdb->get_results('SHOW COLUMNS FROM `' . $table_prefix . 'google_routeplaner`');
+	$planer = $wpdb->get_row("SELECT * FROM " . $wpdb->prefix . "google_routeplaner WHERE planer_id='" . $route_id . "' LIMIT 1", ARRAY_A);
+	$check_updated = $wpdb->get_results('SHOW COLUMNS FROM `' . $wpdb->prefix . 'google_routeplaner`');
 
 	$map = '
 	<!-- Start Google Routeplaner Plugin Output -->' . "\n";
@@ -185,7 +215,7 @@ function google_routeplaner_build_map($route_id) {
 	
 	if('personal_link' == get_option("google_routeplaner_donate") || 'commercial_link' == get_option("google_routeplaner_donate")) {
 		$map .= '<div style="clear: both; margin-top: 10px;">Powered by <a href="http://wordpress.org/extend/plugins/google-routeplaner/">Google Routeplaner</a>, 
-		brought to you by <a href="http://deformed-design.de">Deformed Design</a></div>' . "\n";
+		brought to you by <a href="http://derwebschmied.de">DerWebschmied</a></div>' . "\n";
 	}
 	$map .= '<!-- End Google Routeplaner Plugin Output --><p>' . "\n";
 

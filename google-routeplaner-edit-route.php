@@ -1,5 +1,5 @@
 <?php
-	global $wpdb, $table_prefix;
+	global $wpdb;
 	
 	/*
 	 * Save Route
@@ -7,7 +7,7 @@
 	if ('google_routeplaner_edit_route' == $_POST['action'])
 	{
 			
-		$wpdb->query("UPDATE " . $table_prefix . "google_routeplaner 
+		$wpdb->query("UPDATE " . $wpdb->prefix . "google_routeplaner 
 		SET
 		start_location = '" . $_POST['google_routeplaner_destination'] . "',
 		planer_width = '" . $_POST['google_routeplaner_map_width'] . "',
@@ -31,7 +31,7 @@
 		/*
 		 * Output Form
 		 */
-		$planer = $wpdb->get_row("SELECT * FROM " . $table_prefix . "google_routeplaner WHERE planer_id='" . $route_id . "' LIMIT 1", ARRAY_A);
+		$planer = $wpdb->get_row("SELECT * FROM " . $wpdb->prefix . "google_routeplaner WHERE planer_id='" . $route_id . "' LIMIT 1", ARRAY_A);
 
 ?>
 	<div class="wrap google_routeplaner">

@@ -1,5 +1,5 @@
 <?php
-	global $wpdb, $table_prefix;
+	global $wpdb;
 	
 	/*
 	 * Save Route
@@ -7,7 +7,7 @@
 	if ('google_routeplaner_add_route' == $_POST['action'])
 	{
 			
-		$wpdb->query("INSERT INTO " . $table_prefix . "google_routeplaner (`start_location`, `planer_width`, `planer_height`, `planer_zoom`, `planer_type`, `planer_zoom_control`, `planer_type_control`, `planer_language`)
+		$wpdb->query("INSERT INTO " . $wpdb->prefix . "google_routeplaner (`start_location`, `planer_width`, `planer_height`, `planer_zoom`, `planer_type`, `planer_zoom_control`, `planer_type_control`, `planer_language`)
 		VALUES (
 		'" . $_POST['google_routeplaner_destination'] . "',
 		'" . $_POST['google_routeplaner_map_width'] . "',

@@ -1,10 +1,10 @@
 === Google Routeplaner ===
-Contributors: Deformed Design
+Contributors: DerWebschmied
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VAFAKGCDQ2GHU
 Tags: route, google, map, route planner, planer, route
-Requires at least: 2.7
-Tested up to: 3.2.1
-Stable tag: 2.2
+Requires at least: 3.0
+Tested up to: 3.4.2
+Stable tag: 2.3
 
 Allows you to add one or more route planners based on Google Maps to help your users to find a specific place.
 
@@ -14,8 +14,7 @@ To help your users locate a specific place, such as your company site, the plugi
 
 The view of the plan can be quickly and easily adapt to your needs and of course it is also possible to create more then one route planner, for example to find venues. The well-known interface of Google Maps your users find quickly a way around. With a simple input field the user can specify their own location and not only gets directions but also a map with the marked path.
 
-* [Plugin Page](http://plugins.deformed-design.de/)
-* [Plugin Support](http://support.deformed-design.de/)
+* [Plugin Support](http://support.derwebschied.de/)
 
 Romanian Translation [Web Geek Science](http://webhostinggeeks.com/)
 
@@ -39,16 +38,18 @@ Maybe you need to uninstall and reinstall the plugin if you update from a very o
 
 == Frequently Asked Questions ==
 
-= Why can't I define the zoom? =
-
-It seems Google Maps is unable to recieve custom zoom information when used as route planner. If you have any idea how to solve this problem, please contact me.
-
 = Can I add multiple maps to a single page? =
 
 Yes, this works since version 1.5 but it's not possible to use different languages for routes on one page.
 
 
 == Changelog ==
+
+= 2.3 =
+* WordPress Multisite support
+* Added default values for zoom level to prevent errors
+* New Icon
+* You are now asked if you really want to delete a route
 
 = 2.2 =
 * Donation settings have been changed. Please take a look at them!

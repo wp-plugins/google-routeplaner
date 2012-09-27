@@ -1,7 +1,7 @@
 <?php
-	global $wpdb, $table_prefix;
+	global $wpdb;
 
-	$planers = $wpdb->get_results("SELECT * FROM " . $table_prefix . "google_routeplaner ORDER BY planer_id", ARRAY_A); 
+	$planers = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "google_routeplaner ORDER BY planer_id", ARRAY_A); 
 ?>
   <div class="wrap google_routeplaner">
 	<script type="text/javascript">
@@ -9,6 +9,11 @@
 	{
 		document.getElementById(id).focus();
 		document.getElementById(id).select();
+	}
+	function deleteroute(url) {
+		if (confirm('<?php _e('Really delete this route?', 'google_routeplaner'); ?>')) {
+			window.location = url;
+		}
 	}
 	</script>
    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Routes', 'google_routeplaner'); ?></h2>
@@ -32,7 +37,7 @@
    </tfoot>
    
    <?php
-	if(is_array($planers)) {
+	if(is_array($planers) && !empty($planers)) {
 		$rownum = 1;
 		foreach($planers as $planer) {
 
@@ -45,13 +50,13 @@
 			<td>
 			<a href="admin.php?page=google_routeplaner_routes&amp;routeplaner_action=preview_route&amp;route_id=' . $planer['planer_id'] . '" class="button gr_preview">' . __('preview', 'google_routeplaner') . '</a>
 			<a href="admin.php?page=google_routeplaner_routes&amp;routeplaner_action=edit_route&amp;route_id=' . $planer['planer_id'] . '" class="button gr_edit">' . __('edit', 'google_routeplaner') . '</a>
-			<a href="admin.php?page=google_routeplaner_routes&amp;routeplaner_action=delete_route&amp;route_id=' . $planer['planer_id'] . '" class="button gr_delete">' . __('delete', 'google_routeplaner') . '</a>
+			<a onclick="deleteroute(\'admin.php?page=google_routeplaner_routes&amp;routeplaner_action=delete_route&amp;route_id=' . $planer['planer_id'] . '\');" class="button gr_delete">' . __('delete', 'google_routeplaner') . '</a>
 			</td>
 			</tr>' . "\n";
 		}
 	} else {
 		echo '<tr>
-		<td colspan="3" class="error">' . __('You have not created any routes yet!', 'google_routeplaner') . '</td>
+		<td colspan="4">' . __('You have not created any routes yet!', 'google_routeplaner') . '</td>
 		</tr>';
 	}
    ?>
