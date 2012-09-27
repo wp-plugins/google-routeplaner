@@ -45,7 +45,7 @@ Yes, this works since version 1.5 but it's not possible to use different languag
 
 == Changelog ==
 
-= 2.3 =
+= 2.3 = 
 * WordPress Multisite support
 * Added default values for zoom level to prevent errors
 * New Icon
