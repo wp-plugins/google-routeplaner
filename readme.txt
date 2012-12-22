@@ -23,7 +23,7 @@ Use our [Plugin Support Page](http://support.derwebschied.de/) instead.
 = Translations =
 * Romanian Translation: [Web Geek Science](http://webhostinggeeks.com/)
 * French Translation: Corentin Smith 
-* Slovak Translation [WebHostingGeeks.com] (http://webhostinggeeks.com/blog/)
+* Slovak Translation [WebHostingGeeks.com](http://webhostinggeeks.com/blog/)
 
 == Installation ==
 
