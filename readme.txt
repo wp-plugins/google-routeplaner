@@ -52,6 +52,9 @@ Yes, this works since version 1.5 but it's not possible to use different languag
 
 == Changelog ==
 
+= 2.6 =
+* Hotfix for trouble with version 2.5
+
 = 2.5 =
 * French translation added, thanks to Corentin Smith 
 * Slovak Translation by [WebHostingGeeks.com] (http://webhostinggeeks.com/blog/) added
