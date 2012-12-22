@@ -1,0 +1,492 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Google Routeplaner\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-09 01:56+0100\n"
+"PO-Revision-Date: \n"
+"X-Poedit-Language: Romanian\n"
+"X-Poedit-Country: Romania\n"
+"Language-Team: Web Geeks\n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: C:\\google-routeplaner\n"
+"X-Poedit-SearchPath-0: C:\\google-routeplaner\n"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:23
+#: C:\google-routeplaner/google-routeplaner-add-route.php:36
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:23
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:37
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:14
+#: C:\google-routeplaner/google-routeplaner-main-page.php:2
+#: C:\google-routeplaner/google-routeplaner-pages.php:63
+#: C:\google-routeplaner/google-routeplaner-pages.php:76
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:2
+msgid "Google Routeplaner"
+msgstr "Google Routeplaner"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:23
+#: C:\google-routeplaner/google-routeplaner-add-route.php:36
+msgid "Add Route"
+msgstr "Adăugare rută"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:24
+msgid "Your route has been saved!"
+msgstr "Ruta a fost salvat!"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:25
+msgid "The code for this route is: "
+msgstr "Codul pentru acest traseu este: "
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:26
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:25
+#: C:\google-routeplaner/google-routeplaner-pages.php:65
+#: C:\google-routeplaner/google-routeplaner-pages.php:77
+msgid "Back to overview"
+msgstr "Înapoi la prezentare"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:38
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:39
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:20
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:28
+msgid "Destination"
+msgstr "Destinaţie"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:40
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:41
+msgid "Add a search string for the destination. Adress, company name or something like this."
+msgstr "Adauga un şir de căutare pentru destinația. Adresa, numele companiei, sau ceva de genul asta."
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:41
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:42
+msgid "Map width"
+msgstr "Hartă lăţime"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:43
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:44
+msgid "Enter the width for the map."
+msgstr "Introduceţi lăţimea pentru hartă."
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:44
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:45
+msgid "Map heigth"
+msgstr "Hartă pe lungime"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:46
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:47
+msgid "Enter the height for the map."
+msgstr "Introduceţi înălţimea pentru hartă."
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:47
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:48
+msgid "Map type"
+msgstr "Tip de hartă"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:50
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:51
+msgid "Road map"
+msgstr "Hartă Road"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:51
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:52
+msgid "Satellite map"
+msgstr "Prin satelit hartă"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:52
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:53
+msgid "Hybrid map"
+msgstr "Hartă hibrid"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:53
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:54
+msgid "Physical map"
+msgstr "Hartă fizice"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:55
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:56
+msgid "Select how the map should look like."
+msgstr "Selectaţi cum ar trebui să arate harta."
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:57
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:58
+msgid "Map Zoom Control"
+msgstr "Hartă Zoom Control"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:59
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:60
+msgid "Large"
+msgstr "Mare"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:61
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:62
+msgid "Small"
+msgstr "Mici"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:63
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:64
+msgid "Zoom only"
+msgstr "Zoom numai"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:65
+#: C:\google-routeplaner/google-routeplaner-add-route.php:74
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:66
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:75
+msgid "None"
+msgstr "Nici unul"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:66
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:67
+msgid "Select the type of zoom and direction control you want."
+msgstr "Selectaţi tipul de zoom şi direcţia de control pe care doriţi."
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:68
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:69
+msgid "Map Type Control"
+msgstr "Control de tip hartă"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:70
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:71
+msgid "Normal"
+msgstr "Normală"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:72
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:73
+msgid "Hierarchical"
+msgstr "Ierarhică"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:75
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:76
+msgid "Select if users can change the map type."
+msgstr "Selectaţi dacă utilizatorii pot modifica tipul de hartă."
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:76
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:78
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:15
+msgid "Language"
+msgstr "Limba"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:78
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:80
+msgid "Default"
+msgstr "Implicit"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:79
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:81
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:17
+msgid "English"
+msgstr "Engleză"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:80
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:82
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:18
+msgid "German"
+msgstr "Germană"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:81
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:83
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:19
+msgid "French"
+msgstr "Franceză"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:82
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:84
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:20
+msgid "Spanish"
+msgstr "Spaniolă"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:83
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:85
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:21
+msgid "Dutch"
+msgstr "Olandeză"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:84
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:86
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:22
+msgid "Italian"
+msgstr "Italiană"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:85
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:87
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:23
+msgid "Polish"
+msgstr "Poloneză"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:86
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:88
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:24
+msgid "Catalan"
+msgstr "Catalană"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:87
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:89
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:25
+msgid "Euskara"
+msgstr "Euskara"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:88
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:90
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:26
+msgid "Russian"
+msgstr "Rusă"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:89
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:91
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:27
+msgid "Japanese"
+msgstr "Japoneză"
+
+#: C:\google-routeplaner/google-routeplaner-add-route.php:91
+msgid "Save route"
+msgstr "Salvare traseu"
+
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:23
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:37
+msgid "Edit Route"
+msgstr "Editare rută"
+
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:24
+msgid "Your changes has been saved!"
+msgstr "Modificările au fost salvate!"
+
+#: C:\google-routeplaner/google-routeplaner-edit-route.php:93
+msgid "Save changes"
+msgstr "Salvaţi modificările"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:14
+#: C:\google-routeplaner/google-routeplaner-pages.php:106
+msgid "Routes"
+msgstr "Rute"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:15
+msgid "Create Route"
+msgstr "Creare traseu"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:19
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:27
+msgid "ID"
+msgstr "ID-UL"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:21
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:29
+msgid "Code"
+msgstr "Codul"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:22
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:30
+msgid "Actions"
+msgstr "Acţiuni"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:49
+msgid "preview"
+msgstr "previzualizare"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:50
+msgid "edit"
+msgstr "Editare"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:51
+msgid "delete"
+msgstr "Ştergere"
+
+#: C:\google-routeplaner/google-routeplaner-list-routes.php:57
+msgid "You have not created any routes yet!"
+msgstr "Încă nu aţi creat orice rute!"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:2
+#: C:\google-routeplaner/google-routeplaner-pages.php:105
+msgid "Overview"
+msgstr "Prezentare generală"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:5
+msgid "Changelog"
+msgstr "Changelog"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:50
+msgid "The Plugin"
+msgstr "Plugin-ul"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:52
+msgid "Google Routeplaner generates a routeplaner based on the <a href=\"http://code.google.com/apis/maps/\">Google Maps API</a>."
+msgstr "Google Routeplaner generează un routeplaner bazat pe <a href=\"http://code.google.com/apis/maps/\"> Google Maps API</a>."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:53
+msgid "We suggest adding a printer friendly stylesheet to your Wordpress design to allow your users to print the route without the need to print design elements. A tutorial how to do this can be found <a href=\"http://codex.wordpress.org/Styling_for_Print\">here</a>."
+msgstr "Vă sugerăm să adăugaţi o foaie de stil prietenos imprimantă cu design-ul Wordpress, pentru a permite utilizatorilor să imprime traseu fără a fi nevoie de a tipări elemente de design. Un tutorial cum să facă acest lucru pot fi găsite <a href=\"http://codex.wordpress.org/Styling_for_Print\"> aici </a>."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:54
+msgid "Plugin developed by <a href=\"http://deformed-design.de\">Deformed Design</a>."
+msgstr "Plugin-ul dezvoltat de Design <a href=\"http://deformed-design.de\"> deformate </a>."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:58
+#: C:\google-routeplaner/google-routeplaner-main-page.php:61
+msgid "Support & Feedback"
+msgstr "Support & Feedback"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:60
+msgid "If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk."
+msgstr "Dacă aveţi probleme cu utilizarea acest plug-in, prezinte ideile tale pentru dezvoltarea viitoare sau pur si simplu vrei să-mi spuneţi ce credeţi că vă rugăm să folosiţi meu Help Desk."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:67
+msgid "Enjoy the plugin?"
+msgstr "Bucuraţi-vă de plugin-ul?"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:69
+msgid "If you like the plugin you can support my work in different ways:"
+msgstr "Dacă vă place plugin-ul poate sprijini munca mea în moduri diferite:"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:71
+msgid "Rate it on WordPress.org"
+msgstr "Rata de aceasta pe WordPress.org"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:72
+msgid "Donate using PayPal"
+msgstr "Donaţi folosind PayPal"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:73
+msgid "Take a look at my Amazon wishlist"
+msgstr "Aruncati o privire la meu Amazon listă de dorinţe"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:79
+msgid "Uninstall"
+msgstr "Dezinstalare"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:82
+msgid "To completly remove this plugin and all database entries you need to use this uninstall feature. If you only deactivate the plugin a lot of stuff will remain in your database."
+msgstr "Pentru complet eliminaţi acest plugin-ul şi toate intrările de date, aveţi nevoie pentru a utiliza această caracteristică de dezinstalare. Dacă aveţi doar dezactiva plugin-ul o mulţime de lucruri va rămâne în baza de date."
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:83
+msgid "Yes, I want to uninstall Google Routeplaner"
+msgstr "Da, vreau să dezinstalaţi Google Routeplaner"
+
+#: C:\google-routeplaner/google-routeplaner-main-page.php:84
+msgid "Full Uninstall Google Routeplaner"
+msgstr "Complet dezinstalaţi Google Routeplaner"
+
+#: C:\google-routeplaner/google-routeplaner-pages.php:63
+msgid "Delete Route"
+msgstr "Ştergere traseu"
+
+#: C:\google-routeplaner/google-routeplaner-pages.php:64
+msgid "The route has been deleted!"
+msgstr "Traseul a fost şters!"
+
+#: C:\google-routeplaner/google-routeplaner-pages.php:76
+msgid "Preview Route"
+msgstr "Route de previzualizare"
+
+#: C:\google-routeplaner/google-routeplaner-pages.php:105
+msgid "Routeplaner"
+msgstr "Routeplaner"
+
+#: C:\google-routeplaner/google-routeplaner-pages.php:107
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:2
+msgid "Settings"
+msgstr "Setări"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:11
+msgid "Settings saved!"
+msgstr "Setări salvate!"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:29
+msgid "Set language for driving information."
+msgstr "Seta limba pentru informaţii de conducere."
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:30
+msgid "Donate this plugin"
+msgstr "Dona acest plug-in"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:32
+msgid "Show a link under the maps"
+msgstr "Arată un link în hărţi"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:34
+msgid "I write an articel about it"
+msgstr "Am scris un articol despre el"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:36
+msgid "I donated with Paypal"
+msgstr "Am donat cu Paypal"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:38
+msgid "I will not donate this project (you will not get support)"
+msgstr "Eu nu va dona acest proiect (nu veti primi sprijin)"
+
+#: C:\google-routeplaner/google-routeplaner-settings-page.php:39
+msgid "Save settings"
+msgstr "Salvaţi setările"
+
+#: C:\google-routeplaner/google-routeplaner.php:209
+msgid "Could not find the start location. Please be more specific!"
+msgstr "Nu a putut găsi locaţia de start. Vă rugăm să fie mai specifice!"
+
+#: C:\google-routeplaner/google-routeplaner.php:240
+msgid "Your location"
+msgstr "Locaţia"
+
+#: C:\google-routeplaner/google-routeplaner.php:240
+msgid "Create route"
+msgstr "Creare traseu"
+
+#~ msgid "Advance CSS"
+#~ msgstr "Advance CSS"
+
+#~ msgid ""
+#~ "You can add css information for any element. Warning: This will result in "
+#~ "invalid HTML output."
+#~ msgstr ""
+#~ "Sie können erweitere CSS Informationen für jedes Kartenelement festlegen. "
+#~ "Achtung: Dadurch wird die HTML-Ausgabe invalide."
+
+#~ msgid "Support"
+#~ msgstr "Suport"
+
+#~ msgid ""
+#~ "If you encounter any problems feel free to use our <a href=\"http://"
+#~ "support.deformed-design.de\">Help Desk</a>."
+#~ msgstr ""
+#~ "Wenn Sie Probleme haben verwenden Sie unsere <a href=\"http://support."
+#~ "deformed-design.de\">Hilfe-Seite</a>."
+
+#~ msgid ""
+#~ "If you enjoy the plugin we would be glad about a small donation. If you "
+#~ "donated, please feel free to remove the authors notice below the map in "
+#~ "the settings menu."
+#~ msgstr ""
+#~ "Wenn Ihnen das Plugin gefällt würden wir uns über eine kleine Spende "
+#~ "freuen. Sollten Sie gespendet haben können Sie gerne den Hinweis auf den "
+#~ "Autoren unter dem Routenplaner in den Einstellungen des Plugins entfernen."
+
+#~ msgid "About"
+#~ msgstr "Despre"
+
+#~ msgid "Yes"
+#~ msgstr "da"
+
+#~ msgid "No"
+#~ msgstr "nu"
+
+#~ msgid "Display a small overview map."
+#~ msgstr "Afişează o prezentare generală a mici de hartă."
+
+#~ msgid ""
+#~ "Google Routeplaner isn't ready yet. Please enter your Google Maps API Key "
+#~ "on the <a href=\"admin.php?page=google_routeplaner_settings\">settings "
+#~ "screen</a>."
+#~ msgstr ""
+#~ "Google Routeplaner ist noch nicht einsatzbereit. Bitte gib einen Google "
+#~ "Maps API Key auf der <a href=\"admin.php?page=google_routeplaner_settings"
+#~ "\">Einstellungsseite</a> ein."
+
+#~ msgid "Your Google Maps API Key"
+#~ msgstr "Cheia Google Maps API"
+
+#~ msgid ""
+#~ "You can get a free api key <a href=\"http://code.google.com/apis/maps/"
+#~ "\">here</a>."
+#~ msgstr ""
+#~ "Du kannst einen kostenlosen API Key <a href=\"http://code.google.com/apis/"
+#~ "maps/\">here</a> bekommen."
