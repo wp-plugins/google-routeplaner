@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: route, google, map, route planner, planer, planner, route
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 2.5
+Stable tag: 2.6
 License: Feel free to edit for personal use
 
 Allows you to add one or more route planners based on Google Maps to help your users to find a specific place.

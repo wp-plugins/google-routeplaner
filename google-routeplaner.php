@@ -3,7 +3,7 @@
 Plugin Name: Google Routeplanner
 Plugin URI: http://support.derwebschmied.de
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
-Version: 2.5
+Version: 2.6
 Author: DerWebschmied
 Author URI: http://support.derwebschmied.de
 Min WP Version: 3.2
@@ -90,6 +90,8 @@ function google_routeplaner_install_create() {
 }
 
 function google_routeplaner_update() {
+	global $wpdb;
+
 	/* 
 	 * Update old information in the database for version 2
 	 */
@@ -112,11 +114,10 @@ function google_routeplaner_update() {
 	/* 
 	 * Update old information in the database for version 2.5
 	 */
-	$wpdb->query('ALTER TABLE  `wp_google_routeplaner` ADD  `planer_width_unit` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT  \'px\' AFTER  `planer_width`');
-	$wpdb->query('ALTER TABLE  `wp_google_routeplaner` ADD  `planer_height_unit` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT  \'px\' AFTER  `planer_height`');
-	$wpdb->query('ALTER TABLE  `wp_google_routeplaner` ADD  `planer_autofill` INT NOT NULL DEFAULT  \'0\' AFTER  `planer_type_control`');
-	
-	
+	$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_width_unit` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT  \'px\' AFTER  `planer_width`');
+	$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_height_unit` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT  \'px\' AFTER  `planer_height`');
+	$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_autofill` INT NOT NULL DEFAULT  \'0\' AFTER  `planer_type_control`');
+
 }
 
 if ( function_exists('register_update_hook') )

@@ -4,6 +4,10 @@
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside" style="height: 300px; overflow: auto; overflow-y: scroll;">
+				<h5>Version 2.6</h5>
+					<ul>
+						<li>Hotfix for trouble with version 2.5</li>
+					</ul>
 				<h5>Version 2.5</h5>
 					<ul>
 						<li>French translation added, thanks to Corentin Smith</li>
