@@ -11,17 +11,20 @@
 		SET
 		start_location = '" . $_POST['google_routeplaner_destination'] . "',
 		planer_width = '" . $_POST['google_routeplaner_map_width'] . "',
+		planer_width_unit = '" . $_POST['google_routeplaner_map_width_unit'] . "',
 		planer_height = '" . $_POST['google_routeplaner_map_height'] . "',
+		planer_height_unit = '" . $_POST['google_routeplaner_map_height_unit'] . "',
 		planer_zoom = '" . $_POST['google_routeplaner_zoom'] . "',
 		planer_type = '" . $_POST['google_routeplaner_map_type'] . "',
 		planer_zoom_control = '" . $_POST['google_routeplaner_zoom_control'] . "',
 		planer_type_control = '" . $_POST['google_routeplaner_type_control'] . "',
+		planer_autofill = '" . $_POST['google_routeplaner_autofill'] . "',
 		planer_language = '" . $_POST['google_routeplaner_language'] . "'
 		WHERE planer_id = '" . $_POST['route_id'] . "' LIMIT 1");
 		
 		?>
 		<div class="wrap google_routeplaner">
-	    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Edit Route', 'google_routeplaner'); ?></h2>
+	    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Edit Route', 'google_routeplaner'); ?></h2>
 		<p class="success"><?php _e('Your changes has been saved!', 'google_routeplaner'); ?></p>
 		<p><a href="admin.php?page=google_routeplaner_routes"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
 		</div>		
@@ -35,7 +38,7 @@
 
 ?>
 	<div class="wrap google_routeplaner">
-		<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Edit Route', 'google_routeplaner'); ?></h2>
+		<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Edit Route', 'google_routeplaner'); ?></h2>
 		<div id="poststuff"> 
 			<form method="post" action="">
 				<div style="width: 48%; float: right;">
@@ -101,10 +104,22 @@
 						<input type="text" name="google_routeplaner_destination" id="google_routeplaner_destination" style="width: 300px;" value="<?php echo $planer['start_location']; ?>" /><br />
 						<i><?php _e('Add a search string for the destination. Adress, company name or something like this.', 'google_routeplaner'); ?></i></p>
 						<p><label for="google_routeplaner_map_width" class="formbold"><?php _e('Map width', 'google_routeplaner'); ?></label><br />
-						<input type="text" name="google_routeplaner_map_width" id="google_routeplaner_map_width" style="width: 70px;" value="<?php echo $planer['planer_width']; ?>" /><br />
+						<input type="text" name="google_routeplaner_map_width" id="google_routeplaner_map_width" style="width: 70px;" value="<?php echo $planer['planer_width']; ?>" />
+						<select name="google_routeplaner_map_width_unit" id="google_routeplaner_map_width_unit">
+							<option value="px"<?php if('px' == $planer['planer_width_unit']) { echo ' selected=""'; } ?>>px</option>
+							<option value="%"<?php if('%' == $planer['planer_width_unit']) { echo ' selected=""'; } ?>>%</option>
+							<option value="em"<?php if('em' == $planer['planer_width_unit']) { echo ' selected=""'; } ?>>em</option>
+						</select>
+						<br />
 						<i><?php _e('Enter the width for the map.', 'google_routeplaner'); ?></i></p>
 						<p><label for="google_routeplaner_map_height" class="formbold"><?php _e('Map heigth', 'google_routeplaner'); ?></label><br />
-						<input type="text" name="google_routeplaner_map_height" id="google_routeplaner_map_height" style="width: 70px;" value="<?php echo $planer['planer_height']; ?>" /><br />
+						<input type="text" name="google_routeplaner_map_height" id="google_routeplaner_map_height" style="width: 70px;" value="<?php echo $planer['planer_height']; ?>" />
+						<select name="google_routeplaner_map_height_unit" id="google_routeplaner_map_height_unit">
+							<option value="px"<?php if('px' == $planer['planer_height_unit']) { echo ' selected=""'; } ?>>px</option>
+							<option value="%"<?php if('%' == $planer['planer_height_unit']) { echo ' selected=""'; } ?>>%</option>
+							<option value="em"<?php if('em' == $planer['planer_height_unit']) { echo ' selected=""'; } ?>>em</option>
+						</select>
+						<br />
 						<i><?php _e('Enter the height for the map.', 'google_routeplaner'); ?></i></p>
 						
 						<p><label for="google_routeplaner_zoom" class="formbold"><?php _e('Map Zoom', 'google_routeplaner'); ?></label><br />
@@ -123,7 +138,15 @@
 							
 						</select></p>
 						
-						<p>	<label for="google_routeplaner_language" class="formbold"><?php _e('Language', 'google_routeplaner'); ?></label><br />
+						
+						<p><span class="formbold"><?php _e('Auto-Detect users location', 'google_routeplaner'); ?></span><br />
+						<input type="radio" name="google_routeplaner_autofill" id="google_routeplaner_autofill_yes" value="1"<?php if(1 == intval($planer['planer_autofill'])) { echo ' checked=""'; } ?> />
+						<label for="google_routeplaner_autofill_yes"><?php _e('Yes', 'google_routeplaner'); ?></label><br />
+						<input type="radio" name="google_routeplaner_autofill" id="google_routeplaner_autofill_no" value="0"<?php if(0 == intval($planer['planer_autofill'])) { echo ' checked=""'; } ?> />
+						<label for="google_routeplaner_autofill_no"><?php _e('No', 'google_routeplaner'); ?></label><br />
+						<i><?php _e('This is based on HTML5 and will work best with mobile devices.', 'google_routeplaner'); ?></i></p>
+						
+						<p><label for="google_routeplaner_language" class="formbold"><?php _e('Language', 'google_routeplaner'); ?></label><br />
 						<select name="google_routeplaner_language" id="google_routeplaner_language">
 							<option value=""><?php _e('Default', 'google_routeplaner'); ?></option>
 							<option value="en"<?php if('en' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('English', 'google_routeplaner'); ?></option>
@@ -137,7 +160,8 @@
 							<option value="eu"<?php if('eu' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Euskara', 'google_routeplaner'); ?></option>
 							<option value="ru"<?php if('ru' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Russian', 'google_routeplaner'); ?></option>
 							<option value="ja"<?php if('ja' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Japanese', 'google_routeplaner'); ?></option>
-						</select></p>
+						</select><br />
+						<i><?php _e('This only effects the route output, not the interface!', 'google_routeplaner'); ?></i></p>
 					</div>
 				</div>
 			

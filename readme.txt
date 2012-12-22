@@ -1,10 +1,11 @@
-=== Google Routeplaner ===
+=== Google Routeplanner ===
 Contributors: DerWebschmied
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VAFAKGCDQ2GHU
-Tags: route, google, map, route planner, planer, route
+Tags: route, google, map, route planner, planer, planner, route
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 2.3
+Stable tag: 2.5
+License: Feel free to edit for personal use
 
 Allows you to add one or more route planners based on Google Maps to help your users to find a specific place.
 
@@ -14,9 +15,15 @@ To help your users locate a specific place, such as your company site, the plugi
 
 The view of the plan can be quickly and easily adapt to your needs and of course it is also possible to create more then one route planner, for example to find venues. The well-known interface of Google Maps your users find quickly a way around. With a simple input field the user can specify their own location and not only gets directions but also a map with the marked path.
 
-* [Plugin Support](http://support.derwebschied.de/)
+= Support =
 
-Romanian Translation [Web Geek Science](http://webhostinggeeks.com/)
+Please don't use the WordPress.org Forums if you need help with the plugin.
+Use our [Plugin Support Page](http://support.derwebschied.de/) instead.
+
+= Translations =
+* Romanian Translation: [Web Geek Science](http://webhostinggeeks.com/)
+* French Translation: Corentin Smith 
+* Slovak Translation [WebHostingGeeks.com] (http://webhostinggeeks.com/blog/)
 
 == Installation ==
 
@@ -45,7 +52,13 @@ Yes, this works since version 1.5 but it's not possible to use different languag
 
 == Changelog ==
 
-= 2.3 = 
+= 2.5 =
+* French translation added, thanks to Corentin Smith 
+* Slovak Translation by [WebHostingGeeks.com] (http://webhostinggeeks.com/blog/) added
+* You can now define map height and width in px, % or em
+* New feature: HTML5 detection for users location to autofill the form
+
+= 2.3 =
 * WordPress Multisite support
 * Added default values for zoom level to prevent errors
 * New Icon

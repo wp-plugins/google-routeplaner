@@ -1,5 +1,5 @@
  <div class="wrap google_routeplaner">
-   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Settings', 'google_routeplaner'); ?></h2>
+   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Settings', 'google_routeplaner'); ?></h2>
 	<?php
 	/*
 	 * Save Settings
@@ -54,7 +54,7 @@
 					<option value="ru"<?php if('ru' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Russian', 'google_routeplaner'); ?></option>
 					<option value="ja"<?php if('ja' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Japanese', 'google_routeplaner'); ?></option>
 				</select><br />
-				<i><?php _e('Set language for driving information.', 'google_routeplaner'); ?></i></p>
+				<i><?php _e('Set language for driving information, this does not effect the interface.', 'google_routeplaner'); ?></i></p>
 			</div>
 		</div>
 	

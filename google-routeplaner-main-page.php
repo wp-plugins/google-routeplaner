@@ -1,9 +1,16 @@
  <div class="wrap google_routeplaner">
-   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplaner', 'google_routeplaner'); ?> &bull; <?php _e('Overview', 'google_routeplaner'); ?></h2>
+   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Overview', 'google_routeplaner'); ?></h2>
 	<div id="poststuff">
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside" style="height: 300px; overflow: auto; overflow-y: scroll;">
+				<h5>Version 2.5</h5>
+					<ul>
+						<li>French translation added, thanks to Corentin Smith</li>
+						<li>Slovak Translation by <a href="http://webhostinggeeks.com/blog/">WebHostingGeeks.com</a> added</li>
+						<li>You can now define map height and width in px, % or em</li>
+						<li>New feature: HTML5 detection for users location to autofill the form</li>
+					</ul>
 				<h5>Version 2.3</h5>
 					<ul>
 						<li>WordPress Multisite support</li>
@@ -74,7 +81,7 @@
 			<div class="postbox">
 				<h3><?php _e('The Plugin', 'google_routeplaner'); ?></h3>
 				<div class="inside">
-					<p><?php _e('Google Routeplaner generates a routeplaner based on the <a href="http://code.google.com/apis/maps/">Google Maps API</a>.', 'google_routeplaner'); ?></p>
+					<p><?php _e('Google Routeplanner generates a routeplanner based on the <a href="http://code.google.com/apis/maps/">Google Maps API</a>.', 'google_routeplaner'); ?></p>
 					<p><?php _e('We suggest adding a printer friendly stylesheet to your Wordpress design to allow your users to print the route without the need to print design elements. A tutorial how to do this can be found <a href="http://codex.wordpress.org/Styling_for_Print">here</a>.', 'google_routeplaner'); ?></p>	
 					<p><?php _e('Plugin developed by <a href="http://deformed-design.de">Deformed Design</a>.', 'google_routeplaner'); ?></p>
 				</div>
