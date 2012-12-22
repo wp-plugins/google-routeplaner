@@ -57,7 +57,7 @@ Yes, this works since version 1.5 but it's not possible to use different languag
 
 = 2.5 =
 * French translation added, thanks to Corentin Smith 
-* Slovak Translation by [WebHostingGeeks.com] (http://webhostinggeeks.com/blog/) added
+* Slovak Translation by [WebHostingGeeks.com](http://webhostinggeeks.com/blog/) added
 * You can now define map height and width in px, % or em
 * New feature: HTML5 detection for users location to autofill the form
 
