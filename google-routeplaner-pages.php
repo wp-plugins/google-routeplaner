@@ -98,8 +98,15 @@ function google_routeplaner_edit_route($route_id) {
 /*
  * Documentation Page
  */
-function google_routeplaner_doc_page($route_id) {
+function google_routeplaner_doc_page() {
 	include 'google-routeplaner-doc-page.php';
+}
+
+/*
+ * Troubleshooting Page
+ */
+function google_routeplaner_trouble_page() {
+	include 'google-routeplaner-trouble-page.php';
 }
 
 /*
@@ -109,7 +116,8 @@ function google_routeplaner_add_menu() {
 	global $submenu;
 	add_option("google_routeplaner_donate","personal_link");	
 	add_option("google_routeplaner_language","en");	
-	add_option("google_routeplaner_version","2.5");	
+	add_option("google_routeplaner_version","3.0");	
+	add_option("google_routeplaner_viewport","yes");	
 	
 	add_action( 'admin_menu' , 'admin_menu_new_items' );
 
@@ -118,9 +126,8 @@ function google_routeplaner_add_menu() {
 	add_submenu_page('google-routeplaner.php', __('Routes', 'google_routeplaner'), __('Routes', 'google_routeplaner'), 8, 'google_routeplaner_routes', 'google_routeplaner_routes_page');
 	add_submenu_page('google-routeplaner.php', __('Settings', 'google_routeplaner'), __('Settings', 'google_routeplaner'), 8, 'google_routeplaner_settings', 'google_routeplaner_option_page');
 	add_submenu_page('google-routeplaner.php', __('Documentation', 'google_routeplaner'), __('Documentation', 'google_routeplaner'), 8, 'google_routeplaner_doc', 'google_routeplaner_doc_page');
-	if('personal_link' == get_option('google_routeplaner_donate') || 'personal_paypal' == get_option('google_routeplaner_donate') || 'commercial_paypal' == get_option('google_routeplaner_donate')) {
-		$submenu['google-routeplaner.php'][500] = array( 'Support', 'read' , 'http://support.derwebschmied.de' );
-	}
+	add_submenu_page('google-routeplaner.php', __('Troubleshooting', 'google_routeplaner'), __('Troubleshooting', 'google_routeplaner'), 8, 'google_routeplaner_trouble', 'google_routeplaner_trouble_page');
+	$submenu['google-routeplaner.php'][500] = array( 'Support', 'read' , 'http://support.derwebschmied.de' );
 }
 
 add_action('admin_menu', 'google_routeplaner_add_menu');

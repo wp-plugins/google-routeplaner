@@ -3,7 +3,7 @@
 Plugin Name: Google Routeplanner
 Plugin URI: http://support.derwebschmied.de
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
-Version: 2.6
+Version: 3.0
 Author: DerWebschmied
 Author URI: http://support.derwebschmied.de
 Min WP Version: 3.2
@@ -92,32 +92,48 @@ function google_routeplaner_install_create() {
 function google_routeplaner_update() {
 	global $wpdb;
 
-	/* 
-	 * Update old information in the database for version 2
-	 */
-	$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_zoom` INT NOT NULL DEFAULT  \'8\' AFTER  `planer_height`');
+	$gr_version = get_option("google_routeplaner_version");
+	
+	if(floatval($gr_version) < 2.5) {
+		/* 
+		 * Update old information in the database for version 2
+		 */
+		$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_zoom` INT NOT NULL DEFAULT  \'8\' AFTER  `planer_height`');
+			
+		/* 
+		 * Update old information in the database for version 2.2
+		 */
+		$cur_donate = get_option('google_routeplaner_donate');
+		if('link' == $cur_donate) {
+			update_option("google_routeplaner_donate", 'personal_link');
+		} elseif('articel' == $cur_donate) {
+			update_option("google_routeplaner_donate", 'personal_no_link');
+		} elseif('paypal' == $cur_donate) {
+			update_option("google_routeplaner_donate", 'commercial_paypal');
+		} elseif('none' == $cur_donate) {
+			update_option("google_routeplaner_donate", 'personal_no_link');
+		}
 		
-	/* 
-	 * Update old information in the database for version 2.2
-	 */
-	$cur_donate = get_option('google_routeplaner_donate');
-	if('link' == $cur_donate) {
-		update_option("google_routeplaner_donate", 'personal_link');
-	} elseif('articel' == $cur_donate) {
-		update_option("google_routeplaner_donate", 'personal_no_link');
-	} elseif('paypal' == $cur_donate) {
-		update_option("google_routeplaner_donate", 'commercial_paypal');
-	} elseif('none' == $cur_donate) {
-		update_option("google_routeplaner_donate", 'personal_no_link');
+		/* 
+		 * Update old information in the database for version 2.5
+		 */
+		$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_width_unit` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT  \'px\' AFTER  `planer_width`');
+		$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_height_unit` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT  \'px\' AFTER  `planer_height`');
+		$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_autofill` INT NOT NULL DEFAULT  \'0\' AFTER  `planer_type_control`');
 	}
 	
-	/* 
-	 * Update old information in the database for version 2.5
-	 */
-	$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_width_unit` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT  \'px\' AFTER  `planer_width`');
-	$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_height_unit` VARCHAR( 5 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT  \'px\' AFTER  `planer_height`');
-	$wpdb->query('ALTER TABLE  `' . $wpdb->prefix . 'google_routeplaner` ADD  `planer_autofill` INT NOT NULL DEFAULT  \'0\' AFTER  `planer_type_control`');
-
+	if(floatval($gr_version) < 3.0) {
+		/* 
+		 * Update old information in the database for version 3.0
+		 */
+		$old_donate_option = get_option("google_routeplaner_donate");
+		if('personal_link' == $old_donate_option || 'commercial_link' == $old_donate_option) {
+			update_option("google_routeplaner_donate", 'show_link');
+		} elseif('personal_no_link' == $old_donate_option || 'personal_paypal' == $old_donate_option || 'commercial_paypal' == $old_donate_option) {
+			update_option("google_routeplaner_donate", 'no_link');
+		}
+	}
+	update_option("google_routeplaner_version", '3.0');
 }
 
 if ( function_exists('register_update_hook') )
@@ -204,7 +220,7 @@ function google_routeplaner_build_map($route_id) {
 	$check_updated = $wpdb->get_results('SHOW COLUMNS FROM `' . $wpdb->prefix . 'google_routeplaner`');
 
 	$map = '
-	<!-- Start Google Routeplaner Plugin Output -->' . "\n";
+	<!-- Start Google Routeplanner Plugin Output -->' . "\n";
 	
 	if(2 == strlen($planer['planer_language'])) {
 		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . $planer['planer_language'] . '"></script>' . "\n";
@@ -223,11 +239,11 @@ function google_routeplaner_build_map($route_id) {
 	
 	$map .= '<script type="text/javascript" src="' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner-js.php?planer_id=' . $planer['planer_id'] . '&autofill=' . $planer['planer_autofill'] . '"></script>';
 	
-	if('personal_link' == get_option("google_routeplaner_donate") || 'commercial_link' == get_option("google_routeplaner_donate")) {
-		$map .= '<div style="clear: both; margin-top: 10px;">Powered by <a href="http://wordpress.org/extend/plugins/google-routeplaner/">Google Routeplaner</a>, 
+	if('show_link' == get_option("google_routeplaner_donate")) {
+		$map .= '<div style="clear: both; margin-top: 10px;">Powered by <a href="http://wordpress.org/extend/plugins/google-routeplaner/">Google Routeplanner</a>, 
 		brought to you by <a href="http://derwebschmied.de">DerWebschmied</a></div>' . "\n";
 	}
-	$map .= '<!-- End Google Routeplaner Plugin Output --><p>' . "\n";
+	$map .= '<!-- End Google Routeplanner Plugin Output --><p>' . "\n";
 
 	return $map;
 }
@@ -242,7 +258,10 @@ if( function_exists('add_filter') ) {
 
 
 function google_routeplaner_admin_head() {
-	echo '<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+	if('yes' == get_option("google_routeplaner_viewport")) {
+		echo '<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />';
+	}	
+	echo '
 	<style type="text/css" media="screen">
 	@import url("' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner.css");
 	</style>';
@@ -250,7 +269,9 @@ function google_routeplaner_admin_head() {
 add_action('admin_head', 'google_routeplaner_admin_head');
 
 function google_routeplaner_head() {
-	echo '<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />';
+	if('yes' == get_option("google_routeplaner_viewport")) {
+		echo '<meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />';
+	}
 }
 add_action('wp_head', 'google_routeplaner_head');
 

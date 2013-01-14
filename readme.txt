@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: route, google, map, route planner, planer, planner, route
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 2.6
+Stable tag: 3.0
 License: Feel free to edit for personal use
 
 Allows you to add one or more route planners based on Google Maps to help your users to find a specific place.
@@ -51,6 +51,13 @@ Yes, this works since version 1.5 but it's not possible to use different languag
 
 
 == Changelog ==
+
+= 3.0 =
+* Donation settings have been changed. Link can be removed without donating
+* Viewport can now be disabled
+* Small graphical tweaks
+* Troubleshooting page added
+* Autodetection can now give longitude and latitude or country, city and street
 
 = 2.6 =
 * Hotfix for trouble with version 2.5

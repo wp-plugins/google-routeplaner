@@ -12,8 +12,29 @@ if(1 == intval($_GET['autofill'])) {
 
 	echo 'function setUserPos(position) {
 		document.getElementById(\'fromAddress' . $_GET['planer_id'] . '\').value = position.coords.latitude + \', \' + position.coords.longitude;
-		//alert(position.coords.latitude);
-		//alert(position.coords.longitude);
+	}
+	
+	navigator.geolocation.getCurrentPosition(setUserPos);';
+}
+
+if(2 == intval($_GET['autofill'])) {
+
+	echo 'function setUserPos(position) {
+		var getcity = new google.maps.Geocoder();
+		
+		var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+		
+		getcity.geocode({\'latLng\': latlng}, function(results, status) {
+		  if (status == google.maps.GeocoderStatus.OK) {
+			if (results[1]) {
+			 document.getElementById(\'fromAddress' . $_GET['planer_id'] . '\').value = results[1].formatted_address;
+			}
+		  } else {
+			alert("Geocoder failed due to: " + status);
+		  }
+		});
+	
+		
 	}
 	
 	navigator.geolocation.getCurrentPosition(setUserPos);';

@@ -4,15 +4,30 @@
 }
 
 .google_routeplaner .success {
-	background-color: #c3ff88;
-	border-color: #8dff1c;
-	padding: 5px;
+	color: #4f8a10;
+	background: #dff2bf url(images/success.png) no-repeat;
+	border: 1px solid #4f8a10;
+	padding:15px 10px 15px 50px;
+	background-position: 10px center;
+	font-weight: bold;
 }
 
 .google_routeplaner .error {
-	background-color: #ff8888;
-	border-color: #ff1c1c;
-	padding: 5px;
+	color: #d8000c;
+	background: #ffbaba url(images/error.png) no-repeat;
+	border: 1px solid #d8000c;
+	padding:15px 10px 15px 50px;
+	background-position: 10px center;
+	font-weight: bold;
+}
+
+.google_routeplaner .gr_notice {
+	color: #9f6000;
+	background: #feefb3;
+	border: 1px solid #9f6000;
+	padding: 10px;
+	background-position: 10px center;
+	font-weight: bold;
 }
 
 .google_routeplaner ul {

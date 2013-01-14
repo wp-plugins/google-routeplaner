@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Google Routeplaner\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-22 15:51+0100\n"
+"POT-Creation-Date: 2013-01-14 16:32+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Thomas Probach <info@deformed-design.de>\n"
 "Language-Team: DerWebschmied <info@derwebschmied.de>\n"
@@ -27,6 +27,7 @@ msgstr ""
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:63
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:76
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:2
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:2
 msgid "Google Routeplanner"
 msgstr "Google Routeplanner"
 
@@ -196,107 +197,112 @@ msgstr "Automatische Erkennung des Benutzerstandorts"
 
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:136
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:144
-msgid "Yes"
-msgstr "Ja"
+msgid "Get coordinates"
+msgstr "Koordinaten abrufen"
 
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:138
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:146
-msgid "No"
-msgstr "Nein"
-
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:139
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:147
+msgid "Get address"
+msgstr "Adresse abrufen"
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:140
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:150
+msgid "No detection"
+msgstr "Keine autom. Erkennung"
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:141
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:151
 msgid "This is based on HTML5 and will work best with mobile devices."
 msgstr "Dies basiert auf HTML5 und funktioniert mit mobilen Geräten am besten."
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:141
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:149
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:41
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:143
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:153
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:61
 msgid "Language"
 msgstr "Sprache"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:143
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:151
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:145
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:155
 msgid "Default"
 msgstr "Standard"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:144
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:152
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:45
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:146
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:156
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:65
 msgid "English"
 msgstr "Englisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:145
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:153
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:46
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:147
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:157
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:66
 msgid "German"
 msgstr "Deutsch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:146
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:154
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:47
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:148
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:158
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:67
 msgid "French"
 msgstr "Französisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:147
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:155
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:48
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:149
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:159
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:68
 msgid "Spanish"
 msgstr "Spanisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:148
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:156
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:49
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:150
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:160
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:69
 msgid "Dutch"
 msgstr "Holländisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:149
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:157
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:50
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:151
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:161
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:70
 msgid "Italian"
 msgstr "Italienisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:150
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:158
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:51
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:152
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:162
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:71
 msgid "Polish"
 msgstr "Polnisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:151
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:159
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:52
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:153
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:163
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:72
 msgid "Catalan"
 msgstr "Katalanisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:152
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:160
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:53
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:154
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:164
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:73
 msgid "Euskara"
 msgstr "Euskaraisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:153
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:161
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:54
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:155
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:165
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:74
 msgid "Russian"
 msgstr "Russisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:154
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:162
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:55
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:156
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:166
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:75
 msgid "Japanese"
 msgstr "Japanisch"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:156
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:164
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:158
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:168
 msgid "This only effects the route output, not the interface!"
 msgstr "Wirkt sich nur auf die Ausgabe der Route aus, nicht auf das Interface!"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:160
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-add-route.php:162
 msgid "Save route"
 msgstr "Route speichern"
 
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-doc-page.php:2
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:120
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:128
 msgid "Documentation"
 msgstr "Dokumentation"
 
@@ -369,7 +375,7 @@ msgstr "Die Änderungen wurden gespeichert!"
 msgid "CSS Hooks"
 msgstr "CSS Hooks"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:168
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-edit-route.php:172
 msgid "Save changes"
 msgstr "Änderungen speichern"
 
@@ -378,7 +384,7 @@ msgid "Really delete this route?"
 msgstr "Diese Route wirklich löschen?"
 
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-list-routes.php:19
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:118
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:126
 msgid "Routes"
 msgstr "Routen"
 
@@ -418,7 +424,7 @@ msgid "You have not created any routes yet!"
 msgstr "Sie haben noch keine Route angelegt!"
 
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:2
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:117
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:125
 msgid "Overview"
 msgstr "Übersicht"
 
@@ -426,57 +432,50 @@ msgstr "Übersicht"
 msgid "Changelog"
 msgstr "Letzte Änderungen"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:82
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:94
 msgid "The Plugin"
 msgstr "Das Plugin"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:84
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:96
 msgid "Google Routeplanner generates a routeplanner based on the <a href=\"http://code.google.com/apis/maps/\">Google Maps API</a>."
 msgstr "Google Routeplanner erstellt einen Routenplaner auf Basis der <a href=\"http://code.google.com/apis/maps/\">Google Maps API</a>."
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:85
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:97
 msgid "We suggest adding a printer friendly stylesheet to your Wordpress design to allow your users to print the route without the need to print design elements. A tutorial how to do this can be found <a href=\"http://codex.wordpress.org/Styling_for_Print\">here</a>."
 msgstr "Wer empfehlen das hinzufügen eines druckfreundlichen Stylesheets zu Ihrem Wordpress-Design. Dies erlaubt es Ihren Besuchern die Route ohne unnötige Designelemente auszudrucken. Ein (englisches) Tutorial wie Sie dies anstellen finden Sie <a href=\"http://codex.wordpress.org/Styling_for_Print\">hier</a>."
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:86
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:98
 msgid "Plugin developed by <a href=\"http://deformed-design.de\">Deformed Design</a>."
 msgstr "Plugin entwickelt von <a href=\"http://deformed-design.de\">Deformed Design</a>."
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:91
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:97
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:103
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:106
 msgid "Support &amp; Feedback"
 msgstr "Support &amp; Feedback"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:96
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:105
 msgid "If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk."
 msgstr "Wenn Sie bei der Verwendung des Plugins Probleme haben, Ihre Ideen für die künftige Weiterentwicklung weitergeben möchten oder schlicht Ihre Meinung zum Plugin abgeben möchten verwenden Sie bitte meine Help Desk Software."
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:101
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:20
-msgid "Developing this plugin and helping those who have trouble with it costs a lot of time. Please consider a small donation using PayPal or Amazon."
-msgstr "Die Entwicklung dieses Plugins und die Supportarbeit kosten eine Menge Zeit. Bitte ziehen Sie eine kleine Spende via PayPal oder Amazon in Erwägung."
-
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:102
-msgid "Support is currently not available for you."
-msgstr "Support ist für Sie momentan nicht verfügbar."
-
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:111
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:112
 msgid "Enjoy the plugin?"
 msgstr "Gefällt Ihnen das Plugin?"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:113
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:114
 msgid "If you like the plugin you can support my work in different ways:"
 msgstr "Wenn Sie das Plugin mögen können Sie es auf verschiedene Arten unterstützen:"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:115
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:116
 msgid "Rate it on WordPress.org"
 msgstr "Bewerte das Plugin auf WordPress.org"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:116
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:117
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:40
 msgid "Donate using PayPal"
 msgstr "Via PayPal spenden"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:117
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-main-page.php:118
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:41
 msgid "Take a look at my Amazon wishlist"
 msgstr "Schauen Sie auf meine Amazon-Wunschliste"
 
@@ -492,67 +491,151 @@ msgstr "Die Route wurde gelöscht!"
 msgid "Preview Route"
 msgstr "Vorschau der Route"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:117
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:125
 msgid "Routeplaner"
 msgstr "Routenplaner"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:119
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:127
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:2
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:11
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-pages.php:129
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:2
+msgid "Troubleshooting"
+msgstr "Fehlerbehebung"
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:12
 msgid "Settings saved!"
 msgstr "Einstellungen gespeichert!"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:18
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:27
 msgid "Donation settings"
 msgstr "Spender-Einstellungen"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:21
-msgid "Personal use"
-msgstr "Private Nutzung"
-
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:23
-msgid "Show <em>Powered-by</em> below maps (Support available)"
-msgstr "Zeige <em>Powered-by</em> unter Karten (Support verfügbar)"
-
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:26
-msgid "Remove <em>Powered-by</em> (Support NOT available)"
-msgstr "<em>Powered-by</em> entfernen (Support NICHT verfügbar)"
-
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:29
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:36
-msgid "I donated with PayPal or Amazon, remove <em>Powered-by</em> (Support available)"
-msgstr "Ich habe via PayPal oder Amazon gespendet, <em>Powered-by</em> entfernen (Support verfügbar)"
+msgid "Developing this plugin and helping those who have trouble with it costs a lot of time. Please consider a small donation using PayPal or Amazon."
+msgstr "Die Entwicklung dieses Plugins und die Supportarbeit kosten eine Menge Zeit. Bitte ziehen Sie eine kleine Spende via PayPal oder Amazon in Erwägung."
 
 #: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:31
-msgid "Commercial use"
-msgstr "Kommerzielle Nutzung"
+msgid "Show <em>Powered-by</em> below maps to support the developer."
+msgstr "Zeige <em>Powered-by</em> unter Karten um den Entwickler zu unterstützen."
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:33
-msgid "Show <em>Powered-by</em> below maps (Support NOT available)"
-msgstr "Zeige <em>Powered-by</em> unter Karten (Support NICHT verfügbar)"
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:34
+msgid "No <em>Powered-by</em> below maps, please consider another way to support the developer."
+msgstr "Kein  <em>Powered-by</em> unter Karten, bitte ziehen Sie eine andere Form der Unterstützung in Erwägung."
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:43
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:37
+msgid "Developing this plugin is a lot of work and completly free for you. You can also get free support if you need help."
+msgstr "Die Entwicklung dieses Plugins ist viel Arbeit und für Sie komplett kostenlos. Zudem erhalten Sie kostenlosen Support wenn Sie Hilfe benötigen."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:38
+msgid "Please consider a small donation for my work."
+msgstr "Über eine kleine Spende für meine Arbeit würde ich mich freuen."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:48
+msgid "Viewport settings"
+msgstr "Viewport Einstellungen"
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:50
+msgid "If you have set your viewport with another plugin you can disable the viewport output from this plugin."
+msgstr "Wenn Sie den Viewport mittels eines anderen Plugins bereits gesetzt haben können Sie die Vieport-Ausgabe des Routenplaners deaktivieren."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:52
+msgid "Yes, use viewport."
+msgstr "Ja, Viewport verwenden."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:55
+msgid "No, do NOT use viewport."
+msgstr "Nein, Viewport nicht verwenden."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:63
 msgid "You can set the language for the Google driving directions for all maps. You can overwrite this setting for every map."
 msgstr "Sie können die Sprache für die Fahranweisungen von Google für alle Karten einstellen. Sie können diese Einstellung für jede Karte überschreiben."
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:57
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:77
 msgid "Set language for driving information, this does not effect the interface."
 msgstr "Sprache für die Wegbeschreibung festlegen, dies wirkt sich nicht auf das Interface aus."
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:61
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-settings-page.php:81
 msgid "Save settings"
 msgstr "Einstellungen speichern"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner.php:218
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:5
+msgid "Display errors"
+msgstr "Anzeigefehler"
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:7
+msgid "Some people had display error with the map like missing markers or seams between parts of the map."
+msgstr "Eine Nutzer haben Anzeigefehler auf der Karte, wie etwa fehlende Markierungen oder Ränder zwischen Teilen der Karte."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:8
+msgid "This is most of the time caused by your theme and sadly this is also the case with the <em>Twenty Eleven</em>."
+msgstr "In den meisten Fällen wird dieses Problem vom Theme verursacht, leider betrifft dies auch <em>Twenty Eleven</em>."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:9
+msgid "Please switch to the <em>Twenty Ten</em> to see if the theme is your problem."
+msgstr "Bitte wechseln sie für einen Test auf <em>Twenty Ten</em> um zu sehen, ob ihr Theme das Problem verursacht."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:10
+msgid "If that is the case, you need to look into your themes CSS and try to find the troublemaker there."
+msgstr "Wenn dies er Problem löst sollten Sie einen Blick in das CSS Ihres Themes werfen und dort die Quelle des Problems suchen."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:11
+msgid "I can not give free support and fix your theme!"
+msgstr "Leider kann ich keinen kostenlosen Support anbieten, wenn Ihr Theme die Ursache das Problems ist."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:12
+msgid "Trouble with Twenty Eleven"
+msgstr "Probleme mit Twenty Eleven"
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:13
+msgid "As you can see, the zoom slider is broken and there are seams between map parts with <em>Twenty Eleven</em>."
+msgstr "Wie Sie sehen ist die Zoom-Kontrolle defekt und der Übergang zwischen den einzelnen Kartenteilen ist unter <em>Twenty Eleven</em> nicht korrekt."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:14
+msgid "No trouble with Twenty Ten"
+msgstr "Keine Probleme mit Twenty Ten"
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner-trouble-page.php:15
+msgid "Zoom slider is working and there and working and the map parts are seamless with <em>Twenty Ten</em>."
+msgstr "Unter <em>Twenty Ten</em> wird die Zoom-Kontrolle korrekt angezeigt und der Übergang zwischen den Kartenteilen ist korrekt."
+
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner.php:235
 msgid "Your location"
 msgstr "Ihr Standort"
 
-#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner.php:218
+#: C:\Users\Thomas\Wordpress-Plugins\Routeplaner\trunk/google-routeplaner.php:235
 msgid "Create route"
 msgstr "Route erstellen"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid "No"
+#~ msgstr "Nein"
+
+#~ msgid "Support is currently not available for you."
+#~ msgstr "Support ist für Sie momentan nicht verfügbar."
+
+#~ msgid "Personal use"
+#~ msgstr "Private Nutzung"
+
+#~ msgid "Remove <em>Powered-by</em> (Support NOT available)"
+#~ msgstr "<em>Powered-by</em> entfernen (Support NICHT verfügbar)"
+
+#~ msgid ""
+#~ "I donated with PayPal or Amazon, remove <em>Powered-by</em> (Support "
+#~ "available)"
+#~ msgstr ""
+#~ "Ich habe via PayPal oder Amazon gespendet, <em>Powered-by</em> entfernen "
+#~ "(Support verfügbar)"
+
+#~ msgid "Commercial use"
+#~ msgstr "Kommerzielle Nutzung"
+
+#~ msgid "Show <em>Powered-by</em> below maps (Support NOT available)"
+#~ msgstr "Zeige <em>Powered-by</em> unter Karten (Support NICHT verfügbar)"
 
 #~ msgid "Uninstall"
 #~ msgstr "Deinstallieren"

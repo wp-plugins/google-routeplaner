@@ -4,6 +4,14 @@
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside" style="height: 300px; overflow: auto; overflow-y: scroll;">
+				<h5>Version 3.0</h5>
+					<ul>
+						<li>Donation settings have been changed. Link can be removed without donating</li>
+						<li>Viewport can now be disabled</li>
+						<li>Small graphical tweaks</li>
+						<li>Troubleshooting page added</li>
+						<li>Autodetection can now give longitude and latitude or country, city and street</li>
+					</ul>
 				<h5>Version 2.6</h5>
 					<ul>
 						<li>Hotfix for trouble with version 2.5</li>
@@ -94,20 +102,9 @@
 			<div class="postbox">
 				<h3><?php _e('Support &amp; Feedback', 'google_routeplaner'); ?></h3>
 				<div class="inside">
-					<?php
-					if('personal_link' == get_option('google_routeplaner_donate') || 'personal_paypal' == get_option('google_routeplaner_donate') || 'commercial_paypal' == get_option('google_routeplaner_donate')) {
-					?>
 					<p><?php _e('If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk.', 'google_routeplaner'); ?></p>
 					<p style="text-align: center;"><a href="http://support.deformed-design.de"><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/support.png" alt="<?php _e('Support &amp; Feedback', 'google_routeplaner'); ?>" /></a></p>
-					<?php
-					} else {
-					?>
-					<p><?php _e('Developing this plugin and helping those who have trouble with it costs a lot of time. Please consider a small donation using PayPal or Amazon.', 'google_routeplaner'); ?></p>
-					<p><?php _e('Support is currently not available for you.', 'google_routeplaner'); ?></p>
-					<?php
-					}
-					?>
-				</div>
+					</div>
 			</div>
 		</div>
 	   

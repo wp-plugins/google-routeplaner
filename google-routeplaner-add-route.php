@@ -132,10 +132,12 @@
 						</select></p>		
 						
 						<p><span class="formbold"><?php _e('Auto-Detect users location', 'google_routeplaner'); ?></span><br />
-						<input type="radio" name="google_routeplaner_autofill" id="google_routeplaner_autofill_yes" value="1" />
-						<label for="google_routeplaner_autofill_yes"><?php _e('Yes', 'google_routeplaner'); ?></label><br />
+						<input type="radio" name="google_routeplaner_autofill" id="google_routeplaner_autofill_coords" value="1" />
+						<label for="google_routeplaner_autofill_coords"><?php _e('Get coordinates', 'google_routeplaner'); ?></label><br />
+						<input type="radio" name="google_routeplaner_autofill" id="google_routeplaner_autofill_city" value="2" />
+						<label for="google_routeplaner_autofill_city"><?php _e('Get address', 'google_routeplaner'); ?></label><br />
 						<input type="radio" name="google_routeplaner_autofill" id="google_routeplaner_autofill_no" value="0" checked="checked" />
-						<label for="google_routeplaner_autofill_no"><?php _e('No', 'google_routeplaner'); ?></label><br />
+						<label for="google_routeplaner_autofill_no"><?php _e('No detection', 'google_routeplaner'); ?></label><br />
 						<i><?php _e('This is based on HTML5 and will work best with mobile devices.', 'google_routeplaner'); ?></i></p>
 						
 						<p><label for="google_routeplaner_language" class="formbold"><?php _e('Language', 'google_routeplaner'); ?></label><br />
