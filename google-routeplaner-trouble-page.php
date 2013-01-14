@@ -9,9 +9,9 @@
 				<p><?php _e('Please switch to the <em>Twenty Ten</em> to see if the theme is your problem.', 'google_routeplaner'); ?></p>
 				<p><?php _e('If that is the case, you need to look into your themes CSS and try to find the troublemaker there.', 'google_routeplaner'); ?></p>
 				<p><?php _e('I can not give free support and fix your theme!', 'google_routeplaner'); ?></p>
-				<p><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/twenty_eleven_map" alt="<?php _e('Trouble with Twenty Eleven', 'google_routeplaner'); ?>" /></p>
+				<p><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/twenty_eleven_map.jpg" alt="<?php _e('Trouble with Twenty Eleven', 'google_routeplaner'); ?>" /></p>
 				<p><?php _e('As you can see, the zoom slider is broken and there are seams between map parts with <em>Twenty Eleven</em>.', 'google_routeplaner'); ?></p>
-				<p><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/twenty_ten_map" alt="<?php _e('No trouble with Twenty Ten', 'google_routeplaner'); ?>" /></p>
+				<p><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/twenty_ten_map.jpg" alt="<?php _e('No trouble with Twenty Ten', 'google_routeplaner'); ?>" /></p>
 				<p><?php _e('Zoom slider is working and there and working and the map parts are seamless with <em>Twenty Ten</em>.', 'google_routeplaner'); ?></p>
 			</div>	
 		</div>
