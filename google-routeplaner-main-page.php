@@ -95,7 +95,7 @@
 				<div class="inside">
 					<p><?php _e('Google Routeplanner generates a routeplanner based on the <a href="http://code.google.com/apis/maps/">Google Maps API</a>.', 'google_routeplaner'); ?></p>
 					<p><?php _e('We suggest adding a printer friendly stylesheet to your Wordpress design to allow your users to print the route without the need to print design elements. A tutorial how to do this can be found <a href="http://codex.wordpress.org/Styling_for_Print">here</a>.', 'google_routeplaner'); ?></p>	
-					<p><?php _e('Plugin developed by <a href="http://deformed-design.de">Deformed Design</a>.', 'google_routeplaner'); ?></p>
+					<p><?php _e('Plugin developed by <a href="http://www.derwebschmied.de">DerWebschmied</a>.', 'google_routeplaner'); ?></p>
 				</div>
 			</div>
 
