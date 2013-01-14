@@ -103,7 +103,7 @@
 				<h3><?php _e('Support &amp; Feedback', 'google_routeplaner'); ?></h3>
 				<div class="inside">
 					<p><?php _e('If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk.', 'google_routeplaner'); ?></p>
-					<p style="text-align: center;"><a href="http://support.deformed-design.de"><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/support.png" alt="<?php _e('Support &amp; Feedback', 'google_routeplaner'); ?>" /></a></p>
+					<p style="text-align: center;"><a href="http://support.derwebschmied.de"><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/support.png" alt="<?php _e('Support &amp; Feedback', 'google_routeplaner'); ?>" /></a></p>
 					</div>
 			</div>
 		</div>
