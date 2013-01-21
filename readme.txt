@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: route, google, map, route planner, planer, planner, route
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 3.0
+Stable tag: 3.1
 License: Feel free to edit for personal use
 
 Allows you to add one or more route planners based on Google Maps to help your users to find a specific place.
@@ -52,6 +52,11 @@ Yes, this works since version 1.5 but it's not possible to use different languag
 
 == Changelog ==
 
+= 3.1 =
+* Added a lot of new languages which Google supports
+* Label and button of the maps are now translated with a PHP-file. This should make it a lot easier	to translate and to have different languages for maps on the same WordPress installation.
+* Added an integrity check to solve database issues.
+						
 = 3.0 =
 * Donation settings have been changed. Link can be removed without donating
 * Viewport can now be disabled

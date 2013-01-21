@@ -1,9 +1,19 @@
  <div class="wrap google_routeplaner">
-   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Overview', 'google_routeplaner'); ?></h2>
+   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Overview', 'google_routeplaner'); ?></h2>
 	<div id="poststuff">
 		<div class="postbox" style="width: 30%; float: right;">
 			<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 			<div class="inside" style="height: 300px; overflow: auto; overflow-y: scroll;">
+				<h5>Version 3.1</h3>
+					<ul>
+						<li>Added a lot of new languages which Google supports</li>
+						<li>Label and button of the maps are now translated with a PHP-file. This should make it a lot easier
+						to translate and to have different languages for maps on the same WordPress installation.<br />
+						Take a look at the <em>google-routeplaner-translations.php</em> in the plugins directory!<br />
+						Copy this file to the directory of your active theme to apply and keep changes even after updates.</li>
+						<li>Added an integrity check to solve database issues.</li>
+					</ul>
+				
 				<h5>Version 3.0</h5>
 					<ul>
 						<li>Donation settings have been changed. Link can be removed without donating</li>
@@ -108,16 +118,24 @@
 			</div>
 		</div>
 	   
-	   <div class="postbox" style="width: 30%; float: left; margin-left: 5%;">
-		   <h3><?php _e('Enjoy the plugin?', 'google_routeplaner'); ?></h3>
-			<div class="inside">
-				<p><?php _e('If you like the plugin you can support my work in different ways:', 'google_routeplaner'); ?></p>
-					<ul style="list-style-type: none;">
-						<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_wordpress.png" alt="" /> <a href="http://wordpress.org/extend/plugins/google_routeplaner/"> <?php _e('Rate it on WordPress.org', 'google_routeplaner'); ?></a></li>
-						<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_paypal.png" alt="" /> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VAFAKGCDQ2GHU"> <?php _e('Donate using PayPal', 'google_routeplaner'); ?></a></li>
-						<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_amazon.png" alt="" /> <a href="http://www.amazon.de/registry/wishlist/2ZWBSTFQJ9PDU"> <?php _e('Take a look at my Amazon wishlist', 'google_routeplaner'); ?></a></li>
-					</ul>
+	   <div style="width: 30%; float: left; margin-left: 5%;">
+		   <div class="postbox">
+			   <h3><?php _e('Enjoy the plugin?', 'google_routeplaner'); ?></h3>
+				<div class="inside">
+					<p><?php _e('If you like the plugin you can support my work in different ways:', 'google_routeplaner'); ?></p>
+						<ul style="list-style-type: none;">
+							<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_wordpress.png" alt="" /> <a href="http://wordpress.org/extend/plugins/google_routeplaner/"> <?php _e('Rate it on WordPress.org', 'google_routeplaner'); ?></a></li>
+							<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_paypal.png" alt="" /> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VAFAKGCDQ2GHU"> <?php _e('Donate using PayPal', 'google_routeplaner'); ?></a></li>
+							<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_amazon.png" alt="" /> <a href="http://www.amazon.de/registry/wishlist/2ZWBSTFQJ9PDU"> <?php _e('Take a look at my Amazon wishlist', 'google_routeplaner'); ?></a></li>
+						</ul>
+				</div>
+		   </div>
+		   <div class="postbox">
+			   <h3><?php _e('Database integrity check', 'google_routeplaner'); ?></h3>
+				<div class="inside">
+					<?php require_once(WP_PLUGIN_DIR . '/google-routeplaner/google-routeplaner-integrity-check.php'); ?>
+				</div>
 			</div>
-	   </div>
+		</div>
 	</div>
 </div>

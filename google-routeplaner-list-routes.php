@@ -16,7 +16,7 @@
 		}
 	}
 	</script>
-   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Routes', 'google_routeplaner'); ?></h2>
+   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Routes', 'google_routeplaner'); ?></h2>
    <p><a href="admin.php?page=google_routeplaner_routes&amp;routeplaner_action=google_routeplaner_add_route" class="button-primary"><?php _e('Create Route', 'google_routeplaner'); ?></a></p>
    <table class="widefat" cellspacing="0" cellpadding="0">
 	<thead>

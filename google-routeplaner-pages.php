@@ -8,6 +8,8 @@
  * About Page
  */
 function google_routeplaner_about_page() {
+	global $wpdb;
+	
 	include 'google-routeplaner-main-page.php';
 }
 
@@ -38,6 +40,7 @@ function google_routeplaner_routes_page() {
  * Settings Page
  */
 function google_routeplaner_option_page() {
+	global $google_routeplaner_langs;
 	include 'google-routeplaner-settings-page.php';
 }
 
@@ -60,7 +63,7 @@ function google_routeplaner_delete_route($route_id) {
 	
 	?>
 	<div class="wrap google_routeplaner">
-    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Delete Route', 'google_routeplaner'); ?></h2>
+    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Delete Route', 'google_routeplaner'); ?></h2>
 	<p class="success"><?php _e('The route has been deleted!', 'google_routeplaner'); ?></p>
 	<p><a href="admin.php?page=google_routeplaner_routes" class="button"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
 	</div>
@@ -116,7 +119,7 @@ function google_routeplaner_add_menu() {
 	global $submenu;
 	add_option("google_routeplaner_donate","personal_link");	
 	add_option("google_routeplaner_language","en");	
-	add_option("google_routeplaner_version","3.0");	
+	add_option("google_routeplaner_version","1.0");	
 	add_option("google_routeplaner_viewport","yes");	
 	
 	add_action( 'admin_menu' , 'admin_menu_new_items' );

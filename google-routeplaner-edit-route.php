@@ -1,5 +1,5 @@
 <?php
-	global $wpdb;
+	global $wpdb, $google_routeplaner_langs;
 	
 	/*
 	 * Save Route
@@ -24,7 +24,7 @@
 		
 		?>
 		<div class="wrap google_routeplaner">
-	    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Edit Route', 'google_routeplaner'); ?></h2>
+	    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Edit Route', 'google_routeplaner'); ?></h2>
 		<p class="success"><?php _e('Your changes has been saved!', 'google_routeplaner'); ?></p>
 		<p><a href="admin.php?page=google_routeplaner_routes"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
 		</div>		
@@ -153,17 +153,19 @@
 						<p><label for="google_routeplaner_language" class="formbold"><?php _e('Language', 'google_routeplaner'); ?></label><br />
 						<select name="google_routeplaner_language" id="google_routeplaner_language">
 							<option value=""><?php _e('Default', 'google_routeplaner'); ?></option>
-							<option value="en"<?php if('en' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('English', 'google_routeplaner'); ?></option>
-							<option value="de"<?php if('de' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('German', 'google_routeplaner'); ?></option>
-							<option value="fr"<?php if('fr' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('French', 'google_routeplaner'); ?></option>
-							<option value="es"<?php if('es' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Spanish', 'google_routeplaner'); ?></option>
-							<option value="nl"<?php if('nl' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Dutch', 'google_routeplaner'); ?></option>
-							<option value="it"<?php if('it' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Italian', 'google_routeplaner'); ?></option>
-							<option value="pl"<?php if('pl' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Polish', 'google_routeplaner'); ?></option>
-							<option value="ca"<?php if('ca' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Catalan', 'google_routeplaner'); ?></option>
-							<option value="eu"<?php if('eu' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Euskara', 'google_routeplaner'); ?></option>
-							<option value="ru"<?php if('ru' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Russian', 'google_routeplaner'); ?></option>
-							<option value="ja"<?php if('ja' == $planer['planer_language']) { echo ' selected="selected"'; } ?>><?php _e('Japanese', 'google_routeplaner'); ?></option>
+							<?php
+							if(is_array($google_routeplaner_langs)) {
+								foreach($google_routeplaner_langs as $code => $lang) {
+									if($planer['planer_language'] == $code) {
+										echo '<option value="' . $code . '" selected="">' . $lang . '</option>';
+									} else {
+										echo '<option value="' . $code . '">' . $lang . '</option>';
+									}
+								
+								}							
+							}							
+							?>						
+							
 						</select><br />
 						<i><?php _e('This only effects the route output, not the interface!', 'google_routeplaner'); ?></i></p>
 					</div>

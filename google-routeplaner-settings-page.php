@@ -1,5 +1,5 @@
  <div class="wrap google_routeplaner">
-   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Settings', 'google_routeplaner'); ?></h2>
+   <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Settings', 'google_routeplaner'); ?></h2>
 	<?php
 	/*
 	 * Save Settings
@@ -62,17 +62,18 @@
 		   <div class="inside">
 				<p><?php _e('You can set the language for the Google driving directions for all maps. You can overwrite this setting for every map.', 'google_routeplaner'); ?></p>
 				<p><select name="google_routeplaner_language" id="google_routeplaner_language">
-					<option value="en"<?php if('en' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('English', 'google_routeplaner'); ?></option>
-					<option value="de"<?php if('de' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('German', 'google_routeplaner'); ?></option>
-					<option value="fr"<?php if('fr' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('French', 'google_routeplaner'); ?></option>
-					<option value="es"<?php if('es' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Spanish', 'google_routeplaner'); ?></option>
-					<option value="nl"<?php if('nl' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Dutch', 'google_routeplaner'); ?></option>
-					<option value="it"<?php if('it' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Italian', 'google_routeplaner'); ?></option>
-					<option value="pl"<?php if('pl' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Polish', 'google_routeplaner'); ?></option>
-					<option value="ca"<?php if('ca' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Catalan', 'google_routeplaner'); ?></option>
-					<option value="eu"<?php if('eu' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Euskara', 'google_routeplaner'); ?></option>
-					<option value="ru"<?php if('ru' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Russian', 'google_routeplaner'); ?></option>
-					<option value="ja"<?php if('ja' == get_option("google_routeplaner_language")) { echo ' selected="selected"'; } ?>><?php _e('Japanese', 'google_routeplaner'); ?></option>
+					<?php
+					$gr_current_language = get_option("google_routeplaner_language");
+					if(is_array($google_routeplaner_langs)) {
+						foreach($google_routeplaner_langs as $code => $lang) {
+							if($gr_current_language == $code) {
+								echo '<option value="' . $code . '" selected="">' . $lang . '</option>';
+							} else {
+								echo '<option value="' . $code . '">' . $lang . '</option>';
+							}
+						}							
+					}							
+					?>
 				</select><br />
 				<i><?php _e('Set language for driving information, this does not effect the interface.', 'google_routeplaner'); ?></i></p>
 			</div>

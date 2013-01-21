@@ -1,5 +1,5 @@
 <div class="wrap google_routeplaner">
-	<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Troubleshooting', 'google_routeplaner'); ?></h2>
+	<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Troubleshooting', 'google_routeplaner'); ?></h2>
 	<div id="poststuff">
 		<div class="postbox">
 			<h3><?php _e('Display errors', 'google_routeplaner'); ?></h3>
