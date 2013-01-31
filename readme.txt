@@ -18,7 +18,7 @@ The view of the plan can be quickly and easily adapt to your needs and of course
 = Support =
 
 Please don't use the WordPress.org Forums if you need help with the plugin.
-Use our [Plugin Support Page](http://support.derwebschied.de/) instead.
+Use our [Plugin Support Page](http://support.derwebschmied.de/) instead.
 
 = Translations =
 * Romanian Translation: [Web Geek Science](http://webhostinggeeks.com/)
