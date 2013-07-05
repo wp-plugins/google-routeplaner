@@ -1,7 +1,16 @@
 <div class="wrap google_routeplaner">
 	<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Troubleshooting', 'google_routeplaner'); ?></h2>
 	<div id="poststuff">
-		<div class="postbox">
+	
+		<div class="postbox" style="width: 48%; float: right;">
+			<h3><?php _e('Language errors', 'google_routeplaner'); ?></h3>
+			<div class="inside">
+				<p><?php _e('If you have two or more maps on the same page (or in multiple posts shown on one page) you are not able to select different languages for each map.', 'google_routeplaner'); ?> 
+				<?php _e('All maps will use the language used from the last loaded map.', 'google_routeplaner'); ?></p>
+				<p><?php _e('The only way to fix this is to put every map on it\'s own page.', 'google_routeplaner'); ?></p>
+			</div>	
+		</div>
+		<div class="postbox" style="width: 48%; float: left;">
 			<h3><?php _e('Display errors', 'google_routeplaner'); ?></h3>
 			<div class="inside">
 				<p><?php _e('Some people had display error with the map like missing markers or seams between parts of the map.', 'google_routeplaner'); ?></p>
@@ -15,4 +24,5 @@
 				<p><?php _e('Zoom slider is working and there and working and the map parts are seamless with <em>Twenty Ten</em>.', 'google_routeplaner'); ?></p>
 			</div>	
 		</div>
+		<div style="clear: both;"></div>
 	</div>

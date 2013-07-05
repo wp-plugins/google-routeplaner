@@ -3,7 +3,7 @@
 Plugin Name: Google Routeplanner
 Plugin URI: http://support.derwebschmied.de
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
-Version: 3.1
+Version: 3.5
 Author: DerWebschmied
 Author URI: http://support.derwebschmied.de
 Min WP Version: 3.2
@@ -34,7 +34,7 @@ function google_routeplaner_check_table() {
 	
 	$tables = $wpdb->get_col('SHOW TABLES');
 
-	if (in_array($wpdb->prefix . 'google_routeplaner', $tables)) {
+	if (in_array($wpdb->prefix . 'g_routeplanner_plans', $tables) && in_array($wpdb->prefix . 'g_routeplanner_set', $tables)) {
 		return true;
 	} else {
 		return false;
@@ -76,22 +76,23 @@ function google_routeplaner_install_create() {
 			}
 		}
 
-		$sql_routeplaner = 'CREATE TABLE `' . $wpdb->prefix . 'google_routeplaner` (
-					 `planer_id` INT NOT NULL AUTO_INCREMENT,
-					 `start_location` VARCHAR(120) NOT NULL,
-					 `planer_width` INT NOT NULL,
-					 `planer_width_unit` VARCHAR( 5 ) DEFAULT \'px\',
-					 `planer_height` INT NOT NULL,
-					 `planer_height_unit` VARCHAR( 5 ) DEFAULT \'px\',
-					 `planer_zoom` INT NOT NULL,
-					 `planer_type` VARCHAR(120) NOT NULL,
-					 `planer_zoom_control` VARCHAR(120) NOT NULL,
-					 `planer_type_control` VARCHAR(120) NOT NULL,
-					 `planer_autofill` INT NOT NULL DEFAULT  \'0\',
-					 `planer_language` VARCHAR( 5 ),
-					 PRIMARY KEY (`planer_id`)
+		$sql_routes = 'CREATE TABLE `' . $wpdb->prefix . 'g_routeplanner_plans` (
+					 `plan_id` INT NOT NULL AUTO_INCREMENT,
+					 `plan_title` VARCHAR(120) NOT NULL,
+					 PRIMARY KEY (`plan_id`)
 					 )%s';
-		$wpdb->query(sprintf($sql_routeplaner, $charset_collate));
+		$wpdb->query(sprintf($sql_routes, $charset_collate));
+		
+		$sql_settings = 'CREATE TABLE `' . $wpdb->prefix . 'g_routeplanner_set` (
+					 `set_id` INT NOT NULL AUTO_INCREMENT,
+					 `set_plan` INT NOT NULL,
+					 `set_name` VARCHAR(120) NOT NULL,
+					 `set_value` TEXT NOT NULL,
+					 PRIMARY KEY (`set_id`)
+					 )%s';
+		$wpdb->query(sprintf($sql_settings, $charset_collate));
+		
+		update_option("google_routeplaner_version", '3.5');
 		
 	} else {
 		google_routeplaner_update();	
@@ -100,7 +101,7 @@ function google_routeplaner_install_create() {
 
 function google_routeplaner_update($force_update = false) {
 	global $wpdb;
-
+############## ?????????????????????? ################
 	$gr_version = get_option("google_routeplaner_version");
 	if('' == $gr_version) {
 		$gr_version = 0;
@@ -157,6 +158,10 @@ function google_routeplaner_update($force_update = false) {
 		update_option("google_routeplaner_version", '3.1');
 	}
 	
+	if(floatval($gr_version) < 3.5 || $force_update) {
+		update_option("google_routeplaner_version", '3.5');
+	}
+############## ?????????????????????? ################	
 }
 
 if ( function_exists('register_update_hook') )
@@ -194,8 +199,16 @@ function google_routeplaner_uninstall_delete() {
 	delete_option('google_routeplaner_api_key');
 	delete_option('google_routeplaner_donate');
 	delete_option('google_routeplaner_language');
+	delete_option('google_routeplaner_viewport');	
 	
+	$wpdb->query(sprintf('DROP TABLE `' . $wpdb->prefix . 'g_routeplanner_plans`'));
+	$wpdb->query(sprintf('DROP TABLE `' . $wpdb->prefix . 'g_routeplanner_set`'));
+	
+	/*
+	 * Delete old database too!
+	 */ 
 	$wpdb->query(sprintf('DROP TABLE `' . $wpdb->prefix . 'google_routeplaner`'));
+
 }
 
 if ( function_exists('register_uninstall_hook') )
@@ -239,25 +252,68 @@ function google_routeplaner_output($data) {
 function google_routeplaner_build_map($route_id) {
 	global $wpdb, $google_routeplaner_trans;
 
-	$planer = $wpdb->get_row("SELECT * FROM " . $wpdb->prefix . "google_routeplaner WHERE planer_id='" . $route_id . "' LIMIT 1", ARRAY_A);
-	$check_updated = $wpdb->get_results('SHOW COLUMNS FROM `' . $wpdb->prefix . 'google_routeplaner`');
-
-	$map = '
+	$planer = $wpdb->get_row("SELECT * 
+		FROM " . $wpdb->prefix . "g_routeplanner_plans 
+		WHERE plan_id='" . $route_id . "' 
+		LIMIT 1", ARRAY_A);
+	
+	$planer_settings = $wpdb->get_results("SELECT * 
+		FROM " . $wpdb->prefix . "g_routeplanner_set 
+		WHERE set_plan='" . $route_id . "'", ARRAY_A);
+		
+	if(is_array($planer_settings)) {
+		foreach($planer_settings as $setting) {
+			if('' !== $setting['set_value']) {
+				$sett[$setting['set_name']] = $setting['set_value'];
+			}
+		}		
+	}
+	
+	/*  Maybe in the future for custom icons?!
+	 * <style>
+	 *	#adp-placemark img, .adp-placemark img {
+	 *	display:none;
+	 *	}
+	 *	#adp-placemark {
+	 *	   font-weight: bold;
+	 *	   padding: 10px 10px 10px 30px;
+	 *	   background: white url(http://maps.google.com/mapfiles/marker.png) no-repeat 15px center;
+	 *	}
+	 *	.adp-placemark {
+	 *	   font-weight: bold;
+	 *	   padding: 10px 10px 10px 30px;
+	 *	   background: white url(http://maps.google.com/mapfiles/marker.png) no-repeat 15px center;
+	 *	}
+	 *	</style>
+	 */
+	
+	$map = '	
 	<!-- Start Google Routeplanner Plugin Output -->' . "\n";
 	
-	if(1 < strlen($planer['planer_language'])) {
-		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . $planer['planer_language'] . '"></script>' . "\n";
+	$map .= '<script type="text/javascript">';
+	foreach($sett as $key => $value) {
+		if(is_numeric ($value)) {
+			$map .= 'var ' . $key . '_' . $planer['plan_id'] . ' = ' . $value . ';' . "\n";
+		} else {
+			$map .= 'var ' . $key . '_' . $planer['plan_id'] . ' = \'' . $value . '\';' . "\n";
+		}
+	}
+	$map .= '</script>';
+
+	if(1 < strlen($sett['language'])) {	
+		$used_lang = $sett['language'];
 		
-		if(isset($google_routeplaner_trans[$planer['planer_language']])) {
-			$label = $google_routeplaner_trans[$planer['planer_language']]['label'];
-			$button = $google_routeplaner_trans[$planer['planer_language']]['button'];
+		if(isset($google_routeplaner_trans[$sett['language']])) {
+			$label = $google_routeplaner_trans[$sett['language']]['label'];
+			$button = $google_routeplaner_trans[$sett['language']]['button'];
 		} else {
 			$label = $google_routeplaner_trans['en']['label'];
 			$button = $google_routeplaner_trans['en']['button'];
 		}
 		
 	} else {
-		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . get_option("google_routeplaner_language") . '"></script>' . "\n";
+		$used_lang = get_option("google_routeplaner_language");
+
 		$gr_config_lang = get_option("google_routeplaner_language");
 		if(isset($google_routeplaner_trans[$gr_config_lang])) {
 			$label = $google_routeplaner_trans[$gr_config_lang]['label'];
@@ -268,17 +324,27 @@ function google_routeplaner_build_map($route_id) {
 		}
 	
 	}
+	
+	/*
+	 * Use API Key or not
+	 */
+	$api_key = trim(get_option("google_routeplaner_api_key"));
+	if('' !== $api_key) {
+		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=' . $api_key . '&amp;sensor=false&amp;language=' . $used_lang . '"></script>' . "\n";
+	} else {
+		$map .= '<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=' . $used_lang . '"></script>' . "\n";
+	}
 
-	$map .= '<script type="text/javascript" src="' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner-main-js.php?planer_id=' . $planer['planer_id'] . '&amp;planer_type=' . urlencode($planer['planer_type']) . '&amp;planer_zoom_control=' . urlencode($planer['planer_zoom_control']) . '&amp;planer_type_control=' . urlencode($planer['planer_type_control']) . '&amp;start_location=' . urlencode($planer['start_location']) . '&amp;planer_zoom=' . $planer['planer_zoom'] . '"></script>' . "\n";
+	$map .= '<script type="text/javascript" src="' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner-main-js.php?plan_id=' . $planer['plan_id'] . '"></script>' . "\n";
 	
 	$map .= 
-	'<form action="#" onsubmit="calcRoute' . $planer['planer_id'] . '(); return false">
-	 <div id="map_controls' . $planer['planer_id'] . '" class="google_map_controls"><label for="fromAddress' . $planer['planer_id'] . '">' . $label . '</label> <input type="text" size="25" id="fromAddress' . $planer['planer_id'] . '" name="from" value=""/><input name="calc" type="submit" value="' . $button . '" /></div>
-	 <div id="map_canvas' . $planer['planer_id'] . '" class="google_map_canvas" style="overflow: hidden; width: ' . $planer['planer_width'] . $planer['planer_width_unit'] . '; height: ' . $planer['planer_height'] . $planer['planer_height_unit'] . ';"></div>
-	 <div id="map_directions' . $planer['planer_id'] . '" class="google_map_directions"></div>
+	'<form action="#" onsubmit="calcRoute' . $planer['plan_id'] . '(); return false">
+	 <div id="map_controls' . $planer['plan_id'] . '" class="google_map_controls"><label for="fromAddress' . $planer['plan_id'] . '">' . $label . '</label> <input type="text" size="25" id="fromAddress' . $planer['plan_id'] . '" name="from" value=""/><input name="calc" type="submit" value="' . $button . '" /></div>
+	 <div id="map_canvas' . $planer['plan_id'] . '" class="google_map_canvas" style="overflow: hidden; width: ' . $sett['map_width'] . $sett['map_width_unit'] . '; height: ' . $sett['map_height'] . $sett['map_height_unit'] . ';"></div>
+	 <div id="map_directions' . $planer['plan_id'] . '" class="google_map_directions"></div>
 	</form>' . "\n";
 	
-	$map .= '<script type="text/javascript" src="' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner-js.php?planer_id=' . $planer['planer_id'] . '&autofill=' . $planer['planer_autofill'] . '"></script>';
+	$map .= '<script type="text/javascript" src="' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner-js.php?plan_id=' . $planer['plan_id'] . '&autofill=' . $sett['autofill'] . '"></script>' . "\n";
 	
 	if('show_link' == get_option("google_routeplaner_donate")) {
 		$map .= '<div style="clear: both; margin-top: 10px;">Powered by <a href="http://wordpress.org/extend/plugins/google-routeplaner/">Google Routeplanner</a>, 

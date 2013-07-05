@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: route, google, map, route planner, planer, planner, route
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 3.1
+Stable tag: 3.5
 License: Feel free to edit for personal use
 
 Allows you to add one or more route planners based on Google Maps to help your users to find a specific place.
@@ -21,9 +21,11 @@ Please don't use the WordPress.org Forums if you need help with the plugin.
 Use our [Plugin Support Page](http://support.derwebschmied.de/) instead.
 
 = Translations =
-* Romanian Translation: [Web Geek Science](http://webhostinggeeks.com/)
-* French Translation: Corentin Smith 
-* Slovak Translation [WebHostingGeeks.com](http://webhostinggeeks.com/blog/)
+* German: DerWebschmied
+* French: Corentin Smith 
+* Dutch: Unknown
+* Romanian: [WebHostingGeeks.com](http://webhostinggeeks.com/)
+* Slovak [WebHostingGeeks.com](http://webhostinggeeks.com/)
 
 == Installation ==
 
@@ -51,6 +53,14 @@ Yes, this works since version 1.5 but it's not possible to use different languag
 
 
 == Changelog ==
+
+
+= 3.5 = 
+* New and way more flexible database structure
+* You can now use a Google API Key if you want
+* Maps now have a title that can be different from the destination
+* You can now define a display destination. This is shown instead of the route destination, for example if you have to use longitude and latitude.
+* Added pan control options
 
 = 3.1 =
 * Added a lot of new languages which Google supports

@@ -6,35 +6,103 @@
 	 */
 	if ('google_routeplaner_add_route' == $_POST['action'])
 	{
+		if('' !== $_POST['google_routeplaner_destination']) {
 			
-		$wpdb->query("INSERT INTO " . $wpdb->prefix . "google_routeplaner (`start_location`, `planer_width`, `planer_width_unit`, `planer_height`, `planer_height_unit`, `planer_zoom`, `planer_type`, `planer_zoom_control`, `planer_type_control`, `planer_autofill`, `planer_language`)
-		VALUES (
-		'" . $_POST['google_routeplaner_destination'] . "',
-		'" . $_POST['google_routeplaner_map_width'] . "',
-		'" . $_POST['google_routeplaner_map_width_unit'] . "',
-		'" . $_POST['google_routeplaner_map_height'] . "',
-		'" . $_POST['google_routeplaner_map_height_unit'] . "',
-		'" . $_POST['google_routeplaner_zoom'] . "',
-		'" . $_POST['google_routeplaner_map_type'] . "',
-		'" . $_POST['google_routeplaner_zoom_control'] . "',
-		'" . $_POST['google_routeplaner_type_control'] . "',
-		'" . $_POST['google_routeplaner_autofill'] . "',
-		'" . $_POST['google_routeplaner_language'] . "')");
-	
-		$map_id = mysql_insert_id();
+			if('' !== trim($_POST['google_routeplaner_title'])) {
+				$map_name = $_POST['google_routeplaner_title'];
+			} else {
+				$map_name = $_POST['google_routeplaner_destination'];
+			}
 		
+		
+			$wpdb->query("INSERT INTO " . $wpdb->prefix . "g_routeplanner_plans (`plan_title`)
+			VALUES (
+			'" . $map_name . "')");
+			
+			$map_id = mysql_insert_id();
+			
+			$wpdb->query("INSERT INTO " . $wpdb->prefix . "g_routeplanner_set (`set_plan`, `set_name`, `set_value`)
+			VALUES 
+				(
+				'" . $map_id . "',
+				'destination',
+				'" . $_POST['google_routeplaner_destination'] . "'
+				),
+				(
+				'" . $map_id . "',
+				'map_width',
+				'" . $_POST['google_routeplaner_map_width'] . "'
+				),
+				(
+				'" . $map_id . "',
+				'map_width_unit',
+				'" . $_POST['google_routeplaner_map_width_unit'] . "'
+				),
+				(
+				'" . $map_id . "',
+				'map_height',
+				'" . $_POST['google_routeplaner_map_height'] . "'
+				),
+				(
+				'" . $map_id . "',
+				'map_height_unit',
+				'" . $_POST['google_routeplaner_map_height_unit'] . "'
+				),
+				(
+				'" . $map_id . "',
+				'zoom',
+				'" . $_POST['google_routeplaner_zoom'] . "'
+				),			
+				(
+				'" . $map_id . "',
+				'map_type',
+				'" . $_POST['google_routeplaner_map_type'] . "'
+				),			
+				(
+				'" . $map_id . "',
+				'zoom_control',
+				'" . $_POST['google_routeplaner_zoom_control'] . "'
+				),			
+				(
+				'" . $map_id . "',
+				'pan_control',
+				'" . $_POST['google_routeplaner_pan_control'] . "'
+				),		
+				(
+				'" . $map_id . "',
+				'type_control',
+				'" . $_POST['google_routeplaner_type_control'] . "'
+				),
+				(
+				'" . $map_id . "',
+				'autofill',
+				'" . $_POST['google_routeplaner_autofill'] . "'
+				),			
+				(
+				'" . $map_id . "',
+				'language',
+				'" . $_POST['google_routeplaner_language'] . "'
+				),			
+				(
+				'" . $map_id . "',
+				'alt_destination',
+				'" . $_POST['google_routeplaner_alt_destination'] . "'
+				)			
+			");
+			
 		if(0 == $map_id) {
 			google_routeplaner_install();
 		?>
 			<div class="wrap google_routeplaner">
-			<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
-			<p class="error">
-			<?php _e('There has been a problem with installing the plugin. The plugin tried to fix this, please try again.'); ?><br />
-			<?php _e('If the error still appears, please deactivete the plugin, activate it again and try to add a route then.'); ?></p>
-			<p><a href="admin.php?page=google_routeplaner_routes" class="button"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
+				<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
+				<p class="error">
+				<?php _e('There has been a problem with installing the plugin. The plugin tried to fix this, please try again.', 'google_routeplaner'); ?><br />
+				<?php _e('If the error still appears, please deactivete the plugin, activate it again and try to add a route then.', 'google_routeplaner'); ?></p>
+				<p><a href="admin.php?page=google_routeplaner_routes" class="button"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
 			</div>
+
 		<?php
-		} else {
+			} else {		
 		?>	  
 			<div class="wrap google_routeplaner">
 			<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
@@ -43,18 +111,29 @@
 			<p><a href="admin.php?page=google_routeplaner_routes" class="button"><?php _e('Back to overview', 'google_routeplaner'); ?></a></p>
 			</div>
 		<?php
+			}
+		} else {
+			$gr_error['google_routeplaner_destination'] = true;
 		}
-	} else {
+	}
+	if ('google_routeplaner_add_route' !== $_POST['action'] || isset($gr_error)) {
 	/*
 	 * Output Form
 	 */
 
 ?>
+
 	<div class="wrap google_routeplaner">
 		<div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> &bull; <?php _e('Add Route', 'google_routeplaner'); ?></h2>
 	   	<div id="poststuff"> 
 			<form method="post" action="">
-		
+				<div class="postbox" style="clear: both;">
+					<h3><?php _e('Map title', 'google_routeplaner'); ?></h3>
+					<div class="inside">
+						<p><input type="text" name="google_routeplaner_title" id="google_routeplaner_title" style="width: 450px;" value="<?php _e('New map', 'google_routeplaner'); ?>" /><br />
+						<i><?php _e('Empty to use destination as title.', 'google_routeplaner'); ?></i></p>
+					</div>
+				</div>
 				<div class="postbox" style="width: 48%; float: right;">
 					<h3><?php _e('Detail settings', 'google_routeplaner'); ?></h3>
 					<div class="inside">
@@ -70,17 +149,27 @@
 						
 						<p><span class="formbold"><?php _e('Map Zoom Control', 'google_routeplaner'); ?></span><br />
 						<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_large" value="DEFAULT" checked="checked" />
-						<label for="google_routeplaner_zoom_control_large"><?php _e('Large', 'google_routeplaner'); ?></label><br />
+						<label for="google_routeplaner_zoom_control_large"><?php _e('Default', 'google_routeplaner'); ?></label><br />
 						<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_small" value="SMALL" />
 						<label for="google_routeplaner_zoom_control_small"><?php _e('Small', 'google_routeplaner'); ?></label><br />
-						<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_zoom" value="ZOOM_PAN" />
-						<label for="google_routeplaner_zoom_control_zoom"><?php _e('Zoom only', 'google_routeplaner'); ?></label><br />
+						<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_zoom" value="LARGE" />
+						<label for="google_routeplaner_zoom_control_zoom"><?php _e('Large', 'google_routeplaner'); ?></label><br />
 						<input type="radio" name="google_routeplaner_zoom_control" id="google_routeplaner_zoom_control_none" value="NONE" />
 						<label for="google_routeplaner_zoom_control_none"><?php _e('None', 'google_routeplaner'); ?></label><br />
 						<i><?php _e('Select the type of zoom and direction control you want.', 'google_routeplaner'); ?></i></p>
 						
+						<p><span class="formbold"><?php _e('Pan Control', 'google_routeplaner'); ?></span><br />
+						<input type="radio" name="google_routeplaner_pan_control" id="google_routeplaner_pan_control_true" value="true" checked="checked" />
+						<label for="google_routeplaner_pan_control_true"><?php _e('Yes', 'google_routeplaner'); ?></label><br />
+						<input type="radio" name="google_routeplaner_pan_control" id="google_routeplaner_pan_control_false" value="false" />
+						<label for="google_routeplaner_pan_control_false"><?php _e('No', 'google_routeplaner'); ?></label><br />
+						<i><?php _e('Enable or disable the pan control.', 'google_routeplaner'); ?></i></p>
+						
 						<p><span class="formbold"><?php _e('Map Type Control', 'google_routeplaner'); ?></span><br />
-						<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_standard" value="HORIZONTAL_BAR"  checked="checked" />
+						
+						<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_default" value="DEFAULT" checked="checked" />
+						<label for="google_routeplaner_type_control_default"><?php _e('Default', 'google_routeplaner'); ?></label><br />						
+						<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_standard" value="HORIZONTAL_BAR" />
 						<label for="google_routeplaner_type_control_standard"><?php _e('Normal', 'google_routeplaner'); ?></label><br />
 						<input type="radio" name="google_routeplaner_type_control" id="google_routeplaner_type_control_hierachical" value="DROPDOWN_MENU" />
 						<label for="google_routeplaner_type_control_hierachical"><?php _e('Hierarchical', 'google_routeplaner'); ?></label><br />
@@ -93,9 +182,20 @@
 				<div class="postbox" style="width: 48%; float: left;">
 					<h3><?php _e('General settings', 'google_routeplaner'); ?></h3>
 					<div class="inside">
+
 						<p><label for="google_routeplaner_destination" class="formbold"><?php _e('Destination', 'google_routeplaner'); ?></label><br />
-						<input type="text" name="google_routeplaner_destination" id="google_routeplaner_destination" style="width: 300px;" value="<?php echo get_option("google_routeplaner_destination"); ?>" /><br />
+						<input type="text" name="google_routeplaner_destination" id="google_routeplaner_destination" style="width: 300px;" value="" /><br />
 						<i><?php _e('Add a search string for the destination. Adress, company name or something like this.', 'google_routeplaner'); ?></i></p>
+						<?php
+						if($gr_error['google_routeplaner_destination']) {
+							echo '<p class="error">' . __('Please insert a destination', 'google_routeplaner') . '</p>';
+						}
+						?>						
+						
+						<p><label for="google_routeplaner_alt_destination" class="formbold"><?php _e('Display Destination', 'google_routeplaner'); ?></label><br />
+						<input type="text" name="google_routeplaner_alt_destination" id="google_routeplaner_alt_destination" style="width: 300px;" value="" /><br />
+						<i><?php _e('If you want a different name to show as title for the destination.', 'google_routeplaner'); ?></i></p>
+						
 						<p><label for="google_routeplaner_map_width" class="formbold"><?php _e('Map width', 'google_routeplaner'); ?></label><br />
 						<input type="text" name="google_routeplaner_map_width" id="google_routeplaner_map_width" style="width: 70px;" value="500" />
 						<select name="google_routeplaner_map_width_unit" id="google_routeplaner_map_width_unit">
