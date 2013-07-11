@@ -5,6 +5,13 @@
 			<div class="postbox">
 				<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 				<div class="inside" style="height: 300px; overflow: auto; overflow-y: scroll;">
+				
+					<h5>Version 3.6</h3>
+						<ul>
+							<li>Fix for the foreach-error</li>
+							<li>Import should now work or give an error message</li>
+						</ul>
+						
 					<h5>Version 3.5</h3>
 						<ul>
 							<li>New and way more flexible database structure</li>

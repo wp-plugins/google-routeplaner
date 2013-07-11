@@ -3,7 +3,7 @@
 Plugin Name: Google Routeplanner
 Plugin URI: http://support.derwebschmied.de
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
-Version: 3.5
+Version: 3.6
 Author: DerWebschmied
 Author URI: http://support.derwebschmied.de
 Min WP Version: 3.2
@@ -92,7 +92,7 @@ function google_routeplaner_install_create() {
 					 )%s';
 		$wpdb->query(sprintf($sql_settings, $charset_collate));
 		
-		update_option("google_routeplaner_version", '3.5');
+		update_option("google_routeplaner_version", '3.6');
 		
 	} else {
 		google_routeplaner_update();	
@@ -159,8 +159,16 @@ function google_routeplaner_update($force_update = false) {
 	}
 	
 	if(floatval($gr_version) < 3.5 || $force_update) {
+		google_routeplaner_install();
 		update_option("google_routeplaner_version", '3.5');
 	}
+	
+	if(floatval($gr_version) < 3.6 || $force_update) {
+		google_routeplaner_install();
+		update_option("google_routeplaner_version", '3.6');
+	}
+	
+	
 ############## ?????????????????????? ################	
 }
 
@@ -291,11 +299,13 @@ function google_routeplaner_build_map($route_id) {
 	<!-- Start Google Routeplanner Plugin Output -->' . "\n";
 	
 	$map .= '<script type="text/javascript">';
-	foreach($sett as $key => $value) {
-		if(is_numeric ($value)) {
-			$map .= 'var ' . $key . '_' . $planer['plan_id'] . ' = ' . $value . ';' . "\n";
-		} else {
-			$map .= 'var ' . $key . '_' . $planer['plan_id'] . ' = \'' . $value . '\';' . "\n";
+	if(is_array($sett)) {
+		foreach($sett as $key => $value) {
+			if(is_numeric ($value)) {
+				$map .= 'var ' . $key . '_' . $planer['plan_id'] . ' = ' . $value . ';' . "\n";
+			} else {
+				$map .= 'var ' . $key . '_' . $planer['plan_id'] . ' = \'' . $value . '\';' . "\n";
+			}
 		}
 	}
 	$map .= '</script>';

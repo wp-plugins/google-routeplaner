@@ -143,11 +143,14 @@
 							)";
 					}
 					
-					$wpdb->query("INSERT INTO " . $wpdb->prefix . "g_routeplanner_set (`set_plan`, `set_name`, `set_value`)
-						VALUES " . $insert);
+					if($wpdb->query("INSERT INTO " . $wpdb->prefix . "g_routeplanner_set (`set_plan`, `set_name`, `set_value`)
+						VALUES " . $insert)) {
 				
-					echo '<p class="success">' . sprintf(__('Map ID %s to %s has been successfully imported!', 'google_routeplaner'), $old_map['planer_id'], $old_map['start_location']) . '</p>';
-				
+						echo '<p class="success">' . sprintf(__('Map ID %s to %s has been successfully imported!', 'google_routeplaner'), $old_map['planer_id'], $old_map['start_location']) . '</p>';
+					
+					} else {
+						echo '<p class="error">' . sprintf(__('Map ID %s to %s could not be imported', 'google_routeplaner'), $old_map['planer_id'], $old_map['start_location']) . '</p>';
+					}
 				}
 				echo '<p class="success">' . __('You can now delete the old database.', 'google_routeplaner') . '</p>';
 			}
