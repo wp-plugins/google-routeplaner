@@ -1,10 +1,9 @@
 === Google Routeplanner ===
-Contributors: DerWebschmied
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VAFAKGCDQ2GHU
+Contributors: Abandoned
 Tags: route, google, map, route planner, planer, planner, route
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 3.6
+Stable tag: 4.0
 License: Feel free to edit for personal use
 
 Allows you to add one or more route planners based on Google Maps to help your users to find a specific place.
@@ -15,13 +14,8 @@ To help your users locate a specific place, such as your company site, the plugi
 
 The view of the plan can be quickly and easily adapt to your needs and of course it is also possible to create more then one route planner, for example to find venues. The well-known interface of Google Maps your users find quickly a way around. With a simple input field the user can specify their own location and not only gets directions but also a map with the marked path.
 
-= Support =
-
-Please don't use the WordPress.org Forums if you need help with the plugin.
-Use our [Plugin Support Page](http://support.derwebschmied.de/) instead.
-
 = Translations =
-* German: DerWebschmied
+* German: Unknown
 * French: Corentin Smith 
 * Dutch: Unknown
 * Romanian: [WebHostingGeeks.com](http://webhostinggeeks.com/)
@@ -53,6 +47,10 @@ Yes, this works since version 1.5 but it's not possible to use different languag
 
 
 == Changelog ==
+
+= 4.0 = 
+* Fix for update problems
+* Project now abandoned - no more support, no more ads, no more donations!
 
 = 3.6 = 
 * Fix for the foreach-error

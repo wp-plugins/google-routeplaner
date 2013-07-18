@@ -5,7 +5,12 @@
 			<div class="postbox">
 				<h3><?php _e('Changelog', 'google_routeplaner'); ?></h3>
 				<div class="inside" style="height: 300px; overflow: auto; overflow-y: scroll;">
-				
+					<h5>Version 4.0</h3>
+						<ul>
+							<li>Fix for update problems</li>
+							<li>Project now abandoned - no more support, no more ads, no more donations!</li>
+						</ul>
+
 					<h5>Version 3.6</h3>
 						<ul>
 							<li>Fix for the foreach-error</li>
@@ -134,9 +139,8 @@
 		   <div class="postbox">
 				<h3><?php _e('Support &amp; Feedback', 'google_routeplaner'); ?></h3>
 				<div class="inside">
-					<p><?php _e('If you have trouble using this plugin, submit your ideas for future development or simply want to let me know what you think please use my Help Desk.', 'google_routeplaner'); ?></p>
-					<p style="text-align: center;"><a href="http://support.derwebschmied.de"><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/support.png" alt="<?php _e('Support &amp; Feedback', 'google_routeplaner'); ?>" /></a></p>
-					</div>
+					<p><?php _e('This plugin will not be supported anymore.', 'google_routeplaner'); ?></p>
+				</div>
 			</div>
 		</div>
 		
@@ -147,64 +151,9 @@
 				<div class="inside">
 					<p><?php _e('Google Routeplanner generates a routeplanner based on the <a href="http://code.google.com/apis/maps/">Google Maps API</a>.', 'google_routeplaner'); ?></p>
 					<p><?php _e('We suggest adding a printer friendly stylesheet to your Wordpress design to allow your users to print the route without the need to print design elements. A tutorial how to do this can be found <a href="http://codex.wordpress.org/Styling_for_Print">here</a>.', 'google_routeplaner'); ?></p>	
-					<p><?php _e('Plugin developed by <a href="http://www.derwebschmied.de">DerWebschmied</a>.', 'google_routeplaner'); ?></p>
 				</div>
 			</div>
-		   
-		   <div class="postbox">
-				<h3><?php _e('News', 'google_routeplaner'); ?></h3>
-				<div class="inside">
-					<?php
-					$rss = @fetch_feed( 'http://support.derwebschmied.de/feed.php' );
 
-					if ( is_object($rss) ) {
-
-						if ( is_wp_error($rss) ) {
-							echo '<p>' . sprintf(__('Newsfeed could not be loaded.  Check the <a href="%s">front page</a> to check for updates.', 'google_routeplaner'), 'http://support.derwebschmied.de') . '</p>';
-							return;
-						}
-
-						echo '<ul>';
-						foreach ( $rss->get_items(0, 3) as $item ) {
-							$link = $item->get_link();
-							while ( stristr($link, 'http') != $link )
-								$link = substr($link, 1);
-							$link = esc_url(strip_tags($link));
-							$title = esc_attr(strip_tags($item->get_title()));
-							if ( empty($title) )
-								$title = __('Untitled', 'google_routeplaner');
-
-							$desc = str_replace( array("\n", "\r"), ' ', esc_attr( strip_tags( @html_entity_decode( $item->get_description(), ENT_QUOTES, get_option('blog_charset') ) ) ) );
-							$desc = wp_html_excerpt( $desc, 360 );
-
-
-
-							$desc = esc_html( $desc );
-
-							$date = $item->get_date();
-							$diff = '';
-
-							if ( $date ) {
-
-								$diff = human_time_diff( strtotime($date, time()) );
-
-								if ( $date_stamp = strtotime( $date ) )
-									$date = ' <span class="rss-date">' . date_i18n( get_option( 'date_format' ), $date_stamp ) . '</span>';
-								else
-									$date = '';
-							}
-						?>
-						  <li><a class="rsswidget" title="" target="_blank" href='<?php echo $link; ?>'><?php echo $title; ?></a>
-						  <span class="rss-date"><?php echo $date; ?></span>
-						  <div class="rssSummary"><strong><?php echo $diff; ?></strong> - <?php echo $desc; ?></div></li>
-						<?php
-						}
-						echo '</ul>';
-					  }
-					?>
-				</div>
-			</div>
-			
 			<div class="postbox">
 				<h3><?php _e('Translations', 'google_routeplaner'); ?></h3>
 				<div class="inside">
@@ -227,12 +176,12 @@
 							<tr class="odd">
 								<td><?php _e('English', 'google_routeplaner'); ?></td>
 								<td><?php _e('Core', 'google_routeplaner'); ?></td>
-								<td>DerWebschmied</td>
+								<td>Unknown</td>
 							</tr>
 							<tr class="even">
 								<td><?php _e('German', 'google_routeplaner'); ?></td>
 								<td>98%</td>
-								<td>DerWebschmied</td>
+								<td>Unknown</td>
 							</tr>
 							<tr class="odd">
 								<td><?php _e('French', 'google_routeplaner'); ?></td>

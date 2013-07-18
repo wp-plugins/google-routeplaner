@@ -4,10 +4,6 @@
  * this file will contain the translations for the maps output. It does not effect
  * the admin interface, this is still done by the common .po files.
  *
- * Please note, that most translations are done using Google. If I did something wrong
- * in your native language, please report this http://support.derwebschmied.de
- * and I'll fix it with the next release.
- *
  * If you want to make changes, please copy this file to your active themes directory
  * so it will keep your changes, even if you update the plugin.
  */

@@ -2,6 +2,10 @@
    <div id="icon-google_routeplaner" class="icon32"><br /></div><h2><?php _e('Google Routeplanner', 'google_routeplaner'); ?> V<?php echo get_option("google_routeplaner_version"); ?> &bull; <?php _e('Import old database', 'google_routeplaner'); ?></h2>
 	<?php
 	
+	if(!google_routeplaner_check_table()) {
+		google_routeplaner_install();
+	}
+	
 	$old_maps = $wpdb->get_results("SELECT * FROM " . $wpdb->prefix . "google_routeplaner ORDER BY planer_id", ARRAY_A); 
 	
 

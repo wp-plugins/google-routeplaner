@@ -7,44 +7,15 @@
 	if ('google_routeplaner_save_settings' == $_POST['action'])
 	{
 		update_option("google_routeplaner_language", $_POST['google_routeplaner_language']);
-		update_option("google_routeplaner_donate", $_POST['google_routeplaner_donate']);
 		update_option("google_routeplaner_viewport", $_POST['google_routeplaner_viewport']);
 		update_option("google_routeplaner_api_key", $_POST['google_routeplaner_api_key']);
 
 		echo '<p class="success">' . __('Settings saved!', 'google_routeplaner') . '</p>';
 	}
 	?>
-	<script>
-	jQuery(document).ready(function(){
-		jQuery("#google_routeplaner_donate_no_link").click(function() {
-			jQuery("#donate_note").slideDown('slow', function() {
-			});
-		});
-	});
-	</script>
 	<div id="poststuff"> 
 	<form method="post" action="">
 		<div style="width: 48%; float: right;">
-			<div class="postbox">
-				<h3><?php _e('Donation settings', 'google_routeplaner'); ?></h3>
-				<div class="inside">
-					<p><?php _e('Developing this plugin and helping those who have trouble with it costs a lot of time. Please consider a small donation using PayPal or Amazon.', 'google_routeplaner'); ?></p>
-					<p><input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_link" value="show_link"<?php if('show_link' == get_option("google_routeplaner_donate")) { echo ' checked="checked"'; } ?> />
-					<label for="google_routeplaner_donate_link"><?php _e('Show <em>Powered-by</em> below maps to support the developer.', 'google_routeplaner'); ?></label><br />
-					
-					<input type="radio" name="google_routeplaner_donate" id="google_routeplaner_donate_no_link" value="no_link"<?php if('no_link' == get_option("google_routeplaner_donate")) { echo ' checked="checked"'; } ?> />
-					<label for="google_routeplaner_donate_no_link"><?php _e('No <em>Powered-by</em> below maps, please consider another way to support the developer.', 'google_routeplaner'); ?></label></p>
-					
-					<div id="donate_note"<?php if('show_link' == get_option("google_routeplaner_donate")) { echo ' style="display: none;"'; } ?> class="gr_notice">
-						<p><?php _e('Developing this plugin is a lot of work and completly free for you. You can also get free support if you need help.', 'google_routeplaner'); ?></p>
-						<p><?php _e('Please consider a small donation for my work.', 'google_routeplaner'); ?></p>
-						<ul style="list-style-type: none;">
-							<li><img src="<?php echo WP_PLUGIN_URL; ?>/google-routeplaner/images/icon_paypal.png" alt="" /> <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=VAFAKGCDQ2GHU"> <?php _e('Donate using PayPal', 'google_routeplaner'); ?></a></li>
-					
-						</ul>
-					</div>
-				</div>
-			</div>
 		
 			<div class="postbox">
 				<h3><?php _e('Viewport settings', 'google_routeplaner'); ?></h3>

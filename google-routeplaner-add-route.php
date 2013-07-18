@@ -1,6 +1,10 @@
 <?php
 	global $wpdb, $google_routeplaner_langs;
 	
+	if(!google_routeplaner_check_table()) {
+		google_routeplaner_install();
+	}
+	
 	/*
 	 * Save Route
 	 */

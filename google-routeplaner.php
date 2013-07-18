@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Google Routeplanner
-Plugin URI: http://support.derwebschmied.de
+Plugin URI: http://wordpress.org/plugins/google-routeplaner/
 Description: Allows you to add one or more route planners based on Google Maps to help your users to find a specific place. 
-Version: 3.6
-Author: DerWebschmied
-Author URI: http://support.derwebschmied.de
+Version: 4.0
+Author: Abandoned
+Author URI: http://wordpress.org/plugins/google-routeplaner/
 Min WP Version: 3.2
 */
 
@@ -101,7 +101,7 @@ function google_routeplaner_install_create() {
 
 function google_routeplaner_update($force_update = false) {
 	global $wpdb;
-############## ?????????????????????? ################
+
 	$gr_version = get_option("google_routeplaner_version");
 	if('' == $gr_version) {
 		$gr_version = 0;
@@ -157,19 +157,9 @@ function google_routeplaner_update($force_update = false) {
 	
 		update_option("google_routeplaner_version", '3.1');
 	}
+	delete_option('google_routeplaner_donate');
 	
-	if(floatval($gr_version) < 3.5 || $force_update) {
-		google_routeplaner_install();
-		update_option("google_routeplaner_version", '3.5');
-	}
-	
-	if(floatval($gr_version) < 3.6 || $force_update) {
-		google_routeplaner_install();
-		update_option("google_routeplaner_version", '3.6');
-	}
-	
-	
-############## ?????????????????????? ################	
+	update_option("google_routeplaner_version", '4.0');
 }
 
 if ( function_exists('register_update_hook') )
@@ -276,25 +266,7 @@ function google_routeplaner_build_map($route_id) {
 			}
 		}		
 	}
-	
-	/*  Maybe in the future for custom icons?!
-	 * <style>
-	 *	#adp-placemark img, .adp-placemark img {
-	 *	display:none;
-	 *	}
-	 *	#adp-placemark {
-	 *	   font-weight: bold;
-	 *	   padding: 10px 10px 10px 30px;
-	 *	   background: white url(http://maps.google.com/mapfiles/marker.png) no-repeat 15px center;
-	 *	}
-	 *	.adp-placemark {
-	 *	   font-weight: bold;
-	 *	   padding: 10px 10px 10px 30px;
-	 *	   background: white url(http://maps.google.com/mapfiles/marker.png) no-repeat 15px center;
-	 *	}
-	 *	</style>
-	 */
-	
+		
 	$map = '	
 	<!-- Start Google Routeplanner Plugin Output -->' . "\n";
 	
@@ -356,10 +328,6 @@ function google_routeplaner_build_map($route_id) {
 	
 	$map .= '<script type="text/javascript" src="' . WP_PLUGIN_URL . '/google-routeplaner/google-routeplaner-js.php?plan_id=' . $planer['plan_id'] . '&autofill=' . $sett['autofill'] . '"></script>' . "\n";
 	
-	if('show_link' == get_option("google_routeplaner_donate")) {
-		$map .= '<div style="clear: both; margin-top: 10px;">Powered by <a href="http://wordpress.org/extend/plugins/google-routeplaner/">Google Routeplanner</a>, 
-		brought to you by <a href="http://derwebschmied.de">DerWebschmied</a></div>' . "\n";
-	}
 	$map .= '<!-- End Google Routeplanner Plugin Output --><p>' . "\n";
 
 	return $map;

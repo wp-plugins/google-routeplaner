@@ -184,8 +184,7 @@ function google_routeplaner_add_menu() {
 		$import_menu = true;
 		add_submenu_page('google-routeplaner.php', __('Import', 'google_routeplaner'), __('Import', 'google_routeplaner'), 8, 'google_routeplaner_import', 'google_routeplaner_import_page');
 	}
-	
-	$submenu['google-routeplaner.php'][500] = array( 'Support', 'read' , 'http://support.derwebschmied.de' );
+
 }
 
 add_action('admin_menu', 'google_routeplaner_add_menu');
